@@ -1,0 +1,19 @@
+<?xml version="1.0"?>
+<BuildLog xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+  <ProjectInfo>
+    <Name>Codx-Viva</Name>
+    <LastWriteTime>2022-06-13T11:43:10.9313586Z</LastWriteTime>
+    <LastKnownProtectionLevel>EncryptSensitiveWithPassword</LastKnownProtectionLevel>
+    <Salt>uK4Vwd2z</Salt>
+    <LastKnownProtectedHashedPassword>AQAAANCMnd8BFdERjHoAwE/Cl+sBAAAAqOUHIQBrCkOxdih3asLrbAAAAAACAAAAAAADZgAAwAAAABAAAADQueCXtd0gNqho/+l2l682AAAAAASAAACgAAAAEAAAADkcADA926LLb+cJ7b99OE4oAAAAYY3b//kK2wiMIjsVzlZDe0jMGyyimtWNkdO9Iu0MIe2DfhsXFr4sKxQAAAACXzYfv5LElc4YQvenROB8AY3qYw==</LastKnownProtectedHashedPassword>
+  </ProjectInfo>
+  <LastBuildInfos>
+    <ProjectBuildItemInfo>
+      <Name>Zustellerabrechnung.dtsx</Name>
+      <LastWriteTime>2022-07-27T08:01:46.1945613Z</LastWriteTime>
+      <LastKnownProtectionLevel>EncryptSensitiveWithPassword</LastKnownProtectionLevel>
+      <Salt>hK5gGImH</Salt>
+      <LastKnownProtectedHashedPassword>AQAAANCMnd8BFdERjHoAwE/Cl+sBAAAAqOUHIQBrCkOxdih3asLrbAAAAAACAAAAAAADZgAAwAAAABAAAAD+Klm6gWzmZ0yu6jFOmTt6AAAAAASAAACgAAAAEAAAAIVT1vR+RSvzplxCRP0Vhx4oAAAAbpI+OLoIRs2+k3Jwu2UYcrhKBZo2XIofJZJdzy6uXV1VDH94Ay1D6xQAAABIL9HFiD/rTMHF9Ek+L0K8kczmeA==</LastKnownProtectedHashedPassword>
+    </ProjectBuildItemInfo>
+  </LastBuildInfos>
+</BuildLog>
