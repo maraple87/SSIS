@@ -1,0 +1,1653 @@
+﻿<?xml version="1.0"?>
+<DTS:Executable xmlns:DTS="www.microsoft.com/SqlServer/Dts"
+  DTS:refId="Package"
+  DTS:CreationDate="6/14/2019 9:23:33 AM"
+  DTS:CreationName="Microsoft.Package"
+  DTS:CreatorComputerName="PC2548"
+  DTS:CreatorName="ENTENHAUSEN\plewik"
+  DTS:DTSID="{BFA36DF1-CE45-4C6E-A82D-E7B43DED473E}"
+  DTS:ExecutableType="Microsoft.Package"
+  DTS:LastModifiedProductVersion="15.0.2000.167"
+  DTS:LocaleID="1031"
+  DTS:ObjectName="TK-Auswertung"
+  DTS:PackageType="5"
+  DTS:ProtectionLevel="2"
+  DTS:VersionBuild="164"
+  DTS:VersionGUID="{AC9C691C-2732-4FFD-A072-E60575415511}">
+  <DTS:Property
+    DTS:Name="PackageFormatVersion">8</DTS:Property>
+  <DTS:ConnectionManagers>
+    <DTS:ConnectionManager
+      DTS:refId="Package.ConnectionManagers[Excel-Verbindungs-Manager]"
+      DTS:CreationName="EXCEL"
+      DTS:DTSID="{F565A9E8-821F-41C8-BAA6-B329FCE3124F}"
+      DTS:ObjectName="Excel-Verbindungs-Manager">
+      <DTS:ObjectData>
+        <DTS:ConnectionManager
+          DTS:ConnectRetryCount="0"
+          DTS:ConnectRetryInterval="0"
+          DTS:ConnectionString="Provider=Microsoft.ACE.OLEDB.12.0;Data Source=\\intern.stimme.de\prod\produktion\Integration\Telefoniedaten\Bearbeitung\TK_Bearbeitung.xlsx;Extended Properties=&quot;EXCEL 12.0 XML;HDR=YES&quot;;" />
+      </DTS:ObjectData>
+    </DTS:ConnectionManager>
+    <DTS:ConnectionManager
+      DTS:refId="Package.ConnectionManagers[SMTP-Verbindungs-Manager]"
+      DTS:CreationName="SMTP"
+      DTS:DTSID="{483133D4-40D5-4469-83EC-CFD74DD6386E}"
+      DTS:ObjectName="SMTP-Verbindungs-Manager">
+      <DTS:ObjectData>
+        <SmtpConnectionManager
+          ConnectionString="SmtpServer=smtprelay.intern.stimme.de;UseWindowsAuthentication=False;EnableSsl=False;Timeout=1000;"
+          ConnectByProxy="False" />
+      </DTS:ObjectData>
+    </DTS:ConnectionManager>
+    <DTS:ConnectionManager
+      DTS:refId="Package.ConnectionManagers[sql2-sql1.HStSSiS.sa]"
+      DTS:CreationName="OLEDB"
+      DTS:DTSID="{3CF144E0-FE55-4438-87A8-5E4664181CA0}"
+      DTS:ObjectName="sql2-sql1.HStSSiS.sa">
+      <DTS:ObjectData>
+        <DTS:ConnectionManager
+          DTS:ConnectRetryCount="1"
+          DTS:ConnectRetryInterval="5"
+          DTS:ConnectionString="Data Source=sql2-sql1;User ID=sa;Initial Catalog=HStSSiS;Provider=SQLNCLI11.1;Persist Security Info=True;Auto Translate=False;">
+          <EncryptedData
+            Type="http://www.w3.org/2001/04/xmlenc#Element"
+            Salt="wgKy6ssJfQ=="
+            IV="02uozi2J/C8=" xmlns="http://www.w3.org/2001/04/xmlenc#">
+            <EncryptionMethod
+              Algorithm="http://www.w3.org/2001/04/xmlenc#tripledes-cbc" />
+            <CipherData>
+              <CipherValue>02uozi2J/C+cVf8nXOGD+5g8+xJRuJPBeXC/EFB803TqkmotA9UaXA0d0+JuQqOBY9fU8bOo/TcbkKDcB8uGgJzR0IWxNYkWnIkd1gta9QUQEzaI+HSsKjEwTa+NHweoUmWFNHdWh0t+XhB7c2De5X9zRZAaPmqAqmeRjZqN6Ss=</CipherValue>
+            </CipherData>
+          </EncryptedData>
+        </DTS:ConnectionManager>
+      </DTS:ObjectData>
+    </DTS:ConnectionManager>
+  </DTS:ConnectionManagers>
+  <DTS:Variables>
+    <DTS:Variable
+      DTS:CreationName=""
+      DTS:DTSID="{21080276-4C68-4443-8403-20E886FD0547}"
+      DTS:IncludeInDebugDump="2345"
+      DTS:Namespace="User"
+      DTS:ObjectName="Archiv_Pfad">
+      <DTS:VariableValue
+        DTS:DataType="8">\\intern.stimme.de\fileserver\abteilungen\pvs\tk_auswertung</DTS:VariableValue>
+    </DTS:Variable>
+    <DTS:Variable
+      DTS:CreationName=""
+      DTS:DTSID="{A12A11C2-01A5-4E3F-8B88-6D5D665AB3A0}"
+      DTS:IncludeInDebugDump="2345"
+      DTS:Namespace="User"
+      DTS:ObjectName="ErrorMailTo">
+      <DTS:VariableValue
+        DTS:DataType="8">martin.plewik@stimme-mediengruppe.de;thomas.mayenberger@stimme-mediengruppe.de</DTS:VariableValue>
+    </DTS:Variable>
+    <DTS:Variable
+      DTS:CreationName=""
+      DTS:DTSID="{2E389DA2-9369-4274-B29A-488DC83406C1}"
+      DTS:IncludeInDebugDump="2345"
+      DTS:Namespace="User"
+      DTS:ObjectName="ErrorMailToThM">
+      <DTS:VariableValue
+        DTS:DataType="8">thomas.mayenberger@stimme-mediengruppe.de</DTS:VariableValue>
+    </DTS:Variable>
+    <DTS:Variable
+      DTS:CreationName=""
+      DTS:DTSID="{653B1549-8B70-4A30-A3E7-E1B3A243961E}"
+      DTS:IncludeInDebugDump="2345"
+      DTS:Namespace="User"
+      DTS:ObjectName="MailFrom">
+      <DTS:VariableValue
+        DTS:DataType="8">martin.plewik@stimme-mediengruppe.de</DTS:VariableValue>
+    </DTS:Variable>
+    <DTS:Variable
+      DTS:CreationName=""
+      DTS:DTSID="{6D1AD7C8-CE95-4EA0-BA06-E48B027923D2}"
+      DTS:IncludeInDebugDump="2345"
+      DTS:Namespace="User"
+      DTS:ObjectName="MailFromMP">
+      <DTS:VariableValue
+        DTS:DataType="8">martin.plewik@stimme-mediengruppe.de</DTS:VariableValue>
+    </DTS:Variable>
+    <DTS:Variable
+      DTS:CreationName=""
+      DTS:DTSID="{194FB472-2878-4905-AF75-37391EBD57A5}"
+      DTS:IncludeInDebugDump="2345"
+      DTS:Namespace="User"
+      DTS:ObjectName="Quelldatei_Bearbeitung">
+      <DTS:VariableValue
+        DTS:DataType="8">\\intern.stimme.de\prod\produktion\Integration\Telefoniedaten\Bearbeitung\TK-Bearbeitung.xlsx</DTS:VariableValue>
+    </DTS:Variable>
+    <DTS:Variable
+      DTS:CreationName=""
+      DTS:DTSID="{A1BE8E05-3665-498B-BD25-DB4862EDB38B}"
+      DTS:IncludeInDebugDump="2345"
+      DTS:Namespace="User"
+      DTS:ObjectName="TK_Archiv_PfadDatei">
+      <DTS:VariableValue
+        DTS:DataType="8">\\intern.stimme.de\prod\produktion\Integration\Telefoniedaten\Archiv\4_Donnerstag.xlsx</DTS:VariableValue>
+    </DTS:Variable>
+    <DTS:Variable
+      DTS:CreationName=""
+      DTS:DTSID="{506FFD5A-5C56-4F98-91CC-668E3699C1A0}"
+      DTS:IncludeInDebugDump="2345"
+      DTS:Namespace="User"
+      DTS:ObjectName="TK_Auswertung_MailBCC">
+      <DTS:VariableValue
+        DTS:DataType="8">martin.plewik@stimme-mediengruppe.de;thomas.mayenberger@stimme-mediengruppe.de</DTS:VariableValue>
+    </DTS:Variable>
+    <DTS:Variable
+      DTS:CreationName=""
+      DTS:DTSID="{FC50A4E9-763D-4742-ACEC-E91F2DA51889}"
+      DTS:IncludeInDebugDump="2345"
+      DTS:Namespace="User"
+      DTS:ObjectName="TK_Auswertung_MailTo">
+      <DTS:VariableValue
+        DTS:DataType="8">marcus.baumann@pro-vs.de;beate.semmler@pro-vs.de</DTS:VariableValue>
+    </DTS:Variable>
+    <DTS:Variable
+      DTS:CreationName=""
+      DTS:DTSID="{4EB9ABB5-4801-4364-98C4-7FE891AE113C}"
+      DTS:IncludeInDebugDump="2345"
+      DTS:Namespace="User"
+      DTS:ObjectName="TK_Auswertung_Pfad">
+      <DTS:VariableValue
+        DTS:DataType="8">\\intern.stimme.de\fileserver\abteilungen\pvs\tk_auswertung\</DTS:VariableValue>
+    </DTS:Variable>
+    <DTS:Variable
+      DTS:CreationName=""
+      DTS:DTSID="{6FC04720-78EA-472F-8532-485487BA47F4}"
+      DTS:IncludeInDebugDump="2345"
+      DTS:Namespace="User"
+      DTS:ObjectName="TK_Auswertung_PfadDatei">
+      <DTS:VariableValue
+        DTS:DataType="8">\\intern.stimme.de\fileserver\abteilungen\pvs\tk_auswertung\Berechnen.xlsx</DTS:VariableValue>
+    </DTS:Variable>
+    <DTS:Variable
+      DTS:CreationName=""
+      DTS:DTSID="{E9316B43-A739-4FEC-9150-0AF764E0BC65}"
+      DTS:IncludeInDebugDump="2345"
+      DTS:Namespace="User"
+      DTS:ObjectName="Wochentag">
+      <DTS:VariableValue
+        DTS:DataType="8">Mittwoch</DTS:VariableValue>
+    </DTS:Variable>
+  </DTS:Variables>
+  <DTS:Executables>
+    <DTS:Executable
+      DTS:refId="Package\Datenflusstask"
+      DTS:CreationName="Microsoft.Pipeline"
+      DTS:Description="Datenflusstask"
+      DTS:DTSID="{7AC35680-9001-4E82-9344-3474C4C4D12A}"
+      DTS:ExecutableType="Microsoft.Pipeline"
+      DTS:LocaleID="-1"
+      DTS:ObjectName="Datenflusstask"
+      DTS:TaskContact="Performs high-performance data extraction, transformation and loading;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1">
+      <DTS:Variables />
+      <DTS:ObjectData>
+        <pipeline
+          version="1">
+          <components>
+            <component
+              refId="Package\Datenflusstask\Excel-Ziel"
+              componentClassID="Microsoft.ExcelDestination"
+              contactInfo="Excel-Ziel;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; Alle Rechte vorbehalten; http://www.microsoft.com/sql/support;0"
+              description="Excel-Ziel"
+              name="Excel-Ziel"
+              usesDispositions="true">
+              <properties>
+                <property
+                  dataType="System.Int32"
+                  description="Die Anzahl der Sekunden für das Timeout eines Befehls. Der Wert &quot;0&quot; zeigt einen unendlichen Timeoutwert an."
+                  name="CommandTimeout">0</property>
+                <property
+                  dataType="System.String"
+                  description="Gibt den Namen des zum Öffnen eines Rowsets verwendeten Datenbankobjekts an."
+                  name="OpenRowset">TK_Daten</property>
+                <property
+                  dataType="System.String"
+                  description="Gibt die Variable an, die den Namen des zum Öffnen eines Rowsets verwendeten Datenbankobjekts enthält."
+                  name="OpenRowsetVariable"></property>
+                <property
+                  dataType="System.String"
+                  description="Der auszuführende SQL-Befehl."
+                  name="SqlCommand"
+                  UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor, Microsoft.DataTransformationServices.Controls, Version=15.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91"></property>
+                <property
+                  dataType="System.Int32"
+                  description="Gibt den zum Zugreifen auf die Datenbank verwendeten Modus an."
+                  name="AccessMode"
+                  typeConverter="AccessMode">0</property>
+                <property
+                  dataType="System.Boolean"
+                  description="Zeigt an, ob die für Identitätsspalten übergebenen Werte zum Ziel kopiert werden. Bei &quot;False&quot; werden die Werte für Identitätsspalten am Ziel automatisch generiert. Trifft nur zu, wenn die Option &quot;Schnelles Laden&quot; aktiviert ist."
+                  name="FastLoadKeepIdentity">false</property>
+                <property
+                  dataType="System.Boolean"
+                  description="Zeigt an, ob für Spalten, die NULL enthalten, NULL am Ziel eingefügt wird. Bei &quot;False&quot; werden für Spalten, die NULL enthalten, am Ziel die Standardwerte eingefügt. Trifft nur zu, wenn die Option &quot;Schnelles Laden&quot; aktiviert ist."
+                  name="FastLoadKeepNulls">false</property>
+                <property
+                  dataType="System.String"
+                  description="Gibt die für die Option &quot;Schnelles Laden&quot; zu verwendenden Optionen an. Trifft nur zu, wenn die Option &quot;Schnelles Laden&quot; aktiviert ist."
+                  name="FastLoadOptions"></property>
+                <property
+                  dataType="System.Int32"
+                  description="Gibt an, wann beim Einfügen von Daten Commits ausgegeben werden. Der Wert &quot;0&quot; gibt an, dass ein Commit am Ende des Einfügens von Daten ausgegeben wird. Trifft nur zu, wenn die Option &quot;Schnelles Laden&quot; aktiviert ist."
+                  name="FastLoadMaxInsertCommitSize">2147483647</property>
+              </properties>
+              <connections>
+                <connection
+                  refId="Package\Datenflusstask\Excel-Ziel.Connections[OleDbConnection]"
+                  connectionManagerID="Package.ConnectionManagers[Excel-Verbindungs-Manager]"
+                  connectionManagerRefId="Package.ConnectionManagers[Excel-Verbindungs-Manager]"
+                  description="Die für den Zugriff auf die Datenbank verwendete OLE DB-Laufzeitverbindung."
+                  name="OleDbConnection" />
+              </connections>
+              <inputs>
+                <input
+                  refId="Package\Datenflusstask\Excel-Ziel.Inputs[Eingabe des Excel-Ziels]"
+                  errorOrTruncationOperation="Einfügen"
+                  errorRowDisposition="FailComponent"
+                  hasSideEffects="true"
+                  name="Eingabe des Excel-Ziels">
+                  <inputColumns>
+                    <inputColumn
+                      refId="Package\Datenflusstask\Excel-Ziel.Inputs[Eingabe des Excel-Ziels].Columns[NSt]"
+                      cachedDataType="wstr"
+                      cachedLength="10"
+                      cachedName="NSt"
+                      externalMetadataColumnId="Package\Datenflusstask\Excel-Ziel.Inputs[Eingabe des Excel-Ziels].ExternalColumns[NSt]"
+                      lineageId="Package\Datenflusstask\OLE DB-Quelle.Outputs[Ausgabe der OLE DB-Quelle].Columns[NSt]" />
+                    <inputColumn
+                      refId="Package\Datenflusstask\Excel-Ziel.Inputs[Eingabe des Excel-Ziels].Columns[Ab]"
+                      cachedDataType="dbTimeStamp"
+                      cachedName="Ab"
+                      externalMetadataColumnId="Package\Datenflusstask\Excel-Ziel.Inputs[Eingabe des Excel-Ziels].ExternalColumns[Ab]"
+                      lineageId="Package\Datenflusstask\OLE DB-Quelle.Outputs[Ausgabe der OLE DB-Quelle].Columns[Ab]" />
+                    <inputColumn
+                      refId="Package\Datenflusstask\Excel-Ziel.Inputs[Eingabe des Excel-Ziels].Columns[Bis]"
+                      cachedDataType="dbTimeStamp"
+                      cachedName="Bis"
+                      externalMetadataColumnId="Package\Datenflusstask\Excel-Ziel.Inputs[Eingabe des Excel-Ziels].ExternalColumns[Bis]"
+                      lineageId="Package\Datenflusstask\OLE DB-Quelle.Outputs[Ausgabe der OLE DB-Quelle].Columns[Bis]" />
+                    <inputColumn
+                      refId="Package\Datenflusstask\Excel-Ziel.Inputs[Eingabe des Excel-Ziels].Columns[Status]"
+                      cachedDataType="wstr"
+                      cachedLength="10"
+                      cachedName="Status"
+                      externalMetadataColumnId="Package\Datenflusstask\Excel-Ziel.Inputs[Eingabe des Excel-Ziels].ExternalColumns[Status]"
+                      lineageId="Package\Datenflusstask\OLE DB-Quelle.Outputs[Ausgabe der OLE DB-Quelle].Columns[Status]" />
+                    <inputColumn
+                      refId="Package\Datenflusstask\Excel-Ziel.Inputs[Eingabe des Excel-Ziels].Columns[Was]"
+                      cachedDataType="wstr"
+                      cachedLength="10"
+                      cachedName="Was"
+                      externalMetadataColumnId="Package\Datenflusstask\Excel-Ziel.Inputs[Eingabe des Excel-Ziels].ExternalColumns[Was]"
+                      lineageId="Package\Datenflusstask\OLE DB-Quelle.Outputs[Ausgabe der OLE DB-Quelle].Columns[Was]" />
+                    <inputColumn
+                      refId="Package\Datenflusstask\Excel-Ziel.Inputs[Eingabe des Excel-Ziels].Columns[DauerSekunden]"
+                      cachedDataType="i4"
+                      cachedName="DauerSekunden"
+                      externalMetadataColumnId="Package\Datenflusstask\Excel-Ziel.Inputs[Eingabe des Excel-Ziels].ExternalColumns[DauerSekunden]"
+                      lineageId="Package\Datenflusstask\OLE DB-Quelle.Outputs[Ausgabe der OLE DB-Quelle].Columns[DauerSekunden]" />
+                    <inputColumn
+                      refId="Package\Datenflusstask\Excel-Ziel.Inputs[Eingabe des Excel-Ziels].Columns[TelNr]"
+                      cachedDataType="wstr"
+                      cachedLength="20"
+                      cachedName="TelNr"
+                      externalMetadataColumnId="Package\Datenflusstask\Excel-Ziel.Inputs[Eingabe des Excel-Ziels].ExternalColumns[TelNr]"
+                      lineageId="Package\Datenflusstask\OLE DB-Quelle.Outputs[Ausgabe der OLE DB-Quelle].Columns[TelNr]" />
+                    <inputColumn
+                      refId="Package\Datenflusstask\Excel-Ziel.Inputs[Eingabe des Excel-Ziels].Columns[DauerAnlage]"
+                      cachedDataType="wstr"
+                      cachedLength="8"
+                      cachedName="DauerAnlage"
+                      externalMetadataColumnId="Package\Datenflusstask\Excel-Ziel.Inputs[Eingabe des Excel-Ziels].ExternalColumns[DauerAnlage]"
+                      lineageId="Package\Datenflusstask\OLE DB-Quelle.Outputs[Ausgabe der OLE DB-Quelle].Columns[DauerAnlage]" />
+                  </inputColumns>
+                  <externalMetadataColumns
+                    isUsed="True">
+                    <externalMetadataColumn
+                      refId="Package\Datenflusstask\Excel-Ziel.Inputs[Eingabe des Excel-Ziels].ExternalColumns[NSt]"
+                      dataType="wstr"
+                      length="255"
+                      name="NSt" />
+                    <externalMetadataColumn
+                      refId="Package\Datenflusstask\Excel-Ziel.Inputs[Eingabe des Excel-Ziels].ExternalColumns[Ab]"
+                      dataType="wstr"
+                      length="255"
+                      name="Ab" />
+                    <externalMetadataColumn
+                      refId="Package\Datenflusstask\Excel-Ziel.Inputs[Eingabe des Excel-Ziels].ExternalColumns[Bis]"
+                      dataType="wstr"
+                      length="255"
+                      name="Bis" />
+                    <externalMetadataColumn
+                      refId="Package\Datenflusstask\Excel-Ziel.Inputs[Eingabe des Excel-Ziels].ExternalColumns[Status]"
+                      dataType="wstr"
+                      length="255"
+                      name="Status" />
+                    <externalMetadataColumn
+                      refId="Package\Datenflusstask\Excel-Ziel.Inputs[Eingabe des Excel-Ziels].ExternalColumns[Was]"
+                      dataType="wstr"
+                      length="255"
+                      name="Was" />
+                    <externalMetadataColumn
+                      refId="Package\Datenflusstask\Excel-Ziel.Inputs[Eingabe des Excel-Ziels].ExternalColumns[DauerSekunden]"
+                      dataType="wstr"
+                      length="255"
+                      name="DauerSekunden" />
+                    <externalMetadataColumn
+                      refId="Package\Datenflusstask\Excel-Ziel.Inputs[Eingabe des Excel-Ziels].ExternalColumns[TelNr]"
+                      dataType="wstr"
+                      length="255"
+                      name="TelNr" />
+                    <externalMetadataColumn
+                      refId="Package\Datenflusstask\Excel-Ziel.Inputs[Eingabe des Excel-Ziels].ExternalColumns[DauerAnlage]"
+                      dataType="wstr"
+                      length="255"
+                      name="DauerAnlage" />
+                  </externalMetadataColumns>
+                </input>
+              </inputs>
+              <outputs>
+                <output
+                  refId="Package\Datenflusstask\Excel-Ziel.Outputs[Fehlerausgabe des Excel-Ziels]"
+                  exclusionGroup="1"
+                  isErrorOut="true"
+                  name="Fehlerausgabe des Excel-Ziels"
+                  synchronousInputId="Package\Datenflusstask\Excel-Ziel.Inputs[Eingabe des Excel-Ziels]">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\Datenflusstask\Excel-Ziel.Outputs[Fehlerausgabe des Excel-Ziels].Columns[ErrorCode]"
+                      dataType="i4"
+                      lineageId="Package\Datenflusstask\Excel-Ziel.Outputs[Fehlerausgabe des Excel-Ziels].Columns[ErrorCode]"
+                      name="ErrorCode"
+                      specialFlags="1" />
+                    <outputColumn
+                      refId="Package\Datenflusstask\Excel-Ziel.Outputs[Fehlerausgabe des Excel-Ziels].Columns[ErrorColumn]"
+                      dataType="i4"
+                      lineageId="Package\Datenflusstask\Excel-Ziel.Outputs[Fehlerausgabe des Excel-Ziels].Columns[ErrorColumn]"
+                      name="ErrorColumn"
+                      specialFlags="2" />
+                  </outputColumns>
+                  <externalMetadataColumns />
+                </output>
+              </outputs>
+            </component>
+            <component
+              refId="Package\Datenflusstask\OLE DB-Quelle"
+              componentClassID="Microsoft.OLEDBSource"
+              contactInfo="OLE DB-Quelle;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; Alle Rechte vorbehalten; http://www.microsoft.com/sql/support;7"
+              description="OLE DB-Quelle"
+              name="OLE DB-Quelle"
+              usesDispositions="true"
+              version="7">
+              <properties>
+                <property
+                  dataType="System.Int32"
+                  description="Die Anzahl der Sekunden für das Timeout eines Befehls. Der Wert &quot;0&quot; zeigt einen unendlichen Timeoutwert an."
+                  name="CommandTimeout">0</property>
+                <property
+                  dataType="System.String"
+                  description="Gibt den Namen des zum Öffnen eines Rowsets verwendeten Datenbankobjekts an."
+                  name="OpenRowset">[dbo].[TK_ListeTelefonie]</property>
+                <property
+                  dataType="System.String"
+                  description="Gibt die Variable an, die den Namen des zum Öffnen eines Rowsets verwendeten Datenbankobjekts enthält."
+                  name="OpenRowsetVariable"></property>
+                <property
+                  dataType="System.String"
+                  description="Der auszuführende SQL-Befehl."
+                  name="SqlCommand"
+                  UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor, Microsoft.DataTransformationServices.Controls, Version=15.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91"></property>
+                <property
+                  dataType="System.String"
+                  description="Die Variable, die den auszuführenden SQL-Befehl enthält."
+                  name="SqlCommandVariable"></property>
+                <property
+                  dataType="System.Int32"
+                  description="Gibt die zu verwendende Spaltencodepage an, wenn keine Codepageinformationen von der Datenquelle verfügbar sind."
+                  name="DefaultCodePage">1252</property>
+                <property
+                  dataType="System.Boolean"
+                  description="Erzwingt die Verwendung des DefaultCodePage-Eigenschaftswerts beim Beschreiben von Zeichendaten."
+                  name="AlwaysUseDefaultCodePage">false</property>
+                <property
+                  dataType="System.Int32"
+                  description="Gibt den zum Zugreifen auf die Datenbank verwendeten Modus an."
+                  name="AccessMode"
+                  typeConverter="AccessMode">0</property>
+                <property
+                  dataType="System.String"
+                  description="Die Zuordnungen zwischen den Parametern im SQL-Befehl und den Variablen."
+                  name="ParameterMapping"></property>
+              </properties>
+              <connections>
+                <connection
+                  refId="Package\Datenflusstask\OLE DB-Quelle.Connections[OleDbConnection]"
+                  connectionManagerID="Package.ConnectionManagers[sql2-sql1.HStSSiS.sa]"
+                  connectionManagerRefId="Package.ConnectionManagers[sql2-sql1.HStSSiS.sa]"
+                  description="Die für den Zugriff auf die Datenbank verwendete OLE DB-Laufzeitverbindung."
+                  name="OleDbConnection" />
+              </connections>
+              <outputs>
+                <output
+                  refId="Package\Datenflusstask\OLE DB-Quelle.Outputs[Ausgabe der OLE DB-Quelle]"
+                  name="Ausgabe der OLE DB-Quelle">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\Datenflusstask\OLE DB-Quelle.Outputs[Ausgabe der OLE DB-Quelle].Columns[NSt]"
+                      dataType="wstr"
+                      errorOrTruncationOperation="Konvertierung"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Datenflusstask\OLE DB-Quelle.Outputs[Ausgabe der OLE DB-Quelle].ExternalColumns[NSt]"
+                      length="10"
+                      lineageId="Package\Datenflusstask\OLE DB-Quelle.Outputs[Ausgabe der OLE DB-Quelle].Columns[NSt]"
+                      name="NSt"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\Datenflusstask\OLE DB-Quelle.Outputs[Ausgabe der OLE DB-Quelle].Columns[Ab]"
+                      dataType="dbTimeStamp"
+                      errorOrTruncationOperation="Konvertierung"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Datenflusstask\OLE DB-Quelle.Outputs[Ausgabe der OLE DB-Quelle].ExternalColumns[Ab]"
+                      lineageId="Package\Datenflusstask\OLE DB-Quelle.Outputs[Ausgabe der OLE DB-Quelle].Columns[Ab]"
+                      name="Ab"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\Datenflusstask\OLE DB-Quelle.Outputs[Ausgabe der OLE DB-Quelle].Columns[Bis]"
+                      dataType="dbTimeStamp"
+                      errorOrTruncationOperation="Konvertierung"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Datenflusstask\OLE DB-Quelle.Outputs[Ausgabe der OLE DB-Quelle].ExternalColumns[Bis]"
+                      lineageId="Package\Datenflusstask\OLE DB-Quelle.Outputs[Ausgabe der OLE DB-Quelle].Columns[Bis]"
+                      name="Bis"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\Datenflusstask\OLE DB-Quelle.Outputs[Ausgabe der OLE DB-Quelle].Columns[Status]"
+                      dataType="wstr"
+                      errorOrTruncationOperation="Konvertierung"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Datenflusstask\OLE DB-Quelle.Outputs[Ausgabe der OLE DB-Quelle].ExternalColumns[Status]"
+                      length="10"
+                      lineageId="Package\Datenflusstask\OLE DB-Quelle.Outputs[Ausgabe der OLE DB-Quelle].Columns[Status]"
+                      name="Status"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\Datenflusstask\OLE DB-Quelle.Outputs[Ausgabe der OLE DB-Quelle].Columns[Was]"
+                      dataType="wstr"
+                      errorOrTruncationOperation="Konvertierung"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Datenflusstask\OLE DB-Quelle.Outputs[Ausgabe der OLE DB-Quelle].ExternalColumns[Was]"
+                      length="10"
+                      lineageId="Package\Datenflusstask\OLE DB-Quelle.Outputs[Ausgabe der OLE DB-Quelle].Columns[Was]"
+                      name="Was"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\Datenflusstask\OLE DB-Quelle.Outputs[Ausgabe der OLE DB-Quelle].Columns[DauerSekunden]"
+                      dataType="i4"
+                      errorOrTruncationOperation="Konvertierung"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Datenflusstask\OLE DB-Quelle.Outputs[Ausgabe der OLE DB-Quelle].ExternalColumns[DauerSekunden]"
+                      lineageId="Package\Datenflusstask\OLE DB-Quelle.Outputs[Ausgabe der OLE DB-Quelle].Columns[DauerSekunden]"
+                      name="DauerSekunden"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\Datenflusstask\OLE DB-Quelle.Outputs[Ausgabe der OLE DB-Quelle].Columns[TelNr]"
+                      dataType="wstr"
+                      errorOrTruncationOperation="Konvertierung"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Datenflusstask\OLE DB-Quelle.Outputs[Ausgabe der OLE DB-Quelle].ExternalColumns[TelNr]"
+                      length="20"
+                      lineageId="Package\Datenflusstask\OLE DB-Quelle.Outputs[Ausgabe der OLE DB-Quelle].Columns[TelNr]"
+                      name="TelNr"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\Datenflusstask\OLE DB-Quelle.Outputs[Ausgabe der OLE DB-Quelle].Columns[DauerAnlage]"
+                      dataType="wstr"
+                      errorOrTruncationOperation="Konvertierung"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Datenflusstask\OLE DB-Quelle.Outputs[Ausgabe der OLE DB-Quelle].ExternalColumns[DauerAnlage]"
+                      length="8"
+                      lineageId="Package\Datenflusstask\OLE DB-Quelle.Outputs[Ausgabe der OLE DB-Quelle].Columns[DauerAnlage]"
+                      name="DauerAnlage"
+                      truncationRowDisposition="FailComponent" />
+                  </outputColumns>
+                  <externalMetadataColumns
+                    isUsed="True">
+                    <externalMetadataColumn
+                      refId="Package\Datenflusstask\OLE DB-Quelle.Outputs[Ausgabe der OLE DB-Quelle].ExternalColumns[NSt]"
+                      dataType="wstr"
+                      length="10"
+                      name="NSt" />
+                    <externalMetadataColumn
+                      refId="Package\Datenflusstask\OLE DB-Quelle.Outputs[Ausgabe der OLE DB-Quelle].ExternalColumns[Ab]"
+                      dataType="dbTimeStamp"
+                      name="Ab" />
+                    <externalMetadataColumn
+                      refId="Package\Datenflusstask\OLE DB-Quelle.Outputs[Ausgabe der OLE DB-Quelle].ExternalColumns[Bis]"
+                      dataType="dbTimeStamp"
+                      name="Bis" />
+                    <externalMetadataColumn
+                      refId="Package\Datenflusstask\OLE DB-Quelle.Outputs[Ausgabe der OLE DB-Quelle].ExternalColumns[Status]"
+                      dataType="wstr"
+                      length="10"
+                      name="Status" />
+                    <externalMetadataColumn
+                      refId="Package\Datenflusstask\OLE DB-Quelle.Outputs[Ausgabe der OLE DB-Quelle].ExternalColumns[Was]"
+                      dataType="wstr"
+                      length="10"
+                      name="Was" />
+                    <externalMetadataColumn
+                      refId="Package\Datenflusstask\OLE DB-Quelle.Outputs[Ausgabe der OLE DB-Quelle].ExternalColumns[SecAb]"
+                      dataType="i4"
+                      name="SecAb" />
+                    <externalMetadataColumn
+                      refId="Package\Datenflusstask\OLE DB-Quelle.Outputs[Ausgabe der OLE DB-Quelle].ExternalColumns[SecBis]"
+                      dataType="i4"
+                      name="SecBis" />
+                    <externalMetadataColumn
+                      refId="Package\Datenflusstask\OLE DB-Quelle.Outputs[Ausgabe der OLE DB-Quelle].ExternalColumns[DauerSekunden]"
+                      dataType="i4"
+                      name="DauerSekunden" />
+                    <externalMetadataColumn
+                      refId="Package\Datenflusstask\OLE DB-Quelle.Outputs[Ausgabe der OLE DB-Quelle].ExternalColumns[TelNr]"
+                      dataType="wstr"
+                      length="20"
+                      name="TelNr" />
+                    <externalMetadataColumn
+                      refId="Package\Datenflusstask\OLE DB-Quelle.Outputs[Ausgabe der OLE DB-Quelle].ExternalColumns[DauerAnlage]"
+                      dataType="wstr"
+                      length="8"
+                      name="DauerAnlage" />
+                  </externalMetadataColumns>
+                </output>
+                <output
+                  refId="Package\Datenflusstask\OLE DB-Quelle.Outputs[Fehlerausgabe der OLE DB-Quelle]"
+                  isErrorOut="true"
+                  name="Fehlerausgabe der OLE DB-Quelle">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\Datenflusstask\OLE DB-Quelle.Outputs[Fehlerausgabe der OLE DB-Quelle].Columns[NSt]"
+                      dataType="wstr"
+                      length="10"
+                      lineageId="Package\Datenflusstask\OLE DB-Quelle.Outputs[Fehlerausgabe der OLE DB-Quelle].Columns[NSt]"
+                      name="NSt" />
+                    <outputColumn
+                      refId="Package\Datenflusstask\OLE DB-Quelle.Outputs[Fehlerausgabe der OLE DB-Quelle].Columns[Ab]"
+                      dataType="dbTimeStamp"
+                      lineageId="Package\Datenflusstask\OLE DB-Quelle.Outputs[Fehlerausgabe der OLE DB-Quelle].Columns[Ab]"
+                      name="Ab" />
+                    <outputColumn
+                      refId="Package\Datenflusstask\OLE DB-Quelle.Outputs[Fehlerausgabe der OLE DB-Quelle].Columns[Bis]"
+                      dataType="dbTimeStamp"
+                      lineageId="Package\Datenflusstask\OLE DB-Quelle.Outputs[Fehlerausgabe der OLE DB-Quelle].Columns[Bis]"
+                      name="Bis" />
+                    <outputColumn
+                      refId="Package\Datenflusstask\OLE DB-Quelle.Outputs[Fehlerausgabe der OLE DB-Quelle].Columns[Status]"
+                      dataType="wstr"
+                      length="10"
+                      lineageId="Package\Datenflusstask\OLE DB-Quelle.Outputs[Fehlerausgabe der OLE DB-Quelle].Columns[Status]"
+                      name="Status" />
+                    <outputColumn
+                      refId="Package\Datenflusstask\OLE DB-Quelle.Outputs[Fehlerausgabe der OLE DB-Quelle].Columns[Was]"
+                      dataType="wstr"
+                      length="10"
+                      lineageId="Package\Datenflusstask\OLE DB-Quelle.Outputs[Fehlerausgabe der OLE DB-Quelle].Columns[Was]"
+                      name="Was" />
+                    <outputColumn
+                      refId="Package\Datenflusstask\OLE DB-Quelle.Outputs[Fehlerausgabe der OLE DB-Quelle].Columns[DauerSekunden]"
+                      dataType="i4"
+                      lineageId="Package\Datenflusstask\OLE DB-Quelle.Outputs[Fehlerausgabe der OLE DB-Quelle].Columns[DauerSekunden]"
+                      name="DauerSekunden" />
+                    <outputColumn
+                      refId="Package\Datenflusstask\OLE DB-Quelle.Outputs[Fehlerausgabe der OLE DB-Quelle].Columns[TelNr]"
+                      dataType="wstr"
+                      length="20"
+                      lineageId="Package\Datenflusstask\OLE DB-Quelle.Outputs[Fehlerausgabe der OLE DB-Quelle].Columns[TelNr]"
+                      name="TelNr" />
+                    <outputColumn
+                      refId="Package\Datenflusstask\OLE DB-Quelle.Outputs[Fehlerausgabe der OLE DB-Quelle].Columns[DauerAnlage]"
+                      dataType="wstr"
+                      length="8"
+                      lineageId="Package\Datenflusstask\OLE DB-Quelle.Outputs[Fehlerausgabe der OLE DB-Quelle].Columns[DauerAnlage]"
+                      name="DauerAnlage" />
+                    <outputColumn
+                      refId="Package\Datenflusstask\OLE DB-Quelle.Outputs[Fehlerausgabe der OLE DB-Quelle].Columns[ErrorCode]"
+                      dataType="i4"
+                      lineageId="Package\Datenflusstask\OLE DB-Quelle.Outputs[Fehlerausgabe der OLE DB-Quelle].Columns[ErrorCode]"
+                      name="ErrorCode"
+                      specialFlags="1" />
+                    <outputColumn
+                      refId="Package\Datenflusstask\OLE DB-Quelle.Outputs[Fehlerausgabe der OLE DB-Quelle].Columns[ErrorColumn]"
+                      dataType="i4"
+                      lineageId="Package\Datenflusstask\OLE DB-Quelle.Outputs[Fehlerausgabe der OLE DB-Quelle].Columns[ErrorColumn]"
+                      name="ErrorColumn"
+                      specialFlags="2" />
+                  </outputColumns>
+                  <externalMetadataColumns />
+                </output>
+              </outputs>
+            </component>
+          </components>
+          <paths>
+            <path
+              refId="Package\Datenflusstask.Paths[Ausgabe der OLE DB-Quelle]"
+              endId="Package\Datenflusstask\Excel-Ziel.Inputs[Eingabe des Excel-Ziels]"
+              name="Ausgabe der OLE DB-Quelle"
+              startId="Package\Datenflusstask\OLE DB-Quelle.Outputs[Ausgabe der OLE DB-Quelle]" />
+          </paths>
+        </pipeline>
+      </DTS:ObjectData>
+    </DTS:Executable>
+    <DTS:Executable
+      DTS:refId="Package\Erstelle Excel-Arbeitsdatei neu"
+      DTS:CreationName="Microsoft.ExecuteSQLTask"
+      DTS:Description="Task &quot;SQL ausführen&quot;"
+      DTS:DTSID="{AFA7A0F3-DDB8-41D1-B729-F6EC964C19BB}"
+      DTS:ExecutableType="Microsoft.ExecuteSQLTask"
+      DTS:LocaleID="-1"
+      DTS:ObjectName="Erstelle Excel-Arbeitsdatei neu"
+      DTS:TaskContact="Execute SQL Task; Microsoft Corporation; SQL Server 2017; © 2017 Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1"
+      DTS:ThreadHint="0">
+      <DTS:Variables />
+      <DTS:ObjectData>
+        <SQLTask:SqlTaskData
+          SQLTask:Connection="{F565A9E8-821F-41C8-BAA6-B329FCE3124F}"
+          SQLTask:SqlStatementSource="CREATE TABLE `TK-Daten` (&#xA;    `NSt` NVARCHAR(10),&#xA;    `Ab` DATETIME,&#xA;    `Bis` DATETIME,&#xA;    `Status` NVARCHAR(10),&#xA;    `Was` NVARCHAR(10),&#xA;    `DauerSekunden` INT,&#xA;    `TelNr` NVARCHAR(20),&#xA;    `DauerAnlage` NVARCHAR(8)&#xA;)" xmlns:SQLTask="www.microsoft.com/sqlserver/dts/tasks/sqltask" />
+      </DTS:ObjectData>
+    </DTS:Executable>
+    <DTS:Executable
+      DTS:refId="Package\Fehler SSIS TK-Auswertung"
+      DTS:CreationName="Microsoft.SendMailTask"
+      DTS:Description="Task &quot;Mail senden&quot;"
+      DTS:DTSID="{C5607681-52A1-4085-9CC9-72E4197619E8}"
+      DTS:ExecutableType="Microsoft.SendMailTask"
+      DTS:LocaleID="-1"
+      DTS:ObjectName="Fehler SSIS TK-Auswertung"
+      DTS:TaskContact="Send Mail Task; Microsoft Corporation; SQL Server 2017; © 2017 Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1"
+      DTS:ThreadHint="2">
+      <DTS:Variables />
+      <DTS:PropertyExpression
+        DTS:Name="FromLine">@[User::MailFromMP]</DTS:PropertyExpression>
+      <DTS:PropertyExpression
+        DTS:Name="ToLine">@[User::ErrorMailTo]</DTS:PropertyExpression>
+      <DTS:ObjectData>
+        <SendMailTask:SendMailTaskData
+          SendMailTask:SMTPServer="{483133D4-40D5-4469-83EC-CFD74DD6386E}"
+          SendMailTask:From="martin.plewik@stimme-mediengruppe.de"
+          SendMailTask:To="martin.plewik@stimme-mediengruppe.de;thomas.mayenberger@stimme-mediengruppe.de"
+          SendMailTask:Subject="Fehler SSIS TK-Auswertung"
+          SendMailTask:MessageSource="Bei SSIS &quot;TK-Auswertung&quot; ist ein Fehler aufgetreten beim &#xA;Löschen oder beim&#xA;neu erstellen&#xA;der Excel-Arbeitsdatei!" xmlns:SendMailTask="www.microsoft.com/sqlserver/dts/tasks/sendmailtask" />
+      </DTS:ObjectData>
+    </DTS:Executable>
+    <DTS:Executable
+      DTS:refId="Package\Fehler SSIS TK-Auswertung 2"
+      DTS:CreationName="Microsoft.SendMailTask"
+      DTS:Description="Task &quot;Mail senden&quot;"
+      DTS:DTSID="{51ee6ab6-30d2-429c-bbee-c7e9e5ab173b}"
+      DTS:ExecutableType="Microsoft.SendMailTask"
+      DTS:LocaleID="-1"
+      DTS:ObjectName="Fehler SSIS TK-Auswertung 2"
+      DTS:TaskContact="Send Mail Task; Microsoft Corporation; SQL Server 2017; © 2017 Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1"
+      DTS:ThreadHint="0">
+      <DTS:Variables />
+      <DTS:PropertyExpression
+        DTS:Name="FromLine">@[User::MailFromMP]</DTS:PropertyExpression>
+      <DTS:PropertyExpression
+        DTS:Name="ToLine">@[User::ErrorMailTo]</DTS:PropertyExpression>
+      <DTS:ObjectData>
+        <SendMailTask:SendMailTaskData
+          SendMailTask:SMTPServer="{483133D4-40D5-4469-83EC-CFD74DD6386E}"
+          SendMailTask:From="martin.plewik@stimme-mediengruppe.de"
+          SendMailTask:To="martin.plewik@stimme-mediengruppe.de;thomas.mayenberger@stimme-mediengruppe.de"
+          SendMailTask:Subject="Fehler SSIS TK-Auswertung 2"
+          SendMailTask:Priority="High"
+          SendMailTask:MessageSource="Bei SSIS &quot;TK-Auswertung&quot; ist ein Fehler aufgetreten beim Datenabruf durch die MS-SQL_Prozedur:&#xA;exec   HStSSiS..Report_TK_TelefoniePVS" xmlns:SendMailTask="www.microsoft.com/sqlserver/dts/tasks/sendmailtask" />
+      </DTS:ObjectData>
+    </DTS:Executable>
+    <DTS:Executable
+      DTS:refId="Package\Fehler SSIS TK-Auswertung 3"
+      DTS:CreationName="Microsoft.SendMailTask"
+      DTS:Description="Task &quot;Mail senden&quot;"
+      DTS:DTSID="{4d4c9a04-2845-4522-bbd7-4ca5cee07429}"
+      DTS:ExecutableType="Microsoft.SendMailTask"
+      DTS:LocaleID="-1"
+      DTS:ObjectName="Fehler SSIS TK-Auswertung 3"
+      DTS:TaskContact="Send Mail Task; Microsoft Corporation; SQL Server 2017; © 2017 Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1"
+      DTS:ThreadHint="3">
+      <DTS:Variables />
+      <DTS:PropertyExpression
+        DTS:Name="FromLine">@[User::MailFromMP]</DTS:PropertyExpression>
+      <DTS:PropertyExpression
+        DTS:Name="ToLine">@[User::ErrorMailTo]</DTS:PropertyExpression>
+      <DTS:ObjectData>
+        <SendMailTask:SendMailTaskData
+          SendMailTask:SMTPServer="{483133D4-40D5-4469-83EC-CFD74DD6386E}"
+          SendMailTask:From="martin.plewik@stimme-mediengruppe.de"
+          SendMailTask:To="martin.plewik@stimme-mediengruppe.de;thomas.mayenberger@stimme-mediengruppe.de"
+          SendMailTask:Subject="Fehler SSIS TK-Auswertung"
+          SendMailTask:Priority="High"
+          SendMailTask:MessageSource="Bei SSIS &quot;TK-Auswertung&quot; ist ein Fehler aufgetreten beim Eintrag der Ergebnisse in die Excel-Arbeitsdatei!" xmlns:SendMailTask="www.microsoft.com/sqlserver/dts/tasks/sendmailtask" />
+      </DTS:ObjectData>
+    </DTS:Executable>
+    <DTS:Executable
+      DTS:refId="Package\Fehler SSIS TK-Auswertung 4"
+      DTS:CreationName="Microsoft.SendMailTask"
+      DTS:Description="Task &quot;Mail senden&quot;"
+      DTS:DTSID="{549704ba-8f9b-4a4c-af87-aa50af2905d8}"
+      DTS:ExecutableType="Microsoft.SendMailTask"
+      DTS:LocaleID="-1"
+      DTS:ObjectName="Fehler SSIS TK-Auswertung 4"
+      DTS:TaskContact="Send Mail Task; Microsoft Corporation; SQL Server 2017; © 2017 Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1"
+      DTS:ThreadHint="1">
+      <DTS:Variables />
+      <DTS:PropertyExpression
+        DTS:Name="FromLine">@[User::MailFromMP]</DTS:PropertyExpression>
+      <DTS:PropertyExpression
+        DTS:Name="MessageSource">"Fehler bei SSIS 'TK-Auswertung':
+Die Arbeitsdatei " +  @[User::Quelldatei_Bearbeitung] + "
+konnte nicht nach " +  @[User::TK_Auswertung_PfadDatei] + "
+kopiert werden. Bitte prüfen Sie die Verzeichnis-Rechte."</DTS:PropertyExpression>
+      <DTS:PropertyExpression
+        DTS:Name="ToLine">@[User::ErrorMailTo]</DTS:PropertyExpression>
+      <DTS:ObjectData>
+        <SendMailTask:SendMailTaskData
+          SendMailTask:SMTPServer="{483133D4-40D5-4469-83EC-CFD74DD6386E}"
+          SendMailTask:From="martin.plewik@stimme-mediengruppe.de"
+          SendMailTask:To="martin.plewik@stimme-mediengruppe.de;thomas.mayenberger@stimme-mediengruppe.de"
+          SendMailTask:Subject="Fehler SSIS TK-Auswertung"
+          SendMailTask:Priority="High"
+          SendMailTask:MessageSource="Fehler bei SSIS 'TK-Auswertung':&#xA;Die Arbeitsdatei \\intern.stimme.de\prod\produktion\Integration\Telefoniedaten\Bearbeitung\TK-Bearbeitung.xlsx&#xA;konnte nicht nach \\intern.stimme.de\fileserver\abteilungen\pvs\tk_auswertung\Berechnen.xlsx&#xA;kopiert werden. Bitte prüfen Sie die Verzeichnis-Rechte." xmlns:SendMailTask="www.microsoft.com/sqlserver/dts/tasks/sendmailtask" />
+      </DTS:ObjectData>
+    </DTS:Executable>
+    <DTS:Executable
+      DTS:refId="Package\Fehler SSIS TK-Auswertung 5"
+      DTS:CreationName="Microsoft.SendMailTask"
+      DTS:Description="Task &quot;Mail senden&quot;"
+      DTS:DTSID="{bad59bf8-30ec-4df9-b445-db018a379315}"
+      DTS:ExecutableType="Microsoft.SendMailTask"
+      DTS:LocaleID="-1"
+      DTS:ObjectName="Fehler SSIS TK-Auswertung 5"
+      DTS:TaskContact="Send Mail Task; Microsoft Corporation; SQL Server 2017; © 2017 Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1"
+      DTS:ThreadHint="5">
+      <DTS:Variables />
+      <DTS:PropertyExpression
+        DTS:Name="FromLine">@[User::MailFromMP]</DTS:PropertyExpression>
+      <DTS:PropertyExpression
+        DTS:Name="MessageSource">"Fehler bei SSIS 'TK-Auswertung':
+Die Arbeitsdatei " +  @[User::Quelldatei_Bearbeitung] + "
+konnte nicht nach " + @[User::TK_Archiv_PfadDatei]   + "
+archiviert werden. Bitte prüfen Sie die Verzeichnis-Rechte."</DTS:PropertyExpression>
+      <DTS:PropertyExpression
+        DTS:Name="ToLine">@[User::ErrorMailTo]</DTS:PropertyExpression>
+      <DTS:ObjectData>
+        <SendMailTask:SendMailTaskData
+          SendMailTask:SMTPServer="{483133D4-40D5-4469-83EC-CFD74DD6386E}"
+          SendMailTask:From="martin.plewik@stimme-mediengruppe.de"
+          SendMailTask:To="martin.plewik@stimme-mediengruppe.de;thomas.mayenberger@stimme-mediengruppe.de"
+          SendMailTask:Subject="Fehler SSIS TK-Auswertung"
+          SendMailTask:MessageSource="Fehler bei SSIS 'TK-Auswertung':&#xA;Die Arbeitsdatei \\intern.stimme.de\prod\produktion\Integration\Telefoniedaten\Bearbeitung\TK-Bearbeitung.xlsx&#xA;konnte nicht nach \\intern.stimme.de\prod\produktion\Integration\Telefoniedaten\Archiv\4_Donnerstag.xlsx&#xA;archiviert werden. Bitte prüfen Sie die Verzeichnis-Rechte." xmlns:SendMailTask="www.microsoft.com/sqlserver/dts/tasks/sendmailtask" />
+      </DTS:ObjectData>
+    </DTS:Executable>
+    <DTS:Executable
+      DTS:refId="Package\Fehler SSIS TK-Auswertung 6"
+      DTS:CreationName="Microsoft.SendMailTask"
+      DTS:Description="Task &quot;Mail senden&quot;"
+      DTS:DTSID="{e4ee9ec8-9658-414f-97bc-758d31503eac}"
+      DTS:ExecutableType="Microsoft.SendMailTask"
+      DTS:LocaleID="-1"
+      DTS:ObjectName="Fehler SSIS TK-Auswertung 6"
+      DTS:TaskContact="Send Mail Task; Microsoft Corporation; SQL Server 2017; © 2017 Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1"
+      DTS:ThreadHint="0">
+      <DTS:Variables />
+      <DTS:PropertyExpression
+        DTS:Name="FromLine">@[User::MailFromMP]</DTS:PropertyExpression>
+      <DTS:PropertyExpression
+        DTS:Name="MessageSource">"Geringfügiger Fehler bei SSIS 'TK-Auswertung':
+Die Info-Mail an 
+" + @[User::TK_Auswertung_MailTo] + "
+konnte nicht verschickt werden. Falls es sich nicht um einen kurzfristigen Ausfall des Mailservers handelte, prüfen Sie bitte, ob diese Mail-Empfänger noch korrekt sind, und korrigieren Sie ggf. die Werte in Tabelle HStProg..InitWerte."</DTS:PropertyExpression>
+      <DTS:PropertyExpression
+        DTS:Name="ToLine">@[User::ErrorMailTo]</DTS:PropertyExpression>
+      <DTS:ObjectData>
+        <SendMailTask:SendMailTaskData
+          SendMailTask:SMTPServer="{483133D4-40D5-4469-83EC-CFD74DD6386E}"
+          SendMailTask:From="martin.plewik@stimme-mediengruppe.de"
+          SendMailTask:To="martin.plewik@stimme-mediengruppe.de;thomas.mayenberger@stimme-mediengruppe.de"
+          SendMailTask:Subject="Fehler SSIS TK-Auswertung"
+          SendMailTask:Priority="Low"
+          SendMailTask:MessageSource="Geringfügiger Fehler bei SSIS 'TK-Auswertung':&#xA;Die Info-Mail an &#xA;marcus.baumann@pro-vs.de;beate.semmler@pro-vs.de&#xA;konnte nicht verschickt werden. Falls es sich nicht um einen kurzfristigen Ausfall des Mailservers handelte, prüfen Sie bitte, ob diese Mail-Empfänger noch korrekt sind, und korrigieren Sie ggf. die Werte in Tabelle HStProg..InitWerte." xmlns:SendMailTask="www.microsoft.com/sqlserver/dts/tasks/sendmailtask" />
+      </DTS:ObjectData>
+    </DTS:Executable>
+    <DTS:Executable
+      DTS:refId="Package\Kopieren ins ArchivVerzeichnis"
+      DTS:CreationName="Microsoft.FileSystemTask"
+      DTS:Description="Task &quot;Dateisystem&quot;"
+      DTS:DTSID="{de465d75-8c11-44f6-b840-94ee84edcc49}"
+      DTS:ExecutableType="Microsoft.FileSystemTask"
+      DTS:LocaleID="-1"
+      DTS:ObjectName="Kopieren ins ArchivVerzeichnis"
+      DTS:TaskContact="File System Task;Microsoft Corporation; SQL Server 2017; © 2017 Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1"
+      DTS:ThreadHint="0">
+      <DTS:Variables />
+      <DTS:ObjectData>
+        <FileSystemData
+          TaskOverwriteDestFile="True"
+          TaskSourcePath="User::Quelldatei_Bearbeitung"
+          TaskIsSourceVariable="True"
+          TaskDestinationPath="User::TK_Archiv_PfadDatei"
+          TaskIsDestinationVariable="True" />
+      </DTS:ObjectData>
+    </DTS:Executable>
+    <DTS:Executable
+      DTS:refId="Package\Kopieren ins Zielverzeichnis"
+      DTS:CreationName="Microsoft.FileSystemTask"
+      DTS:Description="Task &quot;Dateisystem&quot;"
+      DTS:DTSID="{94ee995b-1ec0-43af-a292-c4c1d7fc74e3}"
+      DTS:ExecutableType="Microsoft.FileSystemTask"
+      DTS:LocaleID="-1"
+      DTS:ObjectName="Kopieren ins Zielverzeichnis"
+      DTS:TaskContact="File System Task;Microsoft Corporation; SQL Server 2017; © 2017 Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1"
+      DTS:ThreadHint="0">
+      <DTS:Variables />
+      <DTS:ObjectData>
+        <FileSystemData
+          TaskOverwriteDestFile="True"
+          TaskSourcePath="User::Quelldatei_Bearbeitung"
+          TaskIsSourceVariable="True"
+          TaskDestinationPath="User::TK_Auswertung_PfadDatei"
+          TaskIsDestinationVariable="True" />
+      </DTS:ObjectData>
+    </DTS:Executable>
+    <DTS:Executable
+      DTS:refId="Package\Lösche Excel-Arbeitsdatei"
+      DTS:CreationName="Microsoft.FileSystemTask"
+      DTS:Description="Task &quot;Dateisystem&quot;"
+      DTS:DTSID="{590222F2-0A12-442F-8823-4F63CF0A67A6}"
+      DTS:ExecutableType="Microsoft.FileSystemTask"
+      DTS:LocaleID="-1"
+      DTS:ObjectName="Lösche Excel-Arbeitsdatei"
+      DTS:TaskContact="File System Task;Microsoft Corporation; SQL Server 2017; © 2017 Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1"
+      DTS:ThreadHint="0">
+      <DTS:Variables />
+      <DTS:ObjectData>
+        <FileSystemData
+          TaskOperationType="DeleteFile"
+          TaskSourcePath="User::Quelldatei_Bearbeitung"
+          TaskIsSourceVariable="True" />
+      </DTS:ObjectData>
+    </DTS:Executable>
+    <DTS:Executable
+      DTS:refId="Package\Task &quot;Mail senden&quot;"
+      DTS:CreationName="Microsoft.SendMailTask"
+      DTS:Description="Task &quot;Mail senden&quot;"
+      DTS:DTSID="{29e56c78-c1e2-482b-aabe-a750e880db80}"
+      DTS:ExecutableType="Microsoft.SendMailTask"
+      DTS:LocaleID="-1"
+      DTS:ObjectName="Task &quot;Mail senden&quot;"
+      DTS:TaskContact="Send Mail Task; Microsoft Corporation; SQL Server 2017; © 2017 Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1"
+      DTS:ThreadHint="0">
+      <DTS:Variables />
+      <DTS:PropertyExpression
+        DTS:Name="BCCLine">@[User::TK_Auswertung_MailBCC]</DTS:PropertyExpression>
+      <DTS:PropertyExpression
+        DTS:Name="FromLine">@[User::MailFromMP]</DTS:PropertyExpression>
+      <DTS:PropertyExpression
+        DTS:Name="MessageSource">"Unter folgendem Link finden Sie die aktualisierte Exceldatei für " + @[User::Wochentag] +": 
+Verzeichnis: " + @[User::TK_Auswertung_Pfad] +
+"
+Direkter Aufruf der Datei: " +   @[User::TK_Auswertung_PfadDatei]</DTS:PropertyExpression>
+      <DTS:PropertyExpression
+        DTS:Name="ToLine">@[User::TK_Auswertung_MailTo]</DTS:PropertyExpression>
+      <DTS:ObjectData>
+        <SendMailTask:SendMailTaskData
+          SendMailTask:SMTPServer="{483133D4-40D5-4469-83EC-CFD74DD6386E}"
+          SendMailTask:From="martin.plewik@stimme-mediengruppe.de"
+          SendMailTask:To="marcus.baumann@pro-vs.de;beate.semmler@pro-vs.de"
+          SendMailTask:BCC="martin.plewik@stimme-mediengruppe.de;thomas.mayenberger@stimme-mediengruppe.de"
+          SendMailTask:Subject="TK-Auswertung"
+          SendMailTask:MessageSource="Unter folgendem Link finden Sie die aktualisierte Exceldatei für Mittwoch: &#xA;Verzeichnis: \\intern.stimme.de\fileserver\abteilungen\pvs\tk_auswertung\&#xA;Direkter Aufruf der Datei: \\intern.stimme.de\fileserver\abteilungen\pvs\tk_auswertung\Berechnen.xlsx" xmlns:SendMailTask="www.microsoft.com/sqlserver/dts/tasks/sendmailtask" />
+      </DTS:ObjectData>
+    </DTS:Executable>
+    <DTS:Executable
+      DTS:refId="Package\Task &quot;SQL ausführen&quot;"
+      DTS:CreationName="Microsoft.ExecuteSQLTask"
+      DTS:Description="Task &quot;SQL ausführen&quot;"
+      DTS:DTSID="{99C66194-3341-49AA-BFE1-676A1D5C26C6}"
+      DTS:ExecutableType="Microsoft.ExecuteSQLTask"
+      DTS:LocaleID="-1"
+      DTS:ObjectName="Task &quot;SQL ausführen&quot;"
+      DTS:TaskContact="Execute SQL Task; Microsoft Corporation; SQL Server 2017; © 2017 Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1"
+      DTS:ThreadHint="0">
+      <DTS:Variables />
+      <DTS:ObjectData>
+        <SQLTask:SqlTaskData
+          SQLTask:Connection="{3CF144E0-FE55-4438-87A8-5E4664181CA0}"
+          SQLTask:SqlStatementSource="exec   HStSSiS..Report_TK_TelefoniePVS" xmlns:SQLTask="www.microsoft.com/sqlserver/dts/tasks/sqltask" />
+      </DTS:ObjectData>
+    </DTS:Executable>
+    <DTS:Executable
+      DTS:refId="Package\Variablen auslesen"
+      DTS:CreationName="Microsoft.ExecuteSQLTask"
+      DTS:Description="Task 'SQL ausführen'"
+      DTS:DTSID="{96bb6dd4-99fe-4901-9547-72f0eec598f0}"
+      DTS:ExecutableType="Microsoft.ExecuteSQLTask"
+      DTS:LocaleID="-1"
+      DTS:ObjectName="Variablen auslesen"
+      DTS:TaskContact="Execute SQL Task; Microsoft Corporation; Microsoft SQL Server 2008 R2; © 2007 Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1"
+      DTS:ThreadHint="0">
+      <DTS:Variables />
+      <DTS:ObjectData>
+        <SQLTask:SqlTaskData
+          SQLTask:Connection="{3CF144E0-FE55-4438-87A8-5E4664181CA0}"
+          SQLTask:SqlStatementSource="select&#x9;max(m.ErrorMailToMP) + ';' + max(ErrorMailToThM) ErrorMailTo, max(m.MailFromMP) MailFromMP,&#xA;&#x9;max(m.TK_Auswertung_MailTo) TK_Auswertung_MailTo, max(m.TK_Auswertung_MailBCC) TK_Auswertung_MailBCC,&#xA;&#x9;max(m.TK_Auswertung_Pfad) TK_Auswertung_Pfad, rtrim(convert(varchar(12), datename(dw, getdate()))) Wochentag,&#xA;&#x9;max(m.TK_Auswertung_Pfad) + max(TK_NeuerName) TK_Auswertung_PfadDatei,&#xA;&#x9;max(m.TK_Arbeits_Pfad) TK_Arbeits_Pfad, replace(max(m.TK_Arbeits_Pfad), '\Bearbeitung\', '\') + 'Archiv\' + max(TK_NeuerName) TK_Archiv_PfadDatei,&#xA;&#x9;max(m.TK_Arbeits_Pfad) + 'TK_Bearbeitung.xlsx' Quelldatei_Bearbeitung&#xA;from&#x9;(select&#x9;ErrorMailToMP = case when Schluessel = 'ErrorMail_MP' then Wert else ' ' end,&#xA;&#x9;&#x9;MailFromMP = case when Schluessel = 'ErrorMailFrom_MP' then Wert else ' ' end,&#xA;&#x9;&#x9;ErrorMailToThM = case when Schluessel = 'ErrorMail' then Wert else '' end,&#xA;&#x9;&#x9;TK_Auswertung_MailTo = case when Schluessel = 'TK_Auswertung_MailTo' then Wert else '' end,&#xA;&#x9;&#x9;TK_Auswertung_MailBCC = case when Schluessel = 'TK_Auswertung_MailBCC' then Wert else '' end,&#xA;&#x9;&#x9;TK_Auswertung_Pfad = case when Schluessel = 'TK_Auswertung_Pfad' then Wert else '' end,&#xA;&#x9;&#x9;TK_Arbeits_Pfad = case when Schluessel = 'TK_Arbeits_Pfad' then Wert else '' end,&#xA;&#x9;&#x9;TK_NeuerName = convert(char(1), datepart(dw, getdate())) + '_' + rtrim(convert(varchar(12), datename(dw, getdate()))) + '.xlsx'&#xA;&#x9; from&#x9;(SELECT&#x9;Schluessel, Wert from HStProg..InitWerte &#xA;&#x9;&#x9; where&#x9;Abschnitt = 'Integration' and Schluessel in ('ErrorMail_MP', 'ErrorMailFrom_MP','ErrorMail',&#xA;&#x9;&#x9;&#x9;'TK_Auswertung_MailBCC', 'TK_Auswertung_MailTo', 'TK_Auswertung_Pfad', 'TK_Arbeits_Pfad')&#xA;&#x9;&#x9;) t&#xA;&#x9;) m"
+          SQLTask:ResultType="ResultSetType_SingleRow" xmlns:SQLTask="www.microsoft.com/sqlserver/dts/tasks/sqltask">
+          <SQLTask:ResultBinding
+            SQLTask:ResultName="ErrorMailTo"
+            SQLTask:DtsVariableName="User::ErrorMailTo" />
+          <SQLTask:ResultBinding
+            SQLTask:ResultName="MailFromMP"
+            SQLTask:DtsVariableName="User::MailFromMP" />
+          <SQLTask:ResultBinding
+            SQLTask:ResultName="TK_Auswertung_MailTo"
+            SQLTask:DtsVariableName="User::TK_Auswertung_MailTo" />
+          <SQLTask:ResultBinding
+            SQLTask:ResultName="TK_Auswertung_MailBCC"
+            SQLTask:DtsVariableName="User::TK_Auswertung_MailBCC" />
+          <SQLTask:ResultBinding
+            SQLTask:ResultName="TK_Auswertung_Pfad"
+            SQLTask:DtsVariableName="User::TK_Auswertung_Pfad" />
+          <SQLTask:ResultBinding
+            SQLTask:ResultName="TK_Auswertung_PfadDatei"
+            SQLTask:DtsVariableName="User::TK_Auswertung_PfadDatei" />
+          <SQLTask:ResultBinding
+            SQLTask:ResultName="Wochentag"
+            SQLTask:DtsVariableName="User::Wochentag" />
+          <SQLTask:ResultBinding
+            SQLTask:ResultName="TK_Archiv_PfadDatei"
+            SQLTask:DtsVariableName="User::TK_Archiv_PfadDatei" />
+          <SQLTask:ResultBinding
+            SQLTask:ResultName="Quelldatei_Bearbeitung"
+            SQLTask:DtsVariableName="User::Quelldatei_Bearbeitung" />
+        </SQLTask:SqlTaskData>
+      </DTS:ObjectData>
+    </DTS:Executable>
+    <DTS:Executable
+      DTS:refId="Package\VorlaufMail"
+      DTS:CreationName="Microsoft.SendMailTask"
+      DTS:DelayValidation="True"
+      DTS:Description="Mail senden, falls Fehler bei TK-Auswertung Mailadressen+Pfade auslesen"
+      DTS:DisableEventHandlers="True"
+      DTS:DTSID="{36405577-3e7a-4bbe-982a-9062e7028e8b}"
+      DTS:ExecutableType="Microsoft.SendMailTask"
+      DTS:LocaleID="-1"
+      DTS:ObjectName="VorlaufMail"
+      DTS:TaskContact="Send Mail Task; Microsoft Corporation; Microsoft SQL Server 2008 R2; © 2007 Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1"
+      DTS:ThreadHint="4">
+      <DTS:Variables />
+      <DTS:ObjectData>
+        <SendMailTask:SendMailTaskData
+          SendMailTask:SMTPServer="{483133D4-40D5-4469-83EC-CFD74DD6386E}"
+          SendMailTask:From="_Vert_EDV-Programmierung@stimme-mediengruppe.de"
+          SendMailTask:To="martin.plewik@stimme-mediengruppe.de"
+          SendMailTask:CC="martin.plewik@stimme-mediengruppe.de;thomas.mayenberger@stimme-mediengruppe.de"
+          SendMailTask:Subject="Fehler bei Integration-Prozess Umfangsermittlung"
+          SendMailTask:Priority="High"
+          SendMailTask:MessageSource="Hallo,&#xA;&#xA;beim Zugriff auf MS-SQL trat ein Fehler auf.&#xA;Deshalb konnten im Vorlauf des Integration-Prozesses für TK-Auswertung die Variablen für Pfade, Mail-Empfänger und Mail-Absender nicht ausgelesen werden.&#xA;Der Integration-Prozess wird deshalb NICHT fortgesetzt, da auch die Daten für die Generierung der Excel-Datei von MS-SQL ermittelt werden müssten.&#xA;&#xA;Handlungsbedarf besteht immer dann, wenn bei pVS am Vortag gearbeitet wurde.&#xA;&#xA;Viele Grüße&#xA;Martin" xmlns:SendMailTask="www.microsoft.com/sqlserver/dts/tasks/sendmailtask" />
+      </DTS:ObjectData>
+    </DTS:Executable>
+  </DTS:Executables>
+  <DTS:PrecedenceConstraints>
+    <DTS:PrecedenceConstraint
+      DTS:refId="Package.PrecedenceConstraints[Einschränkung]"
+      DTS:CreationName=""
+      DTS:DTSID="{7273AF72-7DE0-4C39-9323-2372908D2AE0}"
+      DTS:From="Package\Kopieren ins ArchivVerzeichnis"
+      DTS:LogicalAnd="True"
+      DTS:ObjectName="Einschränkung"
+      DTS:To="Package\Task &quot;Mail senden&quot;" />
+    <DTS:PrecedenceConstraint
+      DTS:refId="Package.PrecedenceConstraints[Einschränkung 1]"
+      DTS:CreationName=""
+      DTS:DTSID="{0B8CD536-BCA5-406D-82C0-7108EBBDD232}"
+      DTS:From="Package\Task &quot;SQL ausführen&quot;"
+      DTS:LogicalAnd="True"
+      DTS:ObjectName="Einschränkung 1"
+      DTS:To="Package\Datenflusstask" />
+    <DTS:PrecedenceConstraint
+      DTS:refId="Package.PrecedenceConstraints[Einschränkung 10]"
+      DTS:CreationName=""
+      DTS:DTSID="{5E58680B-397A-4A7B-8035-5B768D1807B0}"
+      DTS:From="Package\Kopieren ins ArchivVerzeichnis"
+      DTS:LogicalAnd="True"
+      DTS:ObjectName="Einschränkung 10"
+      DTS:To="Package\Fehler SSIS TK-Auswertung 5"
+      DTS:Value="1" />
+    <DTS:PrecedenceConstraint
+      DTS:refId="Package.PrecedenceConstraints[Einschränkung 11]"
+      DTS:CreationName=""
+      DTS:DTSID="{6AA7C333-E5F6-4625-A4F6-A733D0479E56}"
+      DTS:From="Package\Task &quot;Mail senden&quot;"
+      DTS:LogicalAnd="True"
+      DTS:ObjectName="Einschränkung 11"
+      DTS:To="Package\Fehler SSIS TK-Auswertung 6"
+      DTS:Value="1" />
+    <DTS:PrecedenceConstraint
+      DTS:refId="Package.PrecedenceConstraints[Einschränkung 18]"
+      DTS:CreationName=""
+      DTS:DTSID="{10260842-C3C3-4E7A-9604-38F7631AF4A5}"
+      DTS:From="Package\Variablen auslesen"
+      DTS:LogicalAnd="True"
+      DTS:ObjectName="Einschränkung 18"
+      DTS:To="Package\VorlaufMail"
+      DTS:Value="1" />
+    <DTS:PrecedenceConstraint
+      DTS:refId="Package.PrecedenceConstraints[Einschränkung 19]"
+      DTS:CreationName=""
+      DTS:DTSID="{31EDDB58-7480-432C-93E9-FC1F3F7CA08F}"
+      DTS:From="Package\Variablen auslesen"
+      DTS:LogicalAnd="True"
+      DTS:ObjectName="Einschränkung 19"
+      DTS:To="Package\Lösche Excel-Arbeitsdatei" />
+    <DTS:PrecedenceConstraint
+      DTS:refId="Package.PrecedenceConstraints[Einschränkung 2]"
+      DTS:CreationName=""
+      DTS:DTSID="{DD3576A5-BA5C-43B1-AA47-DFADA5DBF15F}"
+      DTS:From="Package\Datenflusstask"
+      DTS:LogicalAnd="True"
+      DTS:ObjectName="Einschränkung 2"
+      DTS:To="Package\Kopieren ins Zielverzeichnis" />
+    <DTS:PrecedenceConstraint
+      DTS:refId="Package.PrecedenceConstraints[Einschränkung 20]"
+      DTS:CreationName=""
+      DTS:DTSID="{CAE86A23-9154-48AF-9F8B-BAE7D14C01B0}"
+      DTS:From="Package\Datenflusstask"
+      DTS:LogicalAnd="True"
+      DTS:ObjectName="Einschränkung 20"
+      DTS:To="Package\Fehler SSIS TK-Auswertung 3"
+      DTS:Value="1" />
+    <DTS:PrecedenceConstraint
+      DTS:refId="Package.PrecedenceConstraints[Einschränkung 3]"
+      DTS:CreationName=""
+      DTS:DTSID="{603B0F3E-2297-4B2F-9FAD-90265EBB390D}"
+      DTS:From="Package\Kopieren ins Zielverzeichnis"
+      DTS:LogicalAnd="True"
+      DTS:ObjectName="Einschränkung 3"
+      DTS:To="Package\Kopieren ins ArchivVerzeichnis" />
+    <DTS:PrecedenceConstraint
+      DTS:refId="Package.PrecedenceConstraints[Einschränkung 4]"
+      DTS:CreationName=""
+      DTS:DTSID="{E35ABE08-8620-4320-91AB-6CB7A022CB11}"
+      DTS:From="Package\Task &quot;SQL ausführen&quot;"
+      DTS:LogicalAnd="True"
+      DTS:ObjectName="Einschränkung 4"
+      DTS:To="Package\Fehler SSIS TK-Auswertung 2"
+      DTS:Value="1" />
+    <DTS:PrecedenceConstraint
+      DTS:refId="Package.PrecedenceConstraints[Einschränkung 5]"
+      DTS:CreationName=""
+      DTS:DTSID="{82F57604-1BA9-47E9-8537-6320B275AC39}"
+      DTS:From="Package\Erstelle Excel-Arbeitsdatei neu"
+      DTS:LogicalAnd="True"
+      DTS:ObjectName="Einschränkung 5"
+      DTS:To="Package\Task &quot;SQL ausführen&quot;" />
+    <DTS:PrecedenceConstraint
+      DTS:refId="Package.PrecedenceConstraints[Einschränkung 6]"
+      DTS:CreationName=""
+      DTS:DTSID="{580FCC26-00C8-4F7A-B1A7-1EB3C3DE0BDA}"
+      DTS:From="Package\Lösche Excel-Arbeitsdatei"
+      DTS:LogicalAnd="True"
+      DTS:ObjectName="Einschränkung 6"
+      DTS:To="Package\Erstelle Excel-Arbeitsdatei neu" />
+    <DTS:PrecedenceConstraint
+      DTS:refId="Package.PrecedenceConstraints[Einschränkung 7]"
+      DTS:CreationName=""
+      DTS:DTSID="{4E56E2F9-7AD7-4A48-A41B-EB7E5222E43C}"
+      DTS:From="Package\Erstelle Excel-Arbeitsdatei neu"
+      DTS:ObjectName="Einschränkung 7"
+      DTS:To="Package\Fehler SSIS TK-Auswertung"
+      DTS:Value="1" />
+    <DTS:PrecedenceConstraint
+      DTS:refId="Package.PrecedenceConstraints[Einschränkung 8]"
+      DTS:CreationName=""
+      DTS:DTSID="{21DA4E74-8646-4A2C-98CE-F7318B498B13}"
+      DTS:From="Package\Lösche Excel-Arbeitsdatei"
+      DTS:ObjectName="Einschränkung 8"
+      DTS:To="Package\Fehler SSIS TK-Auswertung"
+      DTS:Value="1" />
+    <DTS:PrecedenceConstraint
+      DTS:refId="Package.PrecedenceConstraints[Einschränkung 9]"
+      DTS:CreationName=""
+      DTS:DTSID="{25469F5C-A41B-4336-BE2A-2AA2CDE7F34B}"
+      DTS:From="Package\Kopieren ins Zielverzeichnis"
+      DTS:LogicalAnd="True"
+      DTS:ObjectName="Einschränkung 9"
+      DTS:To="Package\Fehler SSIS TK-Auswertung 4"
+      DTS:Value="1" />
+  </DTS:PrecedenceConstraints>
+  <DTS:DesignTimeProperties><![CDATA[<?xml version="1.0"?>
+<!--Dieser CDATA-Abschnitt enthält die Layoutinformationen des Pakets, z.B. Informationen wie X-/Y-Koordinaten, Breite und Höhe.-->
+<!--Wenn Sie diesen Abschnitt manuell ändern und Ihnen ein Fehler unterläuft, können Sie ihn löschen. -->
+<!--Das Paket kann zwar weiterhin normal geladen werden, aber frühere Layoutinformationen gehen verloren, und die Elemente auf der Entwurfsoberfläche werden vom Designer automatisch neu angeordnet.-->
+<Objects
+  Version="8">
+  <!--Jeder darunter liegende Knoten enthält Eigenschaften, die sich nicht auf das Laufzeitverhalten auswirken.-->
+  <Package
+    design-time-name="Package">
+    <LayoutInfo>
+      <GraphLayout
+        Capacity="32" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml" xmlns:mssgm="clr-namespace:Microsoft.SqlServer.Graph.Model;assembly=Microsoft.SqlServer.Graph">
+        <NodeLayout
+          Size="147,42"
+          Id="Package\Datenflusstask"
+          TopLeft="136.5,316.583333333334" />
+        <NodeLayout
+          Size="178,42"
+          Id="Package\Erstelle Excel-Arbeitsdatei neu"
+          TopLeft="112.791666666667,164.166666666667" />
+        <NodeLayout
+          Size="208,42"
+          Id="Package\Fehler SSIS TK-Auswertung"
+          TopLeft="496.583333333333,115.666666666667" />
+        <NodeLayout
+          Size="243,42"
+          Id="Package\Fehler SSIS TK-Auswertung 2"
+          TopLeft="409.833333333334,240.625" />
+        <NodeLayout
+          Size="240,42"
+          Id="Package\Fehler SSIS TK-Auswertung 3"
+          TopLeft="403.833333333334,319.625" />
+        <NodeLayout
+          Size="168,42"
+          Id="Package\Lösche Excel-Arbeitsdatei"
+          TopLeft="140.833333333333,86.4791667917744" />
+        <NodeLayout
+          Size="168,42"
+          Id="Package\Task &quot;Mail senden&quot;"
+          TopLeft="135,577" />
+        <NodeLayout
+          Size="182,42"
+          Id="Package\Task &quot;SQL ausführen&quot;"
+          TopLeft="116.25,239" />
+        <NodeLayout
+          Size="167,42"
+          Id="Package\Variablen auslesen"
+          TopLeft="147.833333333334,0.625" />
+        <NodeLayout
+          Size="131,42"
+          Id="Package\VorlaufMail"
+          TopLeft="383.993710691825,5.14386792452797" />
+        <EdgeLayout
+          Id="Package.PrecedenceConstraints[Einschränkung 1]"
+          TopLeft="208.625,281">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="0,35.583333333334"
+              Start="0,0"
+              End="0,28.083333333334">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,28.083333333334" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package.PrecedenceConstraints[Einschränkung 18]"
+          TopLeft="314.833333333334,23.884433962264">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="69.160377358491,0"
+              Start="0,0"
+              End="61.660377358491,0">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="61.660377358491,0" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <mssgm:EdgeLabel
+              BoundingBox="16.6214972729955,5,28.4173828125,9.724609375"
+              RelativePosition="Any" />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package.PrecedenceConstraints[Einschränkung 19]"
+          TopLeft="228.083333333333,42.625">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="0,43.8541667917744"
+              Start="0,0"
+              End="0,36.3541667917744">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,36.3541667917744" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package.PrecedenceConstraints[Einschränkung 20]"
+          TopLeft="283.5,339.104166666667">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="120.333333333334,0"
+              Start="0,0"
+              End="112.833333333334,0">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="112.833333333334,0" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <mssgm:EdgeLabel
+              BoundingBox="42.2079752604169,5,28.4173828125,9.724609375"
+              RelativePosition="Any" />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package.PrecedenceConstraints[Einschränkung 4]"
+          TopLeft="298.25,260.8125">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="111.583333333334,0"
+              Start="0,0"
+              End="104.083333333334,0">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="104.083333333334,0" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <mssgm:EdgeLabel
+              BoundingBox="37.8329752604169,5,28.4173828125,9.724609375"
+              RelativePosition="Any" />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package.PrecedenceConstraints[Einschränkung 5]"
+          TopLeft="204.520833333334,206.166666666667">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="0,32.8333333333333"
+              Start="0,0"
+              End="0,25.3333333333333">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,25.3333333333333" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package.PrecedenceConstraints[Einschränkung 6]"
+          TopLeft="199.979166666667,128.479166791774">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="0,35.6874998748923"
+              Start="0,0"
+              End="0,28.1874998748923">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,28.1874998748923" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package.PrecedenceConstraints[Einschränkung 7]"
+          TopLeft="290.791666666667,185.166666666667">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="205.791666666666,-42.833333333333"
+              Start="0,0"
+              End="198.291666666666,-42.833333333333">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="114.943807339449,0" />
+                  <mssgle:CubicBezierSegment
+                    Point1="114.943807339449,0"
+                    Point2="118.943807339449,0"
+                    Point3="118.943807339449,-4" />
+                  <mssgle:LineSegment
+                    End="118.943807339449,-38.833333333333" />
+                  <mssgle:CubicBezierSegment
+                    Point1="118.943807339449,-38.833333333333"
+                    Point2="118.943807339449,-42.833333333333"
+                    Point3="122.943807339449,-42.833333333333" />
+                  <mssgle:LineSegment
+                    End="198.291666666666,-42.833333333333" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <mssgm:EdgeLabel
+              BoundingBox="104.735115933199,1,28.4173828125,9.724609375"
+              RelativePosition="Any" />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package.PrecedenceConstraints[Einschränkung 8]"
+          TopLeft="308.833333333333,107.479166791774">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="187.75,23.520833208226"
+              Start="0,0"
+              End="180.25,23.520833208226">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="104.516055045872,0" />
+                  <mssgle:CubicBezierSegment
+                    Point1="104.516055045872,0"
+                    Point2="108.516055045872,0"
+                    Point3="108.516055045872,4" />
+                  <mssgle:LineSegment
+                    End="108.516055045872,19.520833208226" />
+                  <mssgle:CubicBezierSegment
+                    Point1="108.516055045872,19.520833208226"
+                    Point2="108.516055045872,23.520833208226"
+                    Point3="112.516055045872,23.520833208226" />
+                  <mssgle:LineSegment
+                    End="180.25,23.520833208226" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <mssgm:EdgeLabel
+              BoundingBox="94.3073636396215,-15.724609375,28.4173828125,9.724609375"
+              RelativePosition="Any" />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <NodeLayout
+          Size="208,42"
+          Id="Package\Kopieren ins Zielverzeichnis"
+          TopLeft="105,396" />
+        <EdgeLayout
+          Id="Package.PrecedenceConstraints[Einschränkung 2]"
+          TopLeft="209.5,358.583333333334">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="0,37.416666666666"
+              Start="0,0"
+              End="0,29.916666666666">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,29.916666666666" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <NodeLayout
+          Size="222,42"
+          Id="Package\Kopieren ins ArchivVerzeichnis"
+          TopLeft="101,478" />
+        <EdgeLayout
+          Id="Package.PrecedenceConstraints[Einschränkung 3]"
+          TopLeft="210.5,438">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="0,40"
+              Start="0,0"
+              End="0,32.5">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,32.5" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package.PrecedenceConstraints[Einschränkung]"
+          TopLeft="215.5,520">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="0,57"
+              Start="0,0"
+              End="0,49.5">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,49.5" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <NodeLayout
+          Size="240,42"
+          Id="Package\Fehler SSIS TK-Auswertung 4"
+          TopLeft="406,392" />
+        <NodeLayout
+          Size="240,42"
+          Id="Package\Fehler SSIS TK-Auswertung 5"
+          TopLeft="410,474" />
+        <NodeLayout
+          Size="240,42"
+          Id="Package\Fehler SSIS TK-Auswertung 6"
+          TopLeft="390,577" />
+        <EdgeLayout
+          Id="Package.PrecedenceConstraints[Einschränkung 9]"
+          TopLeft="313,415">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="93,0"
+              Start="0,0"
+              End="85.5,0">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="85.5,0" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <mssgm:EdgeLabel
+              BoundingBox="28.54130859375,5,28.4173828125,9.724609375"
+              RelativePosition="Any" />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package.PrecedenceConstraints[Einschränkung 10]"
+          TopLeft="323,497">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="87,0"
+              Start="0,0"
+              End="79.5,0">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="79.5,0" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <mssgm:EdgeLabel
+              BoundingBox="25.54130859375,5,28.4173828125,9.724609375"
+              RelativePosition="Any" />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package.PrecedenceConstraints[Einschränkung 11]"
+          TopLeft="303,598">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="87,0"
+              Start="0,0"
+              End="79.5,0">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="79.5,0" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <mssgm:EdgeLabel
+              BoundingBox="25.54130859375,5,28.4173828125,9.724609375"
+              RelativePosition="Any" />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+      </GraphLayout>
+    </LayoutInfo>
+  </Package>
+  <TaskHost
+    design-time-name="Package\Datenflusstask">
+    <LayoutInfo>
+      <GraphLayout
+        Capacity="4" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml">
+        <NodeLayout
+          Size="148,42"
+          Id="Package\Datenflusstask\OLE DB-Quelle"
+          TopLeft="95.5,95.5" />
+        <NodeLayout
+          Size="124,42"
+          Id="Package\Datenflusstask\Excel-Ziel"
+          TopLeft="193.25,197" />
+        <EdgeLayout
+          Id="Package\Datenflusstask.Paths[Ausgabe der OLE DB-Quelle]"
+          TopLeft="169.5,137.5">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="85.5,59.5"
+              Start="0,0"
+              End="85.5,52">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,25.75" />
+                  <mssgle:CubicBezierSegment
+                    Point1="0,25.75"
+                    Point2="0,29.75"
+                    Point3="4,29.75" />
+                  <mssgle:LineSegment
+                    End="81.5,29.75" />
+                  <mssgle:CubicBezierSegment
+                    Point1="81.5,29.75"
+                    Point2="85.5,29.75"
+                    Point3="85.5,33.75" />
+                  <mssgle:LineSegment
+                    End="85.5,52" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+      </GraphLayout>
+    </LayoutInfo>
+  </TaskHost>
+  <PipelineComponentMetadata
+    design-time-name="Package\Datenflusstask\Excel-Ziel">
+    <Properties>
+      <Property>
+        <Name>DataSourceViewID</Name>
+      </Property>
+      <Property>
+        <Name>TableInfoObjectType</Name>
+        <Value
+          type="q2:string">Table</Value>
+      </Property>
+    </Properties>
+  </PipelineComponentMetadata>
+  <PipelineComponentMetadata
+    design-time-name="Package\Datenflusstask\OLE DB-Quelle">
+    <Properties>
+      <Property>
+        <Name>DataSourceViewID</Name>
+      </Property>
+      <Property>
+        <Name>TableInfoObjectType</Name>
+        <Value
+          type="q2:string">Table</Value>
+      </Property>
+    </Properties>
+  </PipelineComponentMetadata>
+</Objects>]]></DTS:DesignTimeProperties>
+</DTS:Executable>
