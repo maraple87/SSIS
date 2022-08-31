@@ -1,0 +1,2757 @@
+﻿<?xml version="1.0"?>
+<DTS:Executable xmlns:DTS="www.microsoft.com/SqlServer/Dts"
+  DTS:refId="Package"
+  DTS:CreationDate="11/18/2019 11:46:13 AM"
+  DTS:CreationName="Microsoft.Package"
+  DTS:CreatorComputerName="PC2548"
+  DTS:CreatorName="ENTENHAUSEN\plewik"
+  DTS:DTSID="{6D2E9FBD-80D9-4F29-B822-3AC5F77B33AF}"
+  DTS:ExecutableType="Microsoft.Package"
+  DTS:LastModifiedProductVersion="15.0.2000.71"
+  DTS:LocaleID="1031"
+  DTS:ObjectName="JJK"
+  DTS:PackageType="5"
+  DTS:ProtectionLevel="2"
+  DTS:VersionBuild="24"
+  DTS:VersionGUID="{E655DFF6-79E0-4251-8BFE-CBE6070F37A6}">
+  <DTS:Property
+    DTS:Name="PackageFormatVersion">8</DTS:Property>
+  <DTS:ConnectionManagers>
+    <DTS:ConnectionManager
+      DTS:refId="Package.ConnectionManagers[JJK Input]"
+      DTS:CreationName="FLATFILE"
+      DTS:DTSID="{4624ADF3-3FFC-43FA-B4D0-DE51697F1DAA}"
+      DTS:ObjectName="JJK Input">
+      <DTS:ObjectData>
+        <DTS:ConnectionManager
+          DTS:Format="Delimited"
+          DTS:LocaleID="1031"
+          DTS:HeaderRowDelimiter="_x003B_"
+          DTS:ColumnNamesInFirstDataRow="True"
+          DTS:RowDelimiter=""
+          DTS:TextQualifier="_x0022_"
+          DTS:CodePage="1252"
+          DTS:ConnectionString="\\al-egecko-01\CSS\eGECKO\transfer\Import_JJK\Bearbeitung\bde.txt">
+          <DTS:FlatFileColumns>
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x003B_"
+              DTS:MaximumWidth="50"
+              DTS:DataType="129"
+              DTS:TextQualified="True"
+              DTS:ObjectName="&quot;Mandant&quot;"
+              DTS:DTSID="{A5DA2D22-8216-4B5E-8019-45D819BF4465}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x003B_"
+              DTS:MaximumWidth="50"
+              DTS:DataType="129"
+              DTS:TextQualified="True"
+              DTS:ObjectName="&quot;Monat&quot;"
+              DTS:DTSID="{873B0424-415B-4C6B-BF1C-81C5A5988151}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x003B_"
+              DTS:MaximumWidth="50"
+              DTS:DataType="129"
+              DTS:TextQualified="True"
+              DTS:ObjectName="&quot;Jahr&quot;"
+              DTS:DTSID="{570C355A-3973-4BB0-A8AD-C9D0EDDFEA73}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x003B_"
+              DTS:MaximumWidth="50"
+              DTS:DataType="129"
+              DTS:TextQualified="True"
+              DTS:ObjectName="&quot;PersonalNr&quot;"
+              DTS:DTSID="{279A3BEF-D614-4DC1-AC52-1D9FD36272DD}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x003B_"
+              DTS:MaximumWidth="50"
+              DTS:DataType="129"
+              DTS:TextQualified="True"
+              DTS:ObjectName="&quot;Lohnart&quot;"
+              DTS:DTSID="{8DF64EBD-8061-4B91-8512-AD6EB0AB1037}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x003B_"
+              DTS:MaximumWidth="50"
+              DTS:DataType="129"
+              DTS:TextQualified="True"
+              DTS:ObjectName="&quot;Datum&quot;"
+              DTS:DTSID="{3E818FE2-0A45-492B-ACA3-0A213B0DBFE1}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x003B_"
+              DTS:MaximumWidth="50"
+              DTS:DataType="129"
+              DTS:TextQualified="True"
+              DTS:ObjectName="&quot;Kostemstelle&quot;"
+              DTS:DTSID="{BBE0FAB3-04B9-41E4-8AE8-F9FAFC0B4CB9}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x003B_"
+              DTS:MaximumWidth="50"
+              DTS:DataType="129"
+              DTS:TextQualified="True"
+              DTS:ObjectName="&quot;Kostenträger&quot;"
+              DTS:DTSID="{881EDBEC-E43C-43FA-9F60-6CB5C2A9A2C1}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x003B_"
+              DTS:MaximumWidth="50"
+              DTS:DataType="129"
+              DTS:TextQualified="True"
+              DTS:ObjectName="&quot;Arbeitsart&quot;"
+              DTS:DTSID="{5AE60D9A-4EEF-456E-B656-62F219771C05}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x003B_"
+              DTS:MaximumWidth="50"
+              DTS:DataType="129"
+              DTS:TextQualified="True"
+              DTS:ObjectName="&quot;Anzahl&quot;"
+              DTS:DTSID="{1AC33387-0B7E-4AFB-A537-7E9A8427E259}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x003B_"
+              DTS:MaximumWidth="50"
+              DTS:DataType="129"
+              DTS:TextQualified="True"
+              DTS:ObjectName="&quot;Betrag&quot;"
+              DTS:DTSID="{10D192DA-0C90-40A0-9751-FE873431263B}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x000D__x000A_"
+              DTS:MaximumWidth="50"
+              DTS:DataType="129"
+              DTS:TextQualified="True"
+              DTS:ObjectName="&quot;Zuschlag&quot;"
+              DTS:DTSID="{C0B193BD-A8B9-4A47-B148-AB3E74BC0741}"
+              DTS:CreationName="" />
+          </DTS:FlatFileColumns>
+        </DTS:ConnectionManager>
+      </DTS:ObjectData>
+    </DTS:ConnectionManager>
+    <DTS:ConnectionManager
+      DTS:refId="Package.ConnectionManagers[JJK Output]"
+      DTS:CreationName="FLATFILE"
+      DTS:DTSID="{8C1F73B1-9BD3-4AB3-9E74-AC42A8A31FA3}"
+      DTS:ObjectName="JJK Output">
+      <DTS:ObjectData>
+        <DTS:ConnectionManager
+          DTS:Format="Delimited"
+          DTS:LocaleID="1031"
+          DTS:HeaderRowDelimiter="_x003B_"
+          DTS:RowDelimiter=""
+          DTS:TextQualifier="_x003C_none_x003E_"
+          DTS:CodePage="1252"
+          DTS:ConnectionString="\\al-egecko-01\CSS\eGECKO\transfer\Import_JJK\Bearbeitung\bde.csv">
+          <DTS:FlatFileColumns>
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x003B_"
+              DTS:MaximumWidth="20"
+              DTS:DataType="129"
+              DTS:TextQualified="True"
+              DTS:ObjectName="FIRMANR"
+              DTS:DTSID="{F3DFB8F6-F215-4DBB-B136-A84FC6701F38}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x003B_"
+              DTS:MaximumWidth="20"
+              DTS:DataType="129"
+              DTS:TextQualified="True"
+              DTS:ObjectName="MITARBEITERNR"
+              DTS:DTSID="{706C6E0F-DBDE-4C95-9EF2-6C7753A331DC}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x003B_"
+              DTS:MaximumWidth="20"
+              DTS:DataType="129"
+              DTS:TextQualified="True"
+              DTS:ObjectName="APER"
+              DTS:DTSID="{91C44A0D-6CC0-4567-AC50-E4E80F1C56EF}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x003B_"
+              DTS:MaximumWidth="20"
+              DTS:DataType="129"
+              DTS:TextQualified="True"
+              DTS:ObjectName="LOHNARTNR"
+              DTS:DTSID="{4C325A9F-0B7F-4A52-A0F5-25DE0077099B}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x003B_"
+              DTS:MaximumWidth="50"
+              DTS:DataType="129"
+              DTS:TextQualified="True"
+              DTS:ObjectName="DATUM"
+              DTS:DTSID="{DF48CAF8-AC07-4073-8B39-E980D0674917}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x003B_"
+              DTS:DataType="133"
+              DTS:TextQualified="True"
+              DTS:ObjectName="VON-DATUM"
+              DTS:DTSID="{A973BC41-EB16-4A95-BE62-ECB34B44306C}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x003B_"
+              DTS:DataType="133"
+              DTS:TextQualified="True"
+              DTS:ObjectName="BIS-DATUM"
+              DTS:DTSID="{B9A9566A-21E1-45FB-8923-916D6C32C5C0}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x003B_"
+              DTS:MaximumWidth="20"
+              DTS:DataType="129"
+              DTS:TextQualified="True"
+              DTS:ObjectName="PLATZHALTER"
+              DTS:DTSID="{C2086557-EB05-4EE4-B408-14C580FCE338}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x003B_"
+              DTS:MaximumWidth="20"
+              DTS:DataType="129"
+              DTS:TextQualified="True"
+              DTS:ObjectName="KOSTENART"
+              DTS:DTSID="{E8CF476D-C557-45C6-9DA0-DBF21AC7DC39}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x003B_"
+              DTS:MaximumWidth="20"
+              DTS:DataType="129"
+              DTS:TextQualified="True"
+              DTS:ObjectName="KOSTENSTELLE"
+              DTS:DTSID="{A54071A6-4BC5-40D8-A3C0-7E4F06EF0459}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x003B_"
+              DTS:MaximumWidth="20"
+              DTS:DataType="129"
+              DTS:TextQualified="True"
+              DTS:ObjectName="KOSTENTRÄGER"
+              DTS:DTSID="{8DB7BE77-2D2C-49C7-B57E-4B0BD487275E}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x003B_"
+              DTS:DataType="129"
+              DTS:TextQualified="True"
+              DTS:ObjectName="PLATZHALTER_2"
+              DTS:DTSID="{249CA089-8AD4-4CC3-BA46-11145C2CF70C}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x003B_"
+              DTS:DataType="131"
+              DTS:DataPrecision="10"
+              DTS:DataScale="2"
+              DTS:TextQualified="True"
+              DTS:ObjectName="PARAMETER 1"
+              DTS:DTSID="{ED787C17-FA46-4F2B-B65A-A2A4D322D98E}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x003B_"
+              DTS:DataType="131"
+              DTS:DataPrecision="10"
+              DTS:DataScale="2"
+              DTS:TextQualified="True"
+              DTS:ObjectName="PARAMETER 2"
+              DTS:DTSID="{363121BA-0889-4AA5-AB54-B9197FECB0F4}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x003B_"
+              DTS:DataType="131"
+              DTS:DataPrecision="10"
+              DTS:DataScale="2"
+              DTS:TextQualified="True"
+              DTS:ObjectName="PARAMETER 3"
+              DTS:DTSID="{0E264FBF-8BEF-4940-B04F-4E87F2B88730}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x003B_"
+              DTS:DataType="131"
+              DTS:DataPrecision="10"
+              DTS:DataScale="2"
+              DTS:TextQualified="True"
+              DTS:ObjectName="PARAMETER 4"
+              DTS:DTSID="{072FDCC5-65D1-4F88-9AFD-5A146083B6E0}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x003B_"
+              DTS:DataType="131"
+              DTS:DataPrecision="10"
+              DTS:DataScale="2"
+              DTS:TextQualified="True"
+              DTS:ObjectName="PARAMETER 5"
+              DTS:DTSID="{DE4A3EAD-8942-4BAA-ABF4-62A54D670125}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x000D__x000A_"
+              DTS:DataType="131"
+              DTS:DataPrecision="10"
+              DTS:DataScale="2"
+              DTS:TextQualified="True"
+              DTS:ObjectName="HKZ"
+              DTS:DTSID="{B056491D-4A01-4CB3-8853-2BB28682D8DA}"
+              DTS:CreationName="" />
+          </DTS:FlatFileColumns>
+        </DTS:ConnectionManager>
+      </DTS:ObjectData>
+    </DTS:ConnectionManager>
+  </DTS:ConnectionManagers>
+  <DTS:Variables>
+    <DTS:Variable
+      DTS:CreationName=""
+      DTS:DTSID="{83F9318C-214C-4BC1-ACFF-C1ED210BAA5A}"
+      DTS:IncludeInDebugDump="2345"
+      DTS:Namespace="User"
+      DTS:ObjectName="JJK_Alter_Name">
+      <DTS:VariableValue
+        DTS:DataType="8">\\al-egecko-01\CSS\eGECKO\transfer\Import_JJK\save\bde.csv</DTS:VariableValue>
+    </DTS:Variable>
+    <DTS:Variable
+      DTS:CreationName=""
+      DTS:DTSID="{954FA689-C6EF-49BA-A61E-BB9DA9BF6DC0}"
+      DTS:IncludeInDebugDump="2345"
+      DTS:Namespace="User"
+      DTS:ObjectName="JJK_Kopieren_Quelle">
+      <DTS:VariableValue
+        DTS:DataType="8">\\al-egecko-01\CSS\eGECKO\transfer\Import_JJK\Bearbeitung\</DTS:VariableValue>
+    </DTS:Variable>
+    <DTS:Variable
+      DTS:CreationName=""
+      DTS:DTSID="{60D8E8EF-D4C6-45A5-866F-F71BC02F1E5F}"
+      DTS:IncludeInDebugDump="2345"
+      DTS:Namespace="User"
+      DTS:ObjectName="JJK_Kopieren_save">
+      <DTS:VariableValue
+        DTS:DataType="8">\\al-egecko-01\CSS\eGECKO\transfer\Import_JJK\save\</DTS:VariableValue>
+    </DTS:Variable>
+    <DTS:Variable
+      DTS:CreationName=""
+      DTS:DTSID="{108BDCF3-6C80-477E-9FA1-2DBE92D62A33}"
+      DTS:IncludeInDebugDump="2345"
+      DTS:Namespace="User"
+      DTS:ObjectName="JJK_Kopieren_Ziel">
+      <DTS:VariableValue
+        DTS:DataType="8">\\al-egecko-01\CSS\eGECKO\transfer\Import_JJK\</DTS:VariableValue>
+    </DTS:Variable>
+    <DTS:Variable
+      DTS:CreationName=""
+      DTS:DTSID="{BBB1C21D-7C5C-496F-9319-381F02C72B90}"
+      DTS:IncludeInDebugDump="2345"
+      DTS:Namespace="User"
+      DTS:ObjectName="JJK_Neuer_Name">
+      <DTS:VariableValue
+        DTS:DataType="8">\\al-egecko-01\CSS\eGECKO\transfer\Import_JJK\Bearbeitung\bde.txt</DTS:VariableValue>
+    </DTS:Variable>
+    <DTS:Variable
+      DTS:CreationName=""
+      DTS:DTSID="{7CC7B8F8-0611-4986-B265-BB6915CCB806}"
+      DTS:EvaluateAsExpression="True"
+      DTS:Expression="@[User::JJK_Kopieren_save]  + &quot;bde_&quot; + (DT_WSTR,4)DATEPART(&quot;yyyy&quot;,GetDate()) +&#xA;RIGHT(&quot;0&quot; + (DT_WSTR,2)DATEPART(&quot;mm&quot;,GetDate()) ,2) +&#xA;RIGHT(&quot;0&quot; + (DT_WSTR,2)DATEPART(&quot;dd&quot;,GetDate()),2) + &quot;.csv&quot;"
+      DTS:IncludeInDebugDump="2345"
+      DTS:Namespace="User"
+      DTS:ObjectName="JJK_Neuer_Name_save">
+      <DTS:VariableValue
+        DTS:DataType="8">\\al-egecko-01\CSS\eGECKO\transfer\Import_JJK\save\bde_20200306.csv</DTS:VariableValue>
+    </DTS:Variable>
+    <DTS:Variable
+      DTS:CreationName=""
+      DTS:DTSID="{2A28F6A6-10CE-4060-8D4B-871A5A6B89DA}"
+      DTS:IncludeInDebugDump="2345"
+      DTS:Namespace="User"
+      DTS:ObjectName="JJK_Neueste_Datei">
+      <DTS:VariableValue
+        DTS:DataType="8">\\intern.stimme.de\fileserver\jjk\jjk\vertrieb\Export\</DTS:VariableValue>
+    </DTS:Variable>
+    <DTS:Variable
+      DTS:CreationName=""
+      DTS:DTSID="{04B21ED9-9157-4F73-BB54-B84786912AB8}"
+      DTS:EvaluateAsExpression="True"
+      DTS:Expression="@[User::JJK_Neueste_Datei] + &quot;Bruttolohn&quot; + &#xA;RIGHT(&quot;0&quot; + (DT_WSTR,2)DATEPART(&quot;mm&quot;,dateadd(&quot;mm&quot;,-1,getdate())) ,2) + &#xA;(DT_WSTR,4)DATEPART(&quot;yyyy&quot;,dateadd(&quot;mm&quot;,-1,getdate()))  + &quot;.txt&quot;"
+      DTS:IncludeInDebugDump="2345"
+      DTS:Namespace="User"
+      DTS:ObjectName="JJK_Neueste_Datei_kopieren">
+      <DTS:VariableValue
+        DTS:DataType="8">\\intern.stimme.de\fileserver\jjk\jjk\vertrieb\Export\Bruttolohn022020.txt</DTS:VariableValue>
+    </DTS:Variable>
+    <DTS:Variable
+      DTS:CreationName=""
+      DTS:DTSID="{980406B6-3947-4A72-AFB2-19133D283E82}"
+      DTS:IncludeInDebugDump="2345"
+      DTS:Namespace="User"
+      DTS:ObjectName="JJK_Pfad_Bearbeitung">
+      <DTS:VariableValue
+        DTS:DataType="8">\\al-egecko-01\CSS\eGECKO\transfer\Import_JJK\Bearbeitung\</DTS:VariableValue>
+    </DTS:Variable>
+    <DTS:Variable
+      DTS:CreationName=""
+      DTS:DTSID="{8F9EF14E-27AC-4EB6-96DC-CC01B1C54E85}"
+      DTS:EvaluateAsExpression="True"
+      DTS:Expression="@[User::JJK_Pfad_Bearbeitung] + &quot;Bruttolohn&quot; + &#xA;RIGHT(&quot;0&quot; + (DT_WSTR,2)DATEPART(&quot;mm&quot;,dateadd(&quot;mm&quot;,-1,getdate())) ,2) + &#xA;(DT_WSTR,4)DATEPART(&quot;yyyy&quot;,dateadd(&quot;mm&quot;,-1,getdate())) +&quot;.txt&quot;"
+      DTS:IncludeInDebugDump="2345"
+      DTS:Namespace="User"
+      DTS:ObjectName="JJK_Umbenennen">
+      <DTS:VariableValue
+        DTS:DataType="8">\\al-egecko-01\CSS\eGECKO\transfer\Import_JJK\Bearbeitung\Bruttolohn022020.txt</DTS:VariableValue>
+    </DTS:Variable>
+    <DTS:Variable
+      DTS:CreationName=""
+      DTS:DTSID="{521D509A-25AD-4576-ACE9-EE51F92AC074}"
+      DTS:IncludeInDebugDump="2345"
+      DTS:Namespace="User"
+      DTS:ObjectName="JJK_verschieben">
+      <DTS:VariableValue
+        DTS:DataType="8">\\intern.stimme.de\fileserver\jjk\jjk\vertrieb\Export\save_egecko\</DTS:VariableValue>
+    </DTS:Variable>
+  </DTS:Variables>
+  <DTS:Executables>
+    <DTS:Executable
+      DTS:refId="Package\Datei nach Bearbeitung"
+      DTS:CreationName="Microsoft.FileSystemTask"
+      DTS:Description="Task &quot;Dateisystem&quot;"
+      DTS:DTSID="{7f699313-5a4b-472a-8292-ff7ff969696f}"
+      DTS:ExecutableType="Microsoft.FileSystemTask"
+      DTS:LocaleID="-1"
+      DTS:ObjectName="Datei nach Bearbeitung"
+      DTS:TaskContact="File System Task;Microsoft Corporation; SQL Server 2017; © 2017 Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1"
+      DTS:ThreadHint="0">
+      <DTS:Variables />
+      <DTS:ObjectData>
+        <FileSystemData
+          TaskOverwriteDestFile="True"
+          TaskSourcePath="User::JJK_Neueste_Datei_kopieren"
+          TaskIsSourceVariable="True"
+          TaskDestinationPath="User::JJK_Pfad_Bearbeitung"
+          TaskIsDestinationVariable="True" />
+      </DTS:ObjectData>
+    </DTS:Executable>
+    <DTS:Executable
+      DTS:refId="Package\Datei umbenennen"
+      DTS:CreationName="Microsoft.FileSystemTask"
+      DTS:Description="Task &quot;Dateisystem&quot;"
+      DTS:DTSID="{700ecf92-16a6-428b-bfa7-a37d215f967e}"
+      DTS:ExecutableType="Microsoft.FileSystemTask"
+      DTS:LocaleID="-1"
+      DTS:ObjectName="Datei umbenennen"
+      DTS:TaskContact="File System Task;Microsoft Corporation; SQL Server 2017; © 2017 Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1"
+      DTS:ThreadHint="0">
+      <DTS:Variables />
+      <DTS:ObjectData>
+        <FileSystemData
+          TaskOperationType="RenameFile"
+          TaskOverwriteDestFile="True"
+          TaskSourcePath="User::JJK_Umbenennen"
+          TaskIsSourceVariable="True"
+          TaskDestinationPath="User::JJK_Neuer_Name"
+          TaskIsDestinationVariable="True" />
+      </DTS:ObjectData>
+    </DTS:Executable>
+    <DTS:Executable
+      DTS:refId="Package\Ende"
+      DTS:CreationName="Microsoft.ExpressionTask"
+      DTS:Description="Task &quot;Ausdruck&quot;"
+      DTS:DTSID="{E2080120-E59F-4D45-8CD3-4B669D896D68}"
+      DTS:ExecutableType="Microsoft.ExpressionTask"
+      DTS:ForceExecutionResult="0"
+      DTS:LocaleID="-1"
+      DTS:ObjectName="Ende"
+      DTS:TaskContact="Expression Task;Microsoft Corporation; SQL Server 2017; © 2017 Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1"
+      DTS:ThreadHint="1">
+      <DTS:Variables />
+      <DTS:ObjectData>
+        <ExpressionTask
+          Expression="&quot;Ende&quot;" />
+      </DTS:ObjectData>
+    </DTS:Executable>
+    <DTS:Executable
+      DTS:refId="Package\Foreach-Schleifencontainer"
+      DTS:CreationName="STOCK:FOREACHLOOP"
+      DTS:Description="Foreach-Schleifencontainer"
+      DTS:DTSID="{e54133ff-12fc-42a8-89c5-20ab30f1057a}"
+      DTS:ExecutableType="STOCK:FOREACHLOOP"
+      DTS:LocaleID="-1"
+      DTS:ObjectName="Foreach-Schleifencontainer">
+      <DTS:ForEachEnumerator
+        DTS:CreationName="Microsoft.ForEachFileEnumerator"
+        DTS:DTSID="{b806aa33-a67f-4f93-b7e2-78acd7c90ca9}"
+        DTS:ObjectName="{8B14A019-50AA-48A5-B85E-00EB30ED095D}">
+        <DTS:ObjectData>
+          <ForEachFileEnumeratorProperties>
+            <FEFEProperty
+              Folder="\\al-egecko-01\CSS\eGECKO\transfer\Import_JJK\Bearbeitung" />
+            <FEFEProperty
+              FileSpec="*.csv" />
+            <FEFEProperty
+              FileNameRetrievalType="0" />
+            <FEFEProperty
+              Recurse="0" />
+          </ForEachFileEnumeratorProperties>
+        </DTS:ObjectData>
+      </DTS:ForEachEnumerator>
+      <DTS:Variables>
+        <DTS:Variable
+          DTS:CreationName=""
+          DTS:DTSID="{3d328fdf-04da-42cc-8886-9a5ce8058b6c}"
+          DTS:IncludeInDebugDump="2345"
+          DTS:Namespace="User"
+          DTS:ObjectName="Alter_Name">
+          <DTS:VariableValue
+            DTS:DataType="8">\\al-egecko-01\CSS\eGECKO\transfer\Import_AlfaVM\save\bde.csv</DTS:VariableValue>
+        </DTS:Variable>
+        <DTS:Variable
+          DTS:CreationName=""
+          DTS:DTSID="{83220458-86bc-482d-93bb-5787e3fbfad4}"
+          DTS:IncludeInDebugDump="2345"
+          DTS:Namespace="User"
+          DTS:ObjectName="Kopieren_Ziel_save">
+          <DTS:VariableValue
+            DTS:DataType="8">\\al-egecko-01\CSS\eGECKO\transfer\Import_AlfaVM\save</DTS:VariableValue>
+        </DTS:Variable>
+        <DTS:Variable
+          DTS:CreationName=""
+          DTS:DTSID="{9d1df7f3-0f3a-4b63-adbb-1420d0492649}"
+          DTS:EvaluateAsExpression="True"
+          DTS:Expression="@[User::Alfa_Pfad] + &quot;bde_&quot; + (DT_WSTR,4)DATEPART(&quot;yyyy&quot;,GetDate()) +&#xA;RIGHT(&quot;0&quot; + (DT_WSTR,2)DATEPART(&quot;mm&quot;,GetDate()) ,2) +&#xA;RIGHT(&quot;0&quot; + (DT_WSTR,2)DATEPART(&quot;dd&quot;,GetDate()),2) + &quot;.csv&quot;"
+          DTS:IncludeInDebugDump="2345"
+          DTS:Namespace="User"
+          DTS:ObjectName="Neuer_Name">
+          <DTS:VariableValue
+            DTS:DataType="8">\\al-egecko-01\CSS\eGECKO\transfer\Import_AlfaVM\save\bde_20191118.csv</DTS:VariableValue>
+        </DTS:Variable>
+      </DTS:Variables>
+      <DTS:Executables>
+        <DTS:Executable
+          DTS:refId="Package\Foreach-Schleifencontainer\Datei kopieren"
+          DTS:CreationName="Microsoft.FileSystemTask"
+          DTS:Description="Task &quot;Dateisystem&quot;"
+          DTS:DTSID="{c4134da3-06fc-4778-b105-7498f9933e5d}"
+          DTS:ExecutableType="Microsoft.FileSystemTask"
+          DTS:LocaleID="-1"
+          DTS:ObjectName="Datei kopieren"
+          DTS:TaskContact="File System Task;Microsoft Corporation; SQL Server 2017; © 2017 Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1"
+          DTS:ThreadHint="0">
+          <DTS:Variables />
+          <DTS:ObjectData>
+            <FileSystemData
+              TaskOverwriteDestFile="True"
+              TaskSourcePath="User::JJK_Kopieren_Quelle"
+              TaskIsSourceVariable="True"
+              TaskDestinationPath="User::JJK_Kopieren_Ziel"
+              TaskIsDestinationVariable="True" />
+          </DTS:ObjectData>
+        </DTS:Executable>
+        <DTS:Executable
+          DTS:refId="Package\Foreach-Schleifencontainer\Datei kopieren nach save"
+          DTS:CreationName="Microsoft.FileSystemTask"
+          DTS:Description="Task &quot;Dateisystem&quot;"
+          DTS:DTSID="{8b9e3156-0db1-4a41-bd4f-d9f80c9521ce}"
+          DTS:ExecutableType="Microsoft.FileSystemTask"
+          DTS:LocaleID="-1"
+          DTS:ObjectName="Datei kopieren nach save"
+          DTS:TaskContact="File System Task;Microsoft Corporation; SQL Server 2017; © 2017 Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1"
+          DTS:ThreadHint="0">
+          <DTS:Variables />
+          <DTS:ObjectData>
+            <FileSystemData
+              TaskOverwriteDestFile="True"
+              TaskSourcePath="User::JJK_Kopieren_Quelle"
+              TaskIsSourceVariable="True"
+              TaskDestinationPath="User::JJK_Kopieren_save"
+              TaskIsDestinationVariable="True" />
+          </DTS:ObjectData>
+        </DTS:Executable>
+        <DTS:Executable
+          DTS:refId="Package\Foreach-Schleifencontainer\Datei umbenennen"
+          DTS:CreationName="Microsoft.FileSystemTask"
+          DTS:Description="Task &quot;Dateisystem&quot;"
+          DTS:DTSID="{86bfe938-1f23-4e41-bc62-2114116ad2ab}"
+          DTS:ExecutableType="Microsoft.FileSystemTask"
+          DTS:LocaleID="-1"
+          DTS:ObjectName="Datei umbenennen"
+          DTS:TaskContact="File System Task;Microsoft Corporation; SQL Server 2017; © 2017 Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1"
+          DTS:ThreadHint="0">
+          <DTS:Variables />
+          <DTS:ObjectData>
+            <FileSystemData
+              TaskOperationType="RenameFile"
+              TaskOverwriteDestFile="True"
+              TaskSourcePath="User::JJK_Alter_Name"
+              TaskIsSourceVariable="True"
+              TaskDestinationPath="User::JJK_Neuer_Name_save"
+              TaskIsDestinationVariable="True" />
+          </DTS:ObjectData>
+        </DTS:Executable>
+      </DTS:Executables>
+      <DTS:PrecedenceConstraints>
+        <DTS:PrecedenceConstraint
+          DTS:refId="Package\Foreach-Schleifencontainer.PrecedenceConstraints[Einschränkung]"
+          DTS:CreationName=""
+          DTS:DTSID="{e64653b6-be0d-4835-9f15-47083b7855e9}"
+          DTS:From="Package\Foreach-Schleifencontainer\Datei kopieren"
+          DTS:LogicalAnd="True"
+          DTS:ObjectName="Einschränkung"
+          DTS:To="Package\Foreach-Schleifencontainer\Datei kopieren nach save" />
+        <DTS:PrecedenceConstraint
+          DTS:refId="Package\Foreach-Schleifencontainer.PrecedenceConstraints[Einschränkung 1]"
+          DTS:CreationName=""
+          DTS:DTSID="{963cfbf9-4676-4f8c-984b-526eb2012c66}"
+          DTS:From="Package\Foreach-Schleifencontainer\Datei kopieren nach save"
+          DTS:LogicalAnd="True"
+          DTS:ObjectName="Einschränkung 1"
+          DTS:To="Package\Foreach-Schleifencontainer\Datei umbenennen" />
+      </DTS:PrecedenceConstraints>
+      <DTS:ForEachVariableMappings>
+        <DTS:ForEachVariableMapping
+          DTS:CreationName=""
+          DTS:DTSID="{70efd178-1588-4847-8605-25733ff6b5d9}"
+          DTS:ObjectName="{039EF30A-CC12-4FC8-82FE-98BAE79D6E5D}"
+          DTS:ValueIndex="0"
+          DTS:VariableName="User::JJK_Kopieren_Quelle" />
+      </DTS:ForEachVariableMappings>
+    </DTS:Executable>
+    <DTS:Executable
+      DTS:refId="Package\PROCEDURE Import_Zustellerdaten_JJK"
+      DTS:CreationName="Microsoft.ExecuteSQLTask"
+      DTS:Description="Task &quot;SQL ausführen&quot;"
+      DTS:DTSID="{0239d4fd-09ea-41f6-911a-2ce406cef3e6}"
+      DTS:ExecutableType="Microsoft.ExecuteSQLTask"
+      DTS:LocaleID="-1"
+      DTS:ObjectName="PROCEDURE Import_Zustellerdaten_JJK"
+      DTS:TaskContact="Execute SQL Task; Microsoft Corporation; SQL Server 2017; © 2017 Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1"
+      DTS:ThreadHint="0">
+      <DTS:Variables />
+      <DTS:ObjectData>
+        <SQLTask:SqlTaskData
+          SQLTask:Connection="{4ADACE00-0DAE-4573-9D92-4A105A6295AC}"
+          SQLTask:SqlStatementSource="exec [HStSSiS].[dbo].[Import_Zustellerdaten_JJK]" xmlns:SQLTask="www.microsoft.com/sqlserver/dts/tasks/sqltask" />
+      </DTS:ObjectData>
+    </DTS:Executable>
+    <DTS:Executable
+      DTS:refId="Package\Tabelle nach csv"
+      DTS:CreationName="Microsoft.Pipeline"
+      DTS:Description="Datenflusstask"
+      DTS:DTSID="{d9444d0b-8a4f-4a21-838d-fc1bf948fdbc}"
+      DTS:ExecutableType="Microsoft.Pipeline"
+      DTS:LocaleID="-1"
+      DTS:ObjectName="Tabelle nach csv"
+      DTS:TaskContact="Performs high-performance data extraction, transformation and loading;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1">
+      <DTS:Variables />
+      <DTS:ObjectData>
+        <pipeline
+          version="1">
+          <components>
+            <component
+              refId="Package\Tabelle nach csv\Flatfileziel"
+              componentClassID="Microsoft.FlatFileDestination"
+              contactInfo="Flatfileziel;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; Alle Rechte vorbehalten; http://www.microsoft.com/sql/support;0"
+              description="Flatfileziel"
+              localeId="1031"
+              name="Flatfileziel">
+              <properties>
+                <property
+                  dataType="System.Boolean"
+                  description="Gibt an, ob die Daten die Zieldatei überschreiben oder an sie angehängt werden."
+                  name="Overwrite">true</property>
+                <property
+                  dataType="System.Null"
+                  description="Gibt den Text an, der vor dem Schreiben von Daten in die Zieldatei geschrieben werden soll."
+                  expressionType="Notify"
+                  name="Header" />
+                <property
+                  dataType="System.Boolean"
+                  description="Bei Aktivierung des Textqualifizierers wird hiermit angegeben, ob der Textqualifizierer in den Daten, die in die Zieldatei geschrieben werden, mit Escapezeichen versehen wird."
+                  name="EscapeQualifier">false</property>
+              </properties>
+              <connections>
+                <connection
+                  refId="Package\Tabelle nach csv\Flatfileziel.Connections[FlatFileConnection]"
+                  connectionManagerID="Package.ConnectionManagers[JJK Output]"
+                  connectionManagerRefId="Package.ConnectionManagers[JJK Output]"
+                  name="FlatFileConnection" />
+              </connections>
+              <inputs>
+                <input
+                  refId="Package\Tabelle nach csv\Flatfileziel.Inputs[Eingabe des Flatfileziels]"
+                  hasSideEffects="true"
+                  name="Eingabe des Flatfileziels">
+                  <inputColumns>
+                    <inputColumn
+                      refId="Package\Tabelle nach csv\Flatfileziel.Inputs[Eingabe des Flatfileziels].Columns[FIRMANR]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="20"
+                      cachedName="FIRMANR"
+                      externalMetadataColumnId="Package\Tabelle nach csv\Flatfileziel.Inputs[Eingabe des Flatfileziels].ExternalColumns[FIRMANR]"
+                      lineageId="Package\Tabelle nach csv\OLE DB-Quelle.Outputs[Ausgabe der OLE DB-Quelle].Columns[FIRMANR]" />
+                    <inputColumn
+                      refId="Package\Tabelle nach csv\Flatfileziel.Inputs[Eingabe des Flatfileziels].Columns[MITARBEITERNR]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="20"
+                      cachedName="MITARBEITERNR"
+                      externalMetadataColumnId="Package\Tabelle nach csv\Flatfileziel.Inputs[Eingabe des Flatfileziels].ExternalColumns[MITARBEITERNR]"
+                      lineageId="Package\Tabelle nach csv\OLE DB-Quelle.Outputs[Ausgabe der OLE DB-Quelle].Columns[MITARBEITERNR]" />
+                    <inputColumn
+                      refId="Package\Tabelle nach csv\Flatfileziel.Inputs[Eingabe des Flatfileziels].Columns[APER]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="20"
+                      cachedName="APER"
+                      externalMetadataColumnId="Package\Tabelle nach csv\Flatfileziel.Inputs[Eingabe des Flatfileziels].ExternalColumns[APER]"
+                      lineageId="Package\Tabelle nach csv\OLE DB-Quelle.Outputs[Ausgabe der OLE DB-Quelle].Columns[APER]" />
+                    <inputColumn
+                      refId="Package\Tabelle nach csv\Flatfileziel.Inputs[Eingabe des Flatfileziels].Columns[LOHNARTNR]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="20"
+                      cachedName="LOHNARTNR"
+                      externalMetadataColumnId="Package\Tabelle nach csv\Flatfileziel.Inputs[Eingabe des Flatfileziels].ExternalColumns[LOHNARTNR]"
+                      lineageId="Package\Tabelle nach csv\OLE DB-Quelle.Outputs[Ausgabe der OLE DB-Quelle].Columns[LOHNARTNR]" />
+                    <inputColumn
+                      refId="Package\Tabelle nach csv\Flatfileziel.Inputs[Eingabe des Flatfileziels].Columns[DATUM]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="20"
+                      cachedName="DATUM"
+                      externalMetadataColumnId="Package\Tabelle nach csv\Flatfileziel.Inputs[Eingabe des Flatfileziels].ExternalColumns[DATUM]"
+                      lineageId="Package\Tabelle nach csv\OLE DB-Quelle.Outputs[Ausgabe der OLE DB-Quelle].Columns[DATUM]" />
+                    <inputColumn
+                      refId="Package\Tabelle nach csv\Flatfileziel.Inputs[Eingabe des Flatfileziels].Columns[VON-DATUM]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="20"
+                      cachedName="VON-DATUM"
+                      externalMetadataColumnId="Package\Tabelle nach csv\Flatfileziel.Inputs[Eingabe des Flatfileziels].ExternalColumns[VON-DATUM]"
+                      lineageId="Package\Tabelle nach csv\OLE DB-Quelle.Outputs[Ausgabe der OLE DB-Quelle].Columns[VON-DATUM]" />
+                    <inputColumn
+                      refId="Package\Tabelle nach csv\Flatfileziel.Inputs[Eingabe des Flatfileziels].Columns[BIS-DATUM]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="20"
+                      cachedName="BIS-DATUM"
+                      externalMetadataColumnId="Package\Tabelle nach csv\Flatfileziel.Inputs[Eingabe des Flatfileziels].ExternalColumns[BIS-DATUM]"
+                      lineageId="Package\Tabelle nach csv\OLE DB-Quelle.Outputs[Ausgabe der OLE DB-Quelle].Columns[BIS-DATUM]" />
+                    <inputColumn
+                      refId="Package\Tabelle nach csv\Flatfileziel.Inputs[Eingabe des Flatfileziels].Columns[PLATZHALTER]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="20"
+                      cachedName="PLATZHALTER"
+                      externalMetadataColumnId="Package\Tabelle nach csv\Flatfileziel.Inputs[Eingabe des Flatfileziels].ExternalColumns[PLATZHALTER]"
+                      lineageId="Package\Tabelle nach csv\OLE DB-Quelle.Outputs[Ausgabe der OLE DB-Quelle].Columns[PLATZHALTER]" />
+                    <inputColumn
+                      refId="Package\Tabelle nach csv\Flatfileziel.Inputs[Eingabe des Flatfileziels].Columns[KOSTENART]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="20"
+                      cachedName="KOSTENART"
+                      externalMetadataColumnId="Package\Tabelle nach csv\Flatfileziel.Inputs[Eingabe des Flatfileziels].ExternalColumns[KOSTENART]"
+                      lineageId="Package\Tabelle nach csv\OLE DB-Quelle.Outputs[Ausgabe der OLE DB-Quelle].Columns[KOSTENART]" />
+                    <inputColumn
+                      refId="Package\Tabelle nach csv\Flatfileziel.Inputs[Eingabe des Flatfileziels].Columns[KOSTENSTELLE]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="20"
+                      cachedName="KOSTENSTELLE"
+                      externalMetadataColumnId="Package\Tabelle nach csv\Flatfileziel.Inputs[Eingabe des Flatfileziels].ExternalColumns[KOSTENSTELLE]"
+                      lineageId="Package\Tabelle nach csv\OLE DB-Quelle.Outputs[Ausgabe der OLE DB-Quelle].Columns[KOSTENSTELLE]" />
+                    <inputColumn
+                      refId="Package\Tabelle nach csv\Flatfileziel.Inputs[Eingabe des Flatfileziels].Columns[KOSTENTRÄGER]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="20"
+                      cachedName="KOSTENTRÄGER"
+                      externalMetadataColumnId="Package\Tabelle nach csv\Flatfileziel.Inputs[Eingabe des Flatfileziels].ExternalColumns[KOSTENTRÄGER]"
+                      lineageId="Package\Tabelle nach csv\OLE DB-Quelle.Outputs[Ausgabe der OLE DB-Quelle].Columns[KOSTENTRÄGER]" />
+                    <inputColumn
+                      refId="Package\Tabelle nach csv\Flatfileziel.Inputs[Eingabe des Flatfileziels].Columns[PARAMETER 1]"
+                      cachedDataType="numeric"
+                      cachedName="PARAMETER 1"
+                      cachedPrecision="10"
+                      cachedScale="2"
+                      externalMetadataColumnId="Package\Tabelle nach csv\Flatfileziel.Inputs[Eingabe des Flatfileziels].ExternalColumns[PARAMETER 1]"
+                      lineageId="Package\Tabelle nach csv\OLE DB-Quelle.Outputs[Ausgabe der OLE DB-Quelle].Columns[PARAMETER 1]" />
+                    <inputColumn
+                      refId="Package\Tabelle nach csv\Flatfileziel.Inputs[Eingabe des Flatfileziels].Columns[PARAMETER 2]"
+                      cachedDataType="numeric"
+                      cachedName="PARAMETER 2"
+                      cachedPrecision="10"
+                      cachedScale="2"
+                      externalMetadataColumnId="Package\Tabelle nach csv\Flatfileziel.Inputs[Eingabe des Flatfileziels].ExternalColumns[PARAMETER 2]"
+                      lineageId="Package\Tabelle nach csv\OLE DB-Quelle.Outputs[Ausgabe der OLE DB-Quelle].Columns[PARAMETER 2]" />
+                    <inputColumn
+                      refId="Package\Tabelle nach csv\Flatfileziel.Inputs[Eingabe des Flatfileziels].Columns[PARAMETER 3]"
+                      cachedDataType="numeric"
+                      cachedName="PARAMETER 3"
+                      cachedPrecision="10"
+                      cachedScale="2"
+                      externalMetadataColumnId="Package\Tabelle nach csv\Flatfileziel.Inputs[Eingabe des Flatfileziels].ExternalColumns[PARAMETER 3]"
+                      lineageId="Package\Tabelle nach csv\OLE DB-Quelle.Outputs[Ausgabe der OLE DB-Quelle].Columns[PARAMETER 3]" />
+                    <inputColumn
+                      refId="Package\Tabelle nach csv\Flatfileziel.Inputs[Eingabe des Flatfileziels].Columns[PARAMETER 4]"
+                      cachedDataType="numeric"
+                      cachedName="PARAMETER 4"
+                      cachedPrecision="10"
+                      cachedScale="2"
+                      externalMetadataColumnId="Package\Tabelle nach csv\Flatfileziel.Inputs[Eingabe des Flatfileziels].ExternalColumns[PARAMETER 4]"
+                      lineageId="Package\Tabelle nach csv\OLE DB-Quelle.Outputs[Ausgabe der OLE DB-Quelle].Columns[PARAMETER 4]" />
+                    <inputColumn
+                      refId="Package\Tabelle nach csv\Flatfileziel.Inputs[Eingabe des Flatfileziels].Columns[PARAMETER 5]"
+                      cachedDataType="numeric"
+                      cachedName="PARAMETER 5"
+                      cachedPrecision="10"
+                      cachedScale="2"
+                      externalMetadataColumnId="Package\Tabelle nach csv\Flatfileziel.Inputs[Eingabe des Flatfileziels].ExternalColumns[PARAMETER 5]"
+                      lineageId="Package\Tabelle nach csv\OLE DB-Quelle.Outputs[Ausgabe der OLE DB-Quelle].Columns[PARAMETER 5]" />
+                    <inputColumn
+                      refId="Package\Tabelle nach csv\Flatfileziel.Inputs[Eingabe des Flatfileziels].Columns[HKZ]"
+                      cachedDataType="numeric"
+                      cachedName="HKZ"
+                      cachedPrecision="10"
+                      cachedScale="2"
+                      externalMetadataColumnId="Package\Tabelle nach csv\Flatfileziel.Inputs[Eingabe des Flatfileziels].ExternalColumns[HKZ]"
+                      lineageId="Package\Tabelle nach csv\OLE DB-Quelle.Outputs[Ausgabe der OLE DB-Quelle].Columns[HKZ]" />
+                    <inputColumn
+                      refId="Package\Tabelle nach csv\Flatfileziel.Inputs[Eingabe des Flatfileziels].Columns[PLATZHALTER_2]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="20"
+                      cachedName="PLATZHALTER_2"
+                      externalMetadataColumnId="Package\Tabelle nach csv\Flatfileziel.Inputs[Eingabe des Flatfileziels].ExternalColumns[PLATZHALTER_2]"
+                      lineageId="Package\Tabelle nach csv\OLE DB-Quelle.Outputs[Ausgabe der OLE DB-Quelle].Columns[PLATZHALTER_2]" />
+                  </inputColumns>
+                  <externalMetadataColumns
+                    isUsed="True">
+                    <externalMetadataColumn
+                      refId="Package\Tabelle nach csv\Flatfileziel.Inputs[Eingabe des Flatfileziels].ExternalColumns[FIRMANR]"
+                      codePage="1252"
+                      dataType="str"
+                      length="20"
+                      name="FIRMANR" />
+                    <externalMetadataColumn
+                      refId="Package\Tabelle nach csv\Flatfileziel.Inputs[Eingabe des Flatfileziels].ExternalColumns[MITARBEITERNR]"
+                      codePage="1252"
+                      dataType="str"
+                      length="20"
+                      name="MITARBEITERNR" />
+                    <externalMetadataColumn
+                      refId="Package\Tabelle nach csv\Flatfileziel.Inputs[Eingabe des Flatfileziels].ExternalColumns[APER]"
+                      codePage="1252"
+                      dataType="str"
+                      length="20"
+                      name="APER" />
+                    <externalMetadataColumn
+                      refId="Package\Tabelle nach csv\Flatfileziel.Inputs[Eingabe des Flatfileziels].ExternalColumns[LOHNARTNR]"
+                      codePage="1252"
+                      dataType="str"
+                      length="20"
+                      name="LOHNARTNR" />
+                    <externalMetadataColumn
+                      refId="Package\Tabelle nach csv\Flatfileziel.Inputs[Eingabe des Flatfileziels].ExternalColumns[DATUM]"
+                      codePage="1252"
+                      dataType="str"
+                      length="50"
+                      name="DATUM" />
+                    <externalMetadataColumn
+                      refId="Package\Tabelle nach csv\Flatfileziel.Inputs[Eingabe des Flatfileziels].ExternalColumns[VON-DATUM]"
+                      dataType="dbDate"
+                      name="VON-DATUM" />
+                    <externalMetadataColumn
+                      refId="Package\Tabelle nach csv\Flatfileziel.Inputs[Eingabe des Flatfileziels].ExternalColumns[BIS-DATUM]"
+                      dataType="dbDate"
+                      name="BIS-DATUM" />
+                    <externalMetadataColumn
+                      refId="Package\Tabelle nach csv\Flatfileziel.Inputs[Eingabe des Flatfileziels].ExternalColumns[PLATZHALTER]"
+                      codePage="1252"
+                      dataType="str"
+                      length="20"
+                      name="PLATZHALTER" />
+                    <externalMetadataColumn
+                      refId="Package\Tabelle nach csv\Flatfileziel.Inputs[Eingabe des Flatfileziels].ExternalColumns[KOSTENART]"
+                      codePage="1252"
+                      dataType="str"
+                      length="20"
+                      name="KOSTENART" />
+                    <externalMetadataColumn
+                      refId="Package\Tabelle nach csv\Flatfileziel.Inputs[Eingabe des Flatfileziels].ExternalColumns[KOSTENSTELLE]"
+                      codePage="1252"
+                      dataType="str"
+                      length="20"
+                      name="KOSTENSTELLE" />
+                    <externalMetadataColumn
+                      refId="Package\Tabelle nach csv\Flatfileziel.Inputs[Eingabe des Flatfileziels].ExternalColumns[KOSTENTRÄGER]"
+                      codePage="1252"
+                      dataType="str"
+                      length="20"
+                      name="KOSTENTRÄGER" />
+                    <externalMetadataColumn
+                      refId="Package\Tabelle nach csv\Flatfileziel.Inputs[Eingabe des Flatfileziels].ExternalColumns[PARAMETER 1]"
+                      dataType="numeric"
+                      name="PARAMETER 1"
+                      precision="10"
+                      scale="2" />
+                    <externalMetadataColumn
+                      refId="Package\Tabelle nach csv\Flatfileziel.Inputs[Eingabe des Flatfileziels].ExternalColumns[PARAMETER 2]"
+                      dataType="numeric"
+                      name="PARAMETER 2"
+                      precision="10"
+                      scale="2" />
+                    <externalMetadataColumn
+                      refId="Package\Tabelle nach csv\Flatfileziel.Inputs[Eingabe des Flatfileziels].ExternalColumns[PARAMETER 3]"
+                      dataType="numeric"
+                      name="PARAMETER 3"
+                      precision="10"
+                      scale="2" />
+                    <externalMetadataColumn
+                      refId="Package\Tabelle nach csv\Flatfileziel.Inputs[Eingabe des Flatfileziels].ExternalColumns[PARAMETER 4]"
+                      dataType="numeric"
+                      name="PARAMETER 4"
+                      precision="10"
+                      scale="2" />
+                    <externalMetadataColumn
+                      refId="Package\Tabelle nach csv\Flatfileziel.Inputs[Eingabe des Flatfileziels].ExternalColumns[PARAMETER 5]"
+                      dataType="numeric"
+                      name="PARAMETER 5"
+                      precision="10"
+                      scale="2" />
+                    <externalMetadataColumn
+                      refId="Package\Tabelle nach csv\Flatfileziel.Inputs[Eingabe des Flatfileziels].ExternalColumns[HKZ]"
+                      dataType="numeric"
+                      name="HKZ"
+                      precision="10"
+                      scale="2" />
+                    <externalMetadataColumn
+                      refId="Package\Tabelle nach csv\Flatfileziel.Inputs[Eingabe des Flatfileziels].ExternalColumns[PLATZHALTER_2]"
+                      codePage="1252"
+                      dataType="str"
+                      length="255"
+                      name="PLATZHALTER_2" />
+                  </externalMetadataColumns>
+                </input>
+              </inputs>
+            </component>
+            <component
+              refId="Package\Tabelle nach csv\OLE DB-Quelle"
+              componentClassID="Microsoft.OLEDBSource"
+              contactInfo="OLE DB-Quelle;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; Alle Rechte vorbehalten; http://www.microsoft.com/sql/support;7"
+              description="OLE DB-Quelle"
+              name="OLE DB-Quelle"
+              usesDispositions="true"
+              version="7">
+              <properties>
+                <property
+                  dataType="System.Int32"
+                  description="Die Anzahl der Sekunden für das Timeout eines Befehls. Der Wert &quot;0&quot; zeigt einen unendlichen Timeoutwert an."
+                  name="CommandTimeout">0</property>
+                <property
+                  dataType="System.String"
+                  description="Gibt den Namen des zum Öffnen eines Rowsets verwendeten Datenbankobjekts an."
+                  name="OpenRowset">[dbo].[Egecko_Export_JJK]</property>
+                <property
+                  dataType="System.String"
+                  description="Gibt die Variable an, die den Namen des zum Öffnen eines Rowsets verwendeten Datenbankobjekts enthält."
+                  name="OpenRowsetVariable"></property>
+                <property
+                  dataType="System.String"
+                  description="Der auszuführende SQL-Befehl."
+                  name="SqlCommand"
+                  UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor, Microsoft.DataTransformationServices.Controls, Version=15.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91"></property>
+                <property
+                  dataType="System.String"
+                  description="Die Variable, die den auszuführenden SQL-Befehl enthält."
+                  name="SqlCommandVariable"></property>
+                <property
+                  dataType="System.Int32"
+                  description="Gibt die zu verwendende Spaltencodepage an, wenn keine Codepageinformationen von der Datenquelle verfügbar sind."
+                  name="DefaultCodePage">1252</property>
+                <property
+                  dataType="System.Boolean"
+                  description="Erzwingt die Verwendung des DefaultCodePage-Eigenschaftswerts beim Beschreiben von Zeichendaten."
+                  name="AlwaysUseDefaultCodePage">false</property>
+                <property
+                  dataType="System.Int32"
+                  description="Gibt den zum Zugreifen auf die Datenbank verwendeten Modus an."
+                  name="AccessMode"
+                  typeConverter="AccessMode">0</property>
+                <property
+                  dataType="System.String"
+                  description="Die Zuordnungen zwischen den Parametern im SQL-Befehl und den Variablen."
+                  name="ParameterMapping"></property>
+              </properties>
+              <connections>
+                <connection
+                  refId="Package\Tabelle nach csv\OLE DB-Quelle.Connections[OleDbConnection]"
+                  connectionManagerID="{4ADACE00-0DAE-4573-9D92-4A105A6295AC}:external"
+                  connectionManagerRefId="Project.ConnectionManagers[sql2-sql1.HStSSiS.sa]"
+                  description="Die für den Zugriff auf die Datenbank verwendete OLE DB-Laufzeitverbindung."
+                  name="OleDbConnection" />
+              </connections>
+              <outputs>
+                <output
+                  refId="Package\Tabelle nach csv\OLE DB-Quelle.Outputs[Ausgabe der OLE DB-Quelle]"
+                  name="Ausgabe der OLE DB-Quelle">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\Tabelle nach csv\OLE DB-Quelle.Outputs[Ausgabe der OLE DB-Quelle].Columns[FIRMANR]"
+                      codePage="1252"
+                      dataType="str"
+                      errorOrTruncationOperation="Konvertierung"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Tabelle nach csv\OLE DB-Quelle.Outputs[Ausgabe der OLE DB-Quelle].ExternalColumns[FIRMANR]"
+                      length="20"
+                      lineageId="Package\Tabelle nach csv\OLE DB-Quelle.Outputs[Ausgabe der OLE DB-Quelle].Columns[FIRMANR]"
+                      name="FIRMANR"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\Tabelle nach csv\OLE DB-Quelle.Outputs[Ausgabe der OLE DB-Quelle].Columns[MITARBEITERNR]"
+                      codePage="1252"
+                      dataType="str"
+                      errorOrTruncationOperation="Konvertierung"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Tabelle nach csv\OLE DB-Quelle.Outputs[Ausgabe der OLE DB-Quelle].ExternalColumns[MITARBEITERNR]"
+                      length="20"
+                      lineageId="Package\Tabelle nach csv\OLE DB-Quelle.Outputs[Ausgabe der OLE DB-Quelle].Columns[MITARBEITERNR]"
+                      name="MITARBEITERNR"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\Tabelle nach csv\OLE DB-Quelle.Outputs[Ausgabe der OLE DB-Quelle].Columns[APER]"
+                      codePage="1252"
+                      dataType="str"
+                      errorOrTruncationOperation="Konvertierung"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Tabelle nach csv\OLE DB-Quelle.Outputs[Ausgabe der OLE DB-Quelle].ExternalColumns[APER]"
+                      length="20"
+                      lineageId="Package\Tabelle nach csv\OLE DB-Quelle.Outputs[Ausgabe der OLE DB-Quelle].Columns[APER]"
+                      name="APER"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\Tabelle nach csv\OLE DB-Quelle.Outputs[Ausgabe der OLE DB-Quelle].Columns[LOHNARTNR]"
+                      codePage="1252"
+                      dataType="str"
+                      errorOrTruncationOperation="Konvertierung"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Tabelle nach csv\OLE DB-Quelle.Outputs[Ausgabe der OLE DB-Quelle].ExternalColumns[LOHNARTNR]"
+                      length="20"
+                      lineageId="Package\Tabelle nach csv\OLE DB-Quelle.Outputs[Ausgabe der OLE DB-Quelle].Columns[LOHNARTNR]"
+                      name="LOHNARTNR"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\Tabelle nach csv\OLE DB-Quelle.Outputs[Ausgabe der OLE DB-Quelle].Columns[DATUM]"
+                      codePage="1252"
+                      dataType="str"
+                      errorOrTruncationOperation="Konvertierung"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Tabelle nach csv\OLE DB-Quelle.Outputs[Ausgabe der OLE DB-Quelle].ExternalColumns[DATUM]"
+                      length="20"
+                      lineageId="Package\Tabelle nach csv\OLE DB-Quelle.Outputs[Ausgabe der OLE DB-Quelle].Columns[DATUM]"
+                      name="DATUM"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\Tabelle nach csv\OLE DB-Quelle.Outputs[Ausgabe der OLE DB-Quelle].Columns[VON-DATUM]"
+                      codePage="1252"
+                      dataType="str"
+                      errorOrTruncationOperation="Konvertierung"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Tabelle nach csv\OLE DB-Quelle.Outputs[Ausgabe der OLE DB-Quelle].ExternalColumns[VON-DATUM]"
+                      length="20"
+                      lineageId="Package\Tabelle nach csv\OLE DB-Quelle.Outputs[Ausgabe der OLE DB-Quelle].Columns[VON-DATUM]"
+                      name="VON-DATUM"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\Tabelle nach csv\OLE DB-Quelle.Outputs[Ausgabe der OLE DB-Quelle].Columns[BIS-DATUM]"
+                      codePage="1252"
+                      dataType="str"
+                      errorOrTruncationOperation="Konvertierung"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Tabelle nach csv\OLE DB-Quelle.Outputs[Ausgabe der OLE DB-Quelle].ExternalColumns[BIS-DATUM]"
+                      length="20"
+                      lineageId="Package\Tabelle nach csv\OLE DB-Quelle.Outputs[Ausgabe der OLE DB-Quelle].Columns[BIS-DATUM]"
+                      name="BIS-DATUM"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\Tabelle nach csv\OLE DB-Quelle.Outputs[Ausgabe der OLE DB-Quelle].Columns[PLATZHALTER]"
+                      codePage="1252"
+                      dataType="str"
+                      errorOrTruncationOperation="Konvertierung"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Tabelle nach csv\OLE DB-Quelle.Outputs[Ausgabe der OLE DB-Quelle].ExternalColumns[PLATZHALTER]"
+                      length="20"
+                      lineageId="Package\Tabelle nach csv\OLE DB-Quelle.Outputs[Ausgabe der OLE DB-Quelle].Columns[PLATZHALTER]"
+                      name="PLATZHALTER"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\Tabelle nach csv\OLE DB-Quelle.Outputs[Ausgabe der OLE DB-Quelle].Columns[KOSTENART]"
+                      codePage="1252"
+                      dataType="str"
+                      errorOrTruncationOperation="Konvertierung"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Tabelle nach csv\OLE DB-Quelle.Outputs[Ausgabe der OLE DB-Quelle].ExternalColumns[KOSTENART]"
+                      length="20"
+                      lineageId="Package\Tabelle nach csv\OLE DB-Quelle.Outputs[Ausgabe der OLE DB-Quelle].Columns[KOSTENART]"
+                      name="KOSTENART"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\Tabelle nach csv\OLE DB-Quelle.Outputs[Ausgabe der OLE DB-Quelle].Columns[KOSTENSTELLE]"
+                      codePage="1252"
+                      dataType="str"
+                      errorOrTruncationOperation="Konvertierung"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Tabelle nach csv\OLE DB-Quelle.Outputs[Ausgabe der OLE DB-Quelle].ExternalColumns[KOSTENSTELLE]"
+                      length="20"
+                      lineageId="Package\Tabelle nach csv\OLE DB-Quelle.Outputs[Ausgabe der OLE DB-Quelle].Columns[KOSTENSTELLE]"
+                      name="KOSTENSTELLE"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\Tabelle nach csv\OLE DB-Quelle.Outputs[Ausgabe der OLE DB-Quelle].Columns[KOSTENTRÄGER]"
+                      codePage="1252"
+                      dataType="str"
+                      errorOrTruncationOperation="Konvertierung"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Tabelle nach csv\OLE DB-Quelle.Outputs[Ausgabe der OLE DB-Quelle].ExternalColumns[KOSTENTRÄGER]"
+                      length="20"
+                      lineageId="Package\Tabelle nach csv\OLE DB-Quelle.Outputs[Ausgabe der OLE DB-Quelle].Columns[KOSTENTRÄGER]"
+                      name="KOSTENTRÄGER"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\Tabelle nach csv\OLE DB-Quelle.Outputs[Ausgabe der OLE DB-Quelle].Columns[PARAMETER 1]"
+                      dataType="numeric"
+                      errorOrTruncationOperation="Konvertierung"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Tabelle nach csv\OLE DB-Quelle.Outputs[Ausgabe der OLE DB-Quelle].ExternalColumns[PARAMETER 1]"
+                      lineageId="Package\Tabelle nach csv\OLE DB-Quelle.Outputs[Ausgabe der OLE DB-Quelle].Columns[PARAMETER 1]"
+                      name="PARAMETER 1"
+                      precision="10"
+                      scale="2"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\Tabelle nach csv\OLE DB-Quelle.Outputs[Ausgabe der OLE DB-Quelle].Columns[PARAMETER 2]"
+                      dataType="numeric"
+                      errorOrTruncationOperation="Konvertierung"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Tabelle nach csv\OLE DB-Quelle.Outputs[Ausgabe der OLE DB-Quelle].ExternalColumns[PARAMETER 2]"
+                      lineageId="Package\Tabelle nach csv\OLE DB-Quelle.Outputs[Ausgabe der OLE DB-Quelle].Columns[PARAMETER 2]"
+                      name="PARAMETER 2"
+                      precision="10"
+                      scale="2"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\Tabelle nach csv\OLE DB-Quelle.Outputs[Ausgabe der OLE DB-Quelle].Columns[PARAMETER 3]"
+                      dataType="numeric"
+                      errorOrTruncationOperation="Konvertierung"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Tabelle nach csv\OLE DB-Quelle.Outputs[Ausgabe der OLE DB-Quelle].ExternalColumns[PARAMETER 3]"
+                      lineageId="Package\Tabelle nach csv\OLE DB-Quelle.Outputs[Ausgabe der OLE DB-Quelle].Columns[PARAMETER 3]"
+                      name="PARAMETER 3"
+                      precision="10"
+                      scale="2"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\Tabelle nach csv\OLE DB-Quelle.Outputs[Ausgabe der OLE DB-Quelle].Columns[PARAMETER 4]"
+                      dataType="numeric"
+                      errorOrTruncationOperation="Konvertierung"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Tabelle nach csv\OLE DB-Quelle.Outputs[Ausgabe der OLE DB-Quelle].ExternalColumns[PARAMETER 4]"
+                      lineageId="Package\Tabelle nach csv\OLE DB-Quelle.Outputs[Ausgabe der OLE DB-Quelle].Columns[PARAMETER 4]"
+                      name="PARAMETER 4"
+                      precision="10"
+                      scale="2"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\Tabelle nach csv\OLE DB-Quelle.Outputs[Ausgabe der OLE DB-Quelle].Columns[PARAMETER 5]"
+                      dataType="numeric"
+                      errorOrTruncationOperation="Konvertierung"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Tabelle nach csv\OLE DB-Quelle.Outputs[Ausgabe der OLE DB-Quelle].ExternalColumns[PARAMETER 5]"
+                      lineageId="Package\Tabelle nach csv\OLE DB-Quelle.Outputs[Ausgabe der OLE DB-Quelle].Columns[PARAMETER 5]"
+                      name="PARAMETER 5"
+                      precision="10"
+                      scale="2"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\Tabelle nach csv\OLE DB-Quelle.Outputs[Ausgabe der OLE DB-Quelle].Columns[HKZ]"
+                      dataType="numeric"
+                      errorOrTruncationOperation="Konvertierung"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Tabelle nach csv\OLE DB-Quelle.Outputs[Ausgabe der OLE DB-Quelle].ExternalColumns[HKZ]"
+                      lineageId="Package\Tabelle nach csv\OLE DB-Quelle.Outputs[Ausgabe der OLE DB-Quelle].Columns[HKZ]"
+                      name="HKZ"
+                      precision="10"
+                      scale="2"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\Tabelle nach csv\OLE DB-Quelle.Outputs[Ausgabe der OLE DB-Quelle].Columns[PLATZHALTER_2]"
+                      codePage="1252"
+                      dataType="str"
+                      errorOrTruncationOperation="Konvertierung"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Tabelle nach csv\OLE DB-Quelle.Outputs[Ausgabe der OLE DB-Quelle].ExternalColumns[PLATZHALTER_2]"
+                      length="20"
+                      lineageId="Package\Tabelle nach csv\OLE DB-Quelle.Outputs[Ausgabe der OLE DB-Quelle].Columns[PLATZHALTER_2]"
+                      name="PLATZHALTER_2"
+                      truncationRowDisposition="FailComponent" />
+                  </outputColumns>
+                  <externalMetadataColumns
+                    isUsed="True">
+                    <externalMetadataColumn
+                      refId="Package\Tabelle nach csv\OLE DB-Quelle.Outputs[Ausgabe der OLE DB-Quelle].ExternalColumns[FIRMANR]"
+                      codePage="1252"
+                      dataType="str"
+                      length="20"
+                      name="FIRMANR" />
+                    <externalMetadataColumn
+                      refId="Package\Tabelle nach csv\OLE DB-Quelle.Outputs[Ausgabe der OLE DB-Quelle].ExternalColumns[MITARBEITERNR]"
+                      codePage="1252"
+                      dataType="str"
+                      length="20"
+                      name="MITARBEITERNR" />
+                    <externalMetadataColumn
+                      refId="Package\Tabelle nach csv\OLE DB-Quelle.Outputs[Ausgabe der OLE DB-Quelle].ExternalColumns[APER]"
+                      codePage="1252"
+                      dataType="str"
+                      length="20"
+                      name="APER" />
+                    <externalMetadataColumn
+                      refId="Package\Tabelle nach csv\OLE DB-Quelle.Outputs[Ausgabe der OLE DB-Quelle].ExternalColumns[LOHNARTNR]"
+                      codePage="1252"
+                      dataType="str"
+                      length="20"
+                      name="LOHNARTNR" />
+                    <externalMetadataColumn
+                      refId="Package\Tabelle nach csv\OLE DB-Quelle.Outputs[Ausgabe der OLE DB-Quelle].ExternalColumns[DATUM]"
+                      codePage="1252"
+                      dataType="str"
+                      length="20"
+                      name="DATUM" />
+                    <externalMetadataColumn
+                      refId="Package\Tabelle nach csv\OLE DB-Quelle.Outputs[Ausgabe der OLE DB-Quelle].ExternalColumns[VON-DATUM]"
+                      codePage="1252"
+                      dataType="str"
+                      length="20"
+                      name="VON-DATUM" />
+                    <externalMetadataColumn
+                      refId="Package\Tabelle nach csv\OLE DB-Quelle.Outputs[Ausgabe der OLE DB-Quelle].ExternalColumns[BIS-DATUM]"
+                      codePage="1252"
+                      dataType="str"
+                      length="20"
+                      name="BIS-DATUM" />
+                    <externalMetadataColumn
+                      refId="Package\Tabelle nach csv\OLE DB-Quelle.Outputs[Ausgabe der OLE DB-Quelle].ExternalColumns[PLATZHALTER]"
+                      codePage="1252"
+                      dataType="str"
+                      length="20"
+                      name="PLATZHALTER" />
+                    <externalMetadataColumn
+                      refId="Package\Tabelle nach csv\OLE DB-Quelle.Outputs[Ausgabe der OLE DB-Quelle].ExternalColumns[KOSTENART]"
+                      codePage="1252"
+                      dataType="str"
+                      length="20"
+                      name="KOSTENART" />
+                    <externalMetadataColumn
+                      refId="Package\Tabelle nach csv\OLE DB-Quelle.Outputs[Ausgabe der OLE DB-Quelle].ExternalColumns[KOSTENSTELLE]"
+                      codePage="1252"
+                      dataType="str"
+                      length="20"
+                      name="KOSTENSTELLE" />
+                    <externalMetadataColumn
+                      refId="Package\Tabelle nach csv\OLE DB-Quelle.Outputs[Ausgabe der OLE DB-Quelle].ExternalColumns[KOSTENTRÄGER]"
+                      codePage="1252"
+                      dataType="str"
+                      length="20"
+                      name="KOSTENTRÄGER" />
+                    <externalMetadataColumn
+                      refId="Package\Tabelle nach csv\OLE DB-Quelle.Outputs[Ausgabe der OLE DB-Quelle].ExternalColumns[PARAMETER 1]"
+                      dataType="numeric"
+                      name="PARAMETER 1"
+                      precision="10"
+                      scale="2" />
+                    <externalMetadataColumn
+                      refId="Package\Tabelle nach csv\OLE DB-Quelle.Outputs[Ausgabe der OLE DB-Quelle].ExternalColumns[PARAMETER 2]"
+                      dataType="numeric"
+                      name="PARAMETER 2"
+                      precision="10"
+                      scale="2" />
+                    <externalMetadataColumn
+                      refId="Package\Tabelle nach csv\OLE DB-Quelle.Outputs[Ausgabe der OLE DB-Quelle].ExternalColumns[PARAMETER 3]"
+                      dataType="numeric"
+                      name="PARAMETER 3"
+                      precision="10"
+                      scale="2" />
+                    <externalMetadataColumn
+                      refId="Package\Tabelle nach csv\OLE DB-Quelle.Outputs[Ausgabe der OLE DB-Quelle].ExternalColumns[PARAMETER 4]"
+                      dataType="numeric"
+                      name="PARAMETER 4"
+                      precision="10"
+                      scale="2" />
+                    <externalMetadataColumn
+                      refId="Package\Tabelle nach csv\OLE DB-Quelle.Outputs[Ausgabe der OLE DB-Quelle].ExternalColumns[PARAMETER 5]"
+                      dataType="numeric"
+                      name="PARAMETER 5"
+                      precision="10"
+                      scale="2" />
+                    <externalMetadataColumn
+                      refId="Package\Tabelle nach csv\OLE DB-Quelle.Outputs[Ausgabe der OLE DB-Quelle].ExternalColumns[HKZ]"
+                      dataType="numeric"
+                      name="HKZ"
+                      precision="10"
+                      scale="2" />
+                    <externalMetadataColumn
+                      refId="Package\Tabelle nach csv\OLE DB-Quelle.Outputs[Ausgabe der OLE DB-Quelle].ExternalColumns[PLATZHALTER_2]"
+                      codePage="1252"
+                      dataType="str"
+                      length="20"
+                      name="PLATZHALTER_2" />
+                  </externalMetadataColumns>
+                </output>
+                <output
+                  refId="Package\Tabelle nach csv\OLE DB-Quelle.Outputs[Fehlerausgabe der OLE DB-Quelle]"
+                  isErrorOut="true"
+                  name="Fehlerausgabe der OLE DB-Quelle">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\Tabelle nach csv\OLE DB-Quelle.Outputs[Fehlerausgabe der OLE DB-Quelle].Columns[FIRMANR]"
+                      codePage="1252"
+                      dataType="str"
+                      length="20"
+                      lineageId="Package\Tabelle nach csv\OLE DB-Quelle.Outputs[Fehlerausgabe der OLE DB-Quelle].Columns[FIRMANR]"
+                      name="FIRMANR" />
+                    <outputColumn
+                      refId="Package\Tabelle nach csv\OLE DB-Quelle.Outputs[Fehlerausgabe der OLE DB-Quelle].Columns[MITARBEITERNR]"
+                      codePage="1252"
+                      dataType="str"
+                      length="20"
+                      lineageId="Package\Tabelle nach csv\OLE DB-Quelle.Outputs[Fehlerausgabe der OLE DB-Quelle].Columns[MITARBEITERNR]"
+                      name="MITARBEITERNR" />
+                    <outputColumn
+                      refId="Package\Tabelle nach csv\OLE DB-Quelle.Outputs[Fehlerausgabe der OLE DB-Quelle].Columns[APER]"
+                      codePage="1252"
+                      dataType="str"
+                      length="20"
+                      lineageId="Package\Tabelle nach csv\OLE DB-Quelle.Outputs[Fehlerausgabe der OLE DB-Quelle].Columns[APER]"
+                      name="APER" />
+                    <outputColumn
+                      refId="Package\Tabelle nach csv\OLE DB-Quelle.Outputs[Fehlerausgabe der OLE DB-Quelle].Columns[LOHNARTNR]"
+                      codePage="1252"
+                      dataType="str"
+                      length="20"
+                      lineageId="Package\Tabelle nach csv\OLE DB-Quelle.Outputs[Fehlerausgabe der OLE DB-Quelle].Columns[LOHNARTNR]"
+                      name="LOHNARTNR" />
+                    <outputColumn
+                      refId="Package\Tabelle nach csv\OLE DB-Quelle.Outputs[Fehlerausgabe der OLE DB-Quelle].Columns[DATUM]"
+                      codePage="1252"
+                      dataType="str"
+                      length="20"
+                      lineageId="Package\Tabelle nach csv\OLE DB-Quelle.Outputs[Fehlerausgabe der OLE DB-Quelle].Columns[DATUM]"
+                      name="DATUM" />
+                    <outputColumn
+                      refId="Package\Tabelle nach csv\OLE DB-Quelle.Outputs[Fehlerausgabe der OLE DB-Quelle].Columns[VON-DATUM]"
+                      codePage="1252"
+                      dataType="str"
+                      length="20"
+                      lineageId="Package\Tabelle nach csv\OLE DB-Quelle.Outputs[Fehlerausgabe der OLE DB-Quelle].Columns[VON-DATUM]"
+                      name="VON-DATUM" />
+                    <outputColumn
+                      refId="Package\Tabelle nach csv\OLE DB-Quelle.Outputs[Fehlerausgabe der OLE DB-Quelle].Columns[BIS-DATUM]"
+                      codePage="1252"
+                      dataType="str"
+                      length="20"
+                      lineageId="Package\Tabelle nach csv\OLE DB-Quelle.Outputs[Fehlerausgabe der OLE DB-Quelle].Columns[BIS-DATUM]"
+                      name="BIS-DATUM" />
+                    <outputColumn
+                      refId="Package\Tabelle nach csv\OLE DB-Quelle.Outputs[Fehlerausgabe der OLE DB-Quelle].Columns[PLATZHALTER]"
+                      codePage="1252"
+                      dataType="str"
+                      length="20"
+                      lineageId="Package\Tabelle nach csv\OLE DB-Quelle.Outputs[Fehlerausgabe der OLE DB-Quelle].Columns[PLATZHALTER]"
+                      name="PLATZHALTER" />
+                    <outputColumn
+                      refId="Package\Tabelle nach csv\OLE DB-Quelle.Outputs[Fehlerausgabe der OLE DB-Quelle].Columns[KOSTENART]"
+                      codePage="1252"
+                      dataType="str"
+                      length="20"
+                      lineageId="Package\Tabelle nach csv\OLE DB-Quelle.Outputs[Fehlerausgabe der OLE DB-Quelle].Columns[KOSTENART]"
+                      name="KOSTENART" />
+                    <outputColumn
+                      refId="Package\Tabelle nach csv\OLE DB-Quelle.Outputs[Fehlerausgabe der OLE DB-Quelle].Columns[KOSTENSTELLE]"
+                      codePage="1252"
+                      dataType="str"
+                      length="20"
+                      lineageId="Package\Tabelle nach csv\OLE DB-Quelle.Outputs[Fehlerausgabe der OLE DB-Quelle].Columns[KOSTENSTELLE]"
+                      name="KOSTENSTELLE" />
+                    <outputColumn
+                      refId="Package\Tabelle nach csv\OLE DB-Quelle.Outputs[Fehlerausgabe der OLE DB-Quelle].Columns[KOSTENTRÄGER]"
+                      codePage="1252"
+                      dataType="str"
+                      length="20"
+                      lineageId="Package\Tabelle nach csv\OLE DB-Quelle.Outputs[Fehlerausgabe der OLE DB-Quelle].Columns[KOSTENTRÄGER]"
+                      name="KOSTENTRÄGER" />
+                    <outputColumn
+                      refId="Package\Tabelle nach csv\OLE DB-Quelle.Outputs[Fehlerausgabe der OLE DB-Quelle].Columns[PLATZHALTER_2]"
+                      codePage="1252"
+                      dataType="str"
+                      length="20"
+                      lineageId="Package\Tabelle nach csv\OLE DB-Quelle.Outputs[Fehlerausgabe der OLE DB-Quelle].Columns[PLATZHALTER_2]"
+                      name="PLATZHALTER_2" />
+                    <outputColumn
+                      refId="Package\Tabelle nach csv\OLE DB-Quelle.Outputs[Fehlerausgabe der OLE DB-Quelle].Columns[PARAMETER 1]"
+                      dataType="numeric"
+                      lineageId="Package\Tabelle nach csv\OLE DB-Quelle.Outputs[Fehlerausgabe der OLE DB-Quelle].Columns[PARAMETER 1]"
+                      name="PARAMETER 1"
+                      precision="10"
+                      scale="2" />
+                    <outputColumn
+                      refId="Package\Tabelle nach csv\OLE DB-Quelle.Outputs[Fehlerausgabe der OLE DB-Quelle].Columns[PARAMETER 2]"
+                      dataType="numeric"
+                      lineageId="Package\Tabelle nach csv\OLE DB-Quelle.Outputs[Fehlerausgabe der OLE DB-Quelle].Columns[PARAMETER 2]"
+                      name="PARAMETER 2"
+                      precision="10"
+                      scale="2" />
+                    <outputColumn
+                      refId="Package\Tabelle nach csv\OLE DB-Quelle.Outputs[Fehlerausgabe der OLE DB-Quelle].Columns[PARAMETER 3]"
+                      dataType="numeric"
+                      lineageId="Package\Tabelle nach csv\OLE DB-Quelle.Outputs[Fehlerausgabe der OLE DB-Quelle].Columns[PARAMETER 3]"
+                      name="PARAMETER 3"
+                      precision="10"
+                      scale="2" />
+                    <outputColumn
+                      refId="Package\Tabelle nach csv\OLE DB-Quelle.Outputs[Fehlerausgabe der OLE DB-Quelle].Columns[PARAMETER 4]"
+                      dataType="numeric"
+                      lineageId="Package\Tabelle nach csv\OLE DB-Quelle.Outputs[Fehlerausgabe der OLE DB-Quelle].Columns[PARAMETER 4]"
+                      name="PARAMETER 4"
+                      precision="10"
+                      scale="2" />
+                    <outputColumn
+                      refId="Package\Tabelle nach csv\OLE DB-Quelle.Outputs[Fehlerausgabe der OLE DB-Quelle].Columns[PARAMETER 5]"
+                      dataType="numeric"
+                      lineageId="Package\Tabelle nach csv\OLE DB-Quelle.Outputs[Fehlerausgabe der OLE DB-Quelle].Columns[PARAMETER 5]"
+                      name="PARAMETER 5"
+                      precision="10"
+                      scale="2" />
+                    <outputColumn
+                      refId="Package\Tabelle nach csv\OLE DB-Quelle.Outputs[Fehlerausgabe der OLE DB-Quelle].Columns[HKZ]"
+                      dataType="numeric"
+                      lineageId="Package\Tabelle nach csv\OLE DB-Quelle.Outputs[Fehlerausgabe der OLE DB-Quelle].Columns[HKZ]"
+                      name="HKZ"
+                      precision="10"
+                      scale="2" />
+                    <outputColumn
+                      refId="Package\Tabelle nach csv\OLE DB-Quelle.Outputs[Fehlerausgabe der OLE DB-Quelle].Columns[ErrorCode]"
+                      dataType="i4"
+                      lineageId="Package\Tabelle nach csv\OLE DB-Quelle.Outputs[Fehlerausgabe der OLE DB-Quelle].Columns[ErrorCode]"
+                      name="ErrorCode"
+                      specialFlags="1" />
+                    <outputColumn
+                      refId="Package\Tabelle nach csv\OLE DB-Quelle.Outputs[Fehlerausgabe der OLE DB-Quelle].Columns[ErrorColumn]"
+                      dataType="i4"
+                      lineageId="Package\Tabelle nach csv\OLE DB-Quelle.Outputs[Fehlerausgabe der OLE DB-Quelle].Columns[ErrorColumn]"
+                      name="ErrorColumn"
+                      specialFlags="2" />
+                  </outputColumns>
+                  <externalMetadataColumns />
+                </output>
+              </outputs>
+            </component>
+          </components>
+          <paths>
+            <path
+              refId="Package\Tabelle nach csv.Paths[Ausgabe der OLE DB-Quelle]"
+              endId="Package\Tabelle nach csv\Flatfileziel.Inputs[Eingabe des Flatfileziels]"
+              name="Ausgabe der OLE DB-Quelle"
+              startId="Package\Tabelle nach csv\OLE DB-Quelle.Outputs[Ausgabe der OLE DB-Quelle]" />
+          </paths>
+        </pipeline>
+      </DTS:ObjectData>
+    </DTS:Executable>
+    <DTS:Executable
+      DTS:refId="Package\truncate table Egecko_Export_JJK"
+      DTS:CreationName="Microsoft.ExecuteSQLTask"
+      DTS:Description="Task &quot;SQL ausführen&quot;"
+      DTS:DTSID="{33c3d72f-b4ff-43ee-b851-96ace22d8b8a}"
+      DTS:ExecutableType="Microsoft.ExecuteSQLTask"
+      DTS:LocaleID="-1"
+      DTS:ObjectName="truncate table Egecko_Export_JJK"
+      DTS:TaskContact="Execute SQL Task; Microsoft Corporation; SQL Server 2017; © 2017 Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1"
+      DTS:ThreadHint="0">
+      <DTS:Variables />
+      <DTS:ObjectData>
+        <SQLTask:SqlTaskData
+          SQLTask:Connection="{4ADACE00-0DAE-4573-9D92-4A105A6295AC}"
+          SQLTask:SqlStatementSource="truncate table  [HStSSiS].[dbo].[Egecko_Export_JJK]" xmlns:SQLTask="www.microsoft.com/sqlserver/dts/tasks/sqltask" />
+      </DTS:ObjectData>
+    </DTS:Executable>
+    <DTS:Executable
+      DTS:refId="Package\truncate table Egecko_Import_JJK"
+      DTS:CreationName="Microsoft.ExecuteSQLTask"
+      DTS:Description="Task &quot;SQL ausführen&quot;"
+      DTS:DTSID="{f277dbfc-90e4-4d38-a0b1-47a5417b2617}"
+      DTS:ExecutableType="Microsoft.ExecuteSQLTask"
+      DTS:LocaleID="-1"
+      DTS:ObjectName="truncate table Egecko_Import_JJK"
+      DTS:TaskContact="Execute SQL Task; Microsoft Corporation; SQL Server 2017; © 2017 Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1"
+      DTS:ThreadHint="0">
+      <DTS:Variables />
+      <DTS:ObjectData>
+        <SQLTask:SqlTaskData
+          SQLTask:Connection="{4ADACE00-0DAE-4573-9D92-4A105A6295AC}"
+          SQLTask:SqlStatementSource="truncate table  [HStSSiS].[dbo].[Egecko_Import_JJK]" xmlns:SQLTask="www.microsoft.com/sqlserver/dts/tasks/sqltask" />
+      </DTS:ObjectData>
+    </DTS:Executable>
+    <DTS:Executable
+      DTS:refId="Package\txt nach Tabelle"
+      DTS:CreationName="Microsoft.Pipeline"
+      DTS:Description="Datenflusstask"
+      DTS:DTSID="{fd53fb51-7753-43a7-b1d7-4b9e5904536c}"
+      DTS:ExecutableType="Microsoft.Pipeline"
+      DTS:LocaleID="-1"
+      DTS:ObjectName="txt nach Tabelle"
+      DTS:TaskContact="Performs high-performance data extraction, transformation and loading;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1">
+      <DTS:Variables />
+      <DTS:ObjectData>
+        <pipeline
+          version="1">
+          <components>
+            <component
+              refId="Package\txt nach Tabelle\Flatfilequelle"
+              componentClassID="Microsoft.FlatFileSource"
+              contactInfo="Flatfilequelle;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; Alle Rechte vorbehalten; http://www.microsoft.com/sql/support;1"
+              description="Flatfilequelle"
+              localeId="1031"
+              name="Flatfilequelle"
+              usesDispositions="true"
+              version="1">
+              <properties>
+                <property
+                  dataType="System.Boolean"
+                  description="Gibt an, ob Spalten mit der Länge &quot;0&quot; als NULL behandelt werden."
+                  name="RetainNulls">false</property>
+                <property
+                  dataType="System.String"
+                  description="Gibt den Namen der Ausgabespalte an, die den Dateinamen enthält. Wenn kein Name angegeben wird, wird keine Ausgabespalte generiert, die den Dateinamen enthält."
+                  name="FileNameColumnName"></property>
+              </properties>
+              <connections>
+                <connection
+                  refId="Package\txt nach Tabelle\Flatfilequelle.Connections[FlatFileConnection]"
+                  connectionManagerID="Package.ConnectionManagers[JJK Input]"
+                  connectionManagerRefId="Package.ConnectionManagers[JJK Input]"
+                  name="FlatFileConnection" />
+              </connections>
+              <outputs>
+                <output
+                  refId="Package\txt nach Tabelle\Flatfilequelle.Outputs[Ausgabe der Flatfilequelle]"
+                  name="Ausgabe der Flatfilequelle">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\txt nach Tabelle\Flatfilequelle.Outputs[Ausgabe der Flatfilequelle].Columns[&quot;Mandant&quot;]"
+                      codePage="1252"
+                      dataType="str"
+                      errorOrTruncationOperation="Konvertierung"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\txt nach Tabelle\Flatfilequelle.Outputs[Ausgabe der Flatfilequelle].ExternalColumns[&quot;Mandant&quot;]"
+                      length="50"
+                      lineageId="Package\txt nach Tabelle\Flatfilequelle.Outputs[Ausgabe der Flatfilequelle].Columns[&quot;Mandant&quot;]"
+                      name="&quot;Mandant&quot;"
+                      truncationRowDisposition="FailComponent">
+                      <properties>
+                        <property
+                          dataType="System.Boolean"
+                          description="Zeigt an, ob die Spalte die schnelleren gebietsschemaneutralen Analyseroutinen verwendet."
+                          name="FastParse">false</property>
+                        <property
+                          dataType="System.Boolean"
+                          description="Gibt an, ob die Daten im Binärformat sind."
+                          name="UseBinaryFormat">false</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\txt nach Tabelle\Flatfilequelle.Outputs[Ausgabe der Flatfilequelle].Columns[&quot;Monat&quot;]"
+                      codePage="1252"
+                      dataType="str"
+                      errorOrTruncationOperation="Konvertierung"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\txt nach Tabelle\Flatfilequelle.Outputs[Ausgabe der Flatfilequelle].ExternalColumns[&quot;Monat&quot;]"
+                      length="50"
+                      lineageId="Package\txt nach Tabelle\Flatfilequelle.Outputs[Ausgabe der Flatfilequelle].Columns[&quot;Monat&quot;]"
+                      name="&quot;Monat&quot;"
+                      truncationRowDisposition="FailComponent">
+                      <properties>
+                        <property
+                          dataType="System.Boolean"
+                          description="Zeigt an, ob die Spalte die schnelleren gebietsschemaneutralen Analyseroutinen verwendet."
+                          name="FastParse">false</property>
+                        <property
+                          dataType="System.Boolean"
+                          description="Gibt an, ob die Daten im Binärformat sind."
+                          name="UseBinaryFormat">false</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\txt nach Tabelle\Flatfilequelle.Outputs[Ausgabe der Flatfilequelle].Columns[&quot;Jahr&quot;]"
+                      codePage="1252"
+                      dataType="str"
+                      errorOrTruncationOperation="Konvertierung"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\txt nach Tabelle\Flatfilequelle.Outputs[Ausgabe der Flatfilequelle].ExternalColumns[&quot;Jahr&quot;]"
+                      length="50"
+                      lineageId="Package\txt nach Tabelle\Flatfilequelle.Outputs[Ausgabe der Flatfilequelle].Columns[&quot;Jahr&quot;]"
+                      name="&quot;Jahr&quot;"
+                      truncationRowDisposition="FailComponent">
+                      <properties>
+                        <property
+                          dataType="System.Boolean"
+                          description="Zeigt an, ob die Spalte die schnelleren gebietsschemaneutralen Analyseroutinen verwendet."
+                          name="FastParse">false</property>
+                        <property
+                          dataType="System.Boolean"
+                          description="Gibt an, ob die Daten im Binärformat sind."
+                          name="UseBinaryFormat">false</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\txt nach Tabelle\Flatfilequelle.Outputs[Ausgabe der Flatfilequelle].Columns[&quot;PersonalNr&quot;]"
+                      codePage="1252"
+                      dataType="str"
+                      errorOrTruncationOperation="Konvertierung"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\txt nach Tabelle\Flatfilequelle.Outputs[Ausgabe der Flatfilequelle].ExternalColumns[&quot;PersonalNr&quot;]"
+                      length="50"
+                      lineageId="Package\txt nach Tabelle\Flatfilequelle.Outputs[Ausgabe der Flatfilequelle].Columns[&quot;PersonalNr&quot;]"
+                      name="&quot;PersonalNr&quot;"
+                      truncationRowDisposition="FailComponent">
+                      <properties>
+                        <property
+                          dataType="System.Boolean"
+                          description="Zeigt an, ob die Spalte die schnelleren gebietsschemaneutralen Analyseroutinen verwendet."
+                          name="FastParse">false</property>
+                        <property
+                          dataType="System.Boolean"
+                          description="Gibt an, ob die Daten im Binärformat sind."
+                          name="UseBinaryFormat">false</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\txt nach Tabelle\Flatfilequelle.Outputs[Ausgabe der Flatfilequelle].Columns[&quot;Lohnart&quot;]"
+                      codePage="1252"
+                      dataType="str"
+                      errorOrTruncationOperation="Konvertierung"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\txt nach Tabelle\Flatfilequelle.Outputs[Ausgabe der Flatfilequelle].ExternalColumns[&quot;Lohnart&quot;]"
+                      length="50"
+                      lineageId="Package\txt nach Tabelle\Flatfilequelle.Outputs[Ausgabe der Flatfilequelle].Columns[&quot;Lohnart&quot;]"
+                      name="&quot;Lohnart&quot;"
+                      truncationRowDisposition="FailComponent">
+                      <properties>
+                        <property
+                          dataType="System.Boolean"
+                          description="Zeigt an, ob die Spalte die schnelleren gebietsschemaneutralen Analyseroutinen verwendet."
+                          name="FastParse">false</property>
+                        <property
+                          dataType="System.Boolean"
+                          description="Gibt an, ob die Daten im Binärformat sind."
+                          name="UseBinaryFormat">false</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\txt nach Tabelle\Flatfilequelle.Outputs[Ausgabe der Flatfilequelle].Columns[&quot;Datum&quot;]"
+                      codePage="1252"
+                      dataType="str"
+                      errorOrTruncationOperation="Konvertierung"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\txt nach Tabelle\Flatfilequelle.Outputs[Ausgabe der Flatfilequelle].ExternalColumns[&quot;Datum&quot;]"
+                      length="50"
+                      lineageId="Package\txt nach Tabelle\Flatfilequelle.Outputs[Ausgabe der Flatfilequelle].Columns[&quot;Datum&quot;]"
+                      name="&quot;Datum&quot;"
+                      truncationRowDisposition="FailComponent">
+                      <properties>
+                        <property
+                          dataType="System.Boolean"
+                          description="Zeigt an, ob die Spalte die schnelleren gebietsschemaneutralen Analyseroutinen verwendet."
+                          name="FastParse">false</property>
+                        <property
+                          dataType="System.Boolean"
+                          description="Gibt an, ob die Daten im Binärformat sind."
+                          name="UseBinaryFormat">false</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\txt nach Tabelle\Flatfilequelle.Outputs[Ausgabe der Flatfilequelle].Columns[&quot;Kostemstelle&quot;]"
+                      codePage="1252"
+                      dataType="str"
+                      errorOrTruncationOperation="Konvertierung"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\txt nach Tabelle\Flatfilequelle.Outputs[Ausgabe der Flatfilequelle].ExternalColumns[&quot;Kostemstelle&quot;]"
+                      length="50"
+                      lineageId="Package\txt nach Tabelle\Flatfilequelle.Outputs[Ausgabe der Flatfilequelle].Columns[&quot;Kostemstelle&quot;]"
+                      name="&quot;Kostemstelle&quot;"
+                      truncationRowDisposition="FailComponent">
+                      <properties>
+                        <property
+                          dataType="System.Boolean"
+                          description="Zeigt an, ob die Spalte die schnelleren gebietsschemaneutralen Analyseroutinen verwendet."
+                          name="FastParse">false</property>
+                        <property
+                          dataType="System.Boolean"
+                          description="Gibt an, ob die Daten im Binärformat sind."
+                          name="UseBinaryFormat">false</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\txt nach Tabelle\Flatfilequelle.Outputs[Ausgabe der Flatfilequelle].Columns[&quot;Kostenträger&quot;]"
+                      codePage="1252"
+                      dataType="str"
+                      errorOrTruncationOperation="Konvertierung"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\txt nach Tabelle\Flatfilequelle.Outputs[Ausgabe der Flatfilequelle].ExternalColumns[&quot;Kostenträger&quot;]"
+                      length="50"
+                      lineageId="Package\txt nach Tabelle\Flatfilequelle.Outputs[Ausgabe der Flatfilequelle].Columns[&quot;Kostenträger&quot;]"
+                      name="&quot;Kostenträger&quot;"
+                      truncationRowDisposition="FailComponent">
+                      <properties>
+                        <property
+                          dataType="System.Boolean"
+                          description="Zeigt an, ob die Spalte die schnelleren gebietsschemaneutralen Analyseroutinen verwendet."
+                          name="FastParse">false</property>
+                        <property
+                          dataType="System.Boolean"
+                          description="Gibt an, ob die Daten im Binärformat sind."
+                          name="UseBinaryFormat">false</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\txt nach Tabelle\Flatfilequelle.Outputs[Ausgabe der Flatfilequelle].Columns[&quot;Arbeitsart&quot;]"
+                      codePage="1252"
+                      dataType="str"
+                      errorOrTruncationOperation="Konvertierung"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\txt nach Tabelle\Flatfilequelle.Outputs[Ausgabe der Flatfilequelle].ExternalColumns[&quot;Arbeitsart&quot;]"
+                      length="50"
+                      lineageId="Package\txt nach Tabelle\Flatfilequelle.Outputs[Ausgabe der Flatfilequelle].Columns[&quot;Arbeitsart&quot;]"
+                      name="&quot;Arbeitsart&quot;"
+                      truncationRowDisposition="FailComponent">
+                      <properties>
+                        <property
+                          dataType="System.Boolean"
+                          description="Zeigt an, ob die Spalte die schnelleren gebietsschemaneutralen Analyseroutinen verwendet."
+                          name="FastParse">false</property>
+                        <property
+                          dataType="System.Boolean"
+                          description="Gibt an, ob die Daten im Binärformat sind."
+                          name="UseBinaryFormat">false</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\txt nach Tabelle\Flatfilequelle.Outputs[Ausgabe der Flatfilequelle].Columns[&quot;Anzahl&quot;]"
+                      codePage="1252"
+                      dataType="str"
+                      errorOrTruncationOperation="Konvertierung"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\txt nach Tabelle\Flatfilequelle.Outputs[Ausgabe der Flatfilequelle].ExternalColumns[&quot;Anzahl&quot;]"
+                      length="50"
+                      lineageId="Package\txt nach Tabelle\Flatfilequelle.Outputs[Ausgabe der Flatfilequelle].Columns[&quot;Anzahl&quot;]"
+                      name="&quot;Anzahl&quot;"
+                      truncationRowDisposition="FailComponent">
+                      <properties>
+                        <property
+                          dataType="System.Boolean"
+                          description="Zeigt an, ob die Spalte die schnelleren gebietsschemaneutralen Analyseroutinen verwendet."
+                          name="FastParse">false</property>
+                        <property
+                          dataType="System.Boolean"
+                          description="Gibt an, ob die Daten im Binärformat sind."
+                          name="UseBinaryFormat">false</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\txt nach Tabelle\Flatfilequelle.Outputs[Ausgabe der Flatfilequelle].Columns[&quot;Betrag&quot;]"
+                      codePage="1252"
+                      dataType="str"
+                      errorOrTruncationOperation="Konvertierung"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\txt nach Tabelle\Flatfilequelle.Outputs[Ausgabe der Flatfilequelle].ExternalColumns[&quot;Betrag&quot;]"
+                      length="50"
+                      lineageId="Package\txt nach Tabelle\Flatfilequelle.Outputs[Ausgabe der Flatfilequelle].Columns[&quot;Betrag&quot;]"
+                      name="&quot;Betrag&quot;"
+                      truncationRowDisposition="FailComponent">
+                      <properties>
+                        <property
+                          dataType="System.Boolean"
+                          description="Zeigt an, ob die Spalte die schnelleren gebietsschemaneutralen Analyseroutinen verwendet."
+                          name="FastParse">false</property>
+                        <property
+                          dataType="System.Boolean"
+                          description="Gibt an, ob die Daten im Binärformat sind."
+                          name="UseBinaryFormat">false</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\txt nach Tabelle\Flatfilequelle.Outputs[Ausgabe der Flatfilequelle].Columns[&quot;Zuschlag&quot;]"
+                      codePage="1252"
+                      dataType="str"
+                      errorOrTruncationOperation="Konvertierung"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\txt nach Tabelle\Flatfilequelle.Outputs[Ausgabe der Flatfilequelle].ExternalColumns[&quot;Zuschlag&quot;]"
+                      length="50"
+                      lineageId="Package\txt nach Tabelle\Flatfilequelle.Outputs[Ausgabe der Flatfilequelle].Columns[&quot;Zuschlag&quot;]"
+                      name="&quot;Zuschlag&quot;"
+                      truncationRowDisposition="FailComponent">
+                      <properties>
+                        <property
+                          dataType="System.Boolean"
+                          description="Zeigt an, ob die Spalte die schnelleren gebietsschemaneutralen Analyseroutinen verwendet."
+                          name="FastParse">false</property>
+                        <property
+                          dataType="System.Boolean"
+                          description="Gibt an, ob die Daten im Binärformat sind."
+                          name="UseBinaryFormat">false</property>
+                      </properties>
+                    </outputColumn>
+                  </outputColumns>
+                  <externalMetadataColumns
+                    isUsed="True">
+                    <externalMetadataColumn
+                      refId="Package\txt nach Tabelle\Flatfilequelle.Outputs[Ausgabe der Flatfilequelle].ExternalColumns[&quot;Mandant&quot;]"
+                      codePage="1252"
+                      dataType="str"
+                      length="50"
+                      name="&quot;Mandant&quot;" />
+                    <externalMetadataColumn
+                      refId="Package\txt nach Tabelle\Flatfilequelle.Outputs[Ausgabe der Flatfilequelle].ExternalColumns[&quot;Monat&quot;]"
+                      codePage="1252"
+                      dataType="str"
+                      length="50"
+                      name="&quot;Monat&quot;" />
+                    <externalMetadataColumn
+                      refId="Package\txt nach Tabelle\Flatfilequelle.Outputs[Ausgabe der Flatfilequelle].ExternalColumns[&quot;Jahr&quot;]"
+                      codePage="1252"
+                      dataType="str"
+                      length="50"
+                      name="&quot;Jahr&quot;" />
+                    <externalMetadataColumn
+                      refId="Package\txt nach Tabelle\Flatfilequelle.Outputs[Ausgabe der Flatfilequelle].ExternalColumns[&quot;PersonalNr&quot;]"
+                      codePage="1252"
+                      dataType="str"
+                      length="50"
+                      name="&quot;PersonalNr&quot;" />
+                    <externalMetadataColumn
+                      refId="Package\txt nach Tabelle\Flatfilequelle.Outputs[Ausgabe der Flatfilequelle].ExternalColumns[&quot;Lohnart&quot;]"
+                      codePage="1252"
+                      dataType="str"
+                      length="50"
+                      name="&quot;Lohnart&quot;" />
+                    <externalMetadataColumn
+                      refId="Package\txt nach Tabelle\Flatfilequelle.Outputs[Ausgabe der Flatfilequelle].ExternalColumns[&quot;Datum&quot;]"
+                      codePage="1252"
+                      dataType="str"
+                      length="50"
+                      name="&quot;Datum&quot;" />
+                    <externalMetadataColumn
+                      refId="Package\txt nach Tabelle\Flatfilequelle.Outputs[Ausgabe der Flatfilequelle].ExternalColumns[&quot;Kostemstelle&quot;]"
+                      codePage="1252"
+                      dataType="str"
+                      length="50"
+                      name="&quot;Kostemstelle&quot;" />
+                    <externalMetadataColumn
+                      refId="Package\txt nach Tabelle\Flatfilequelle.Outputs[Ausgabe der Flatfilequelle].ExternalColumns[&quot;Kostenträger&quot;]"
+                      codePage="1252"
+                      dataType="str"
+                      length="50"
+                      name="&quot;Kostenträger&quot;" />
+                    <externalMetadataColumn
+                      refId="Package\txt nach Tabelle\Flatfilequelle.Outputs[Ausgabe der Flatfilequelle].ExternalColumns[&quot;Arbeitsart&quot;]"
+                      codePage="1252"
+                      dataType="str"
+                      length="50"
+                      name="&quot;Arbeitsart&quot;" />
+                    <externalMetadataColumn
+                      refId="Package\txt nach Tabelle\Flatfilequelle.Outputs[Ausgabe der Flatfilequelle].ExternalColumns[&quot;Anzahl&quot;]"
+                      codePage="1252"
+                      dataType="str"
+                      length="50"
+                      name="&quot;Anzahl&quot;" />
+                    <externalMetadataColumn
+                      refId="Package\txt nach Tabelle\Flatfilequelle.Outputs[Ausgabe der Flatfilequelle].ExternalColumns[&quot;Betrag&quot;]"
+                      codePage="1252"
+                      dataType="str"
+                      length="50"
+                      name="&quot;Betrag&quot;" />
+                    <externalMetadataColumn
+                      refId="Package\txt nach Tabelle\Flatfilequelle.Outputs[Ausgabe der Flatfilequelle].ExternalColumns[&quot;Zuschlag&quot;]"
+                      codePage="1252"
+                      dataType="str"
+                      length="50"
+                      name="&quot;Zuschlag&quot;" />
+                  </externalMetadataColumns>
+                </output>
+                <output
+                  refId="Package\txt nach Tabelle\Flatfilequelle.Outputs[Fehlerausgabe der Flatfilequelle]"
+                  isErrorOut="true"
+                  name="Fehlerausgabe der Flatfilequelle">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\txt nach Tabelle\Flatfilequelle.Outputs[Fehlerausgabe der Flatfilequelle].Columns[Fehlerausgabespalte der Flatfilequelle]"
+                      codePage="1252"
+                      dataType="text"
+                      description="Fehlerausgabespalte der Flatfilequelle"
+                      lineageId="Package\txt nach Tabelle\Flatfilequelle.Outputs[Fehlerausgabe der Flatfilequelle].Columns[Fehlerausgabespalte der Flatfilequelle]"
+                      name="Fehlerausgabespalte der Flatfilequelle" />
+                    <outputColumn
+                      refId="Package\txt nach Tabelle\Flatfilequelle.Outputs[Fehlerausgabe der Flatfilequelle].Columns[ErrorCode]"
+                      dataType="i4"
+                      lineageId="Package\txt nach Tabelle\Flatfilequelle.Outputs[Fehlerausgabe der Flatfilequelle].Columns[ErrorCode]"
+                      name="ErrorCode"
+                      specialFlags="1" />
+                    <outputColumn
+                      refId="Package\txt nach Tabelle\Flatfilequelle.Outputs[Fehlerausgabe der Flatfilequelle].Columns[ErrorColumn]"
+                      dataType="i4"
+                      lineageId="Package\txt nach Tabelle\Flatfilequelle.Outputs[Fehlerausgabe der Flatfilequelle].Columns[ErrorColumn]"
+                      name="ErrorColumn"
+                      specialFlags="2" />
+                  </outputColumns>
+                  <externalMetadataColumns />
+                </output>
+              </outputs>
+            </component>
+            <component
+              refId="Package\txt nach Tabelle\OLE DB-Ziel"
+              componentClassID="Microsoft.OLEDBDestination"
+              contactInfo="OLE DB-Ziel;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; Alle Rechte vorbehalten; http://www.microsoft.com/sql/support;4"
+              description="OLE DB-Ziel"
+              name="OLE DB-Ziel"
+              usesDispositions="true"
+              version="4">
+              <properties>
+                <property
+                  dataType="System.Int32"
+                  description="Die Anzahl der Sekunden für das Timeout eines Befehls. Der Wert &quot;0&quot; zeigt einen unendlichen Timeoutwert an."
+                  name="CommandTimeout">0</property>
+                <property
+                  dataType="System.String"
+                  description="Gibt den Namen des zum Öffnen eines Rowsets verwendeten Datenbankobjekts an."
+                  name="OpenRowset">[Egecko_Import_JJK]</property>
+                <property
+                  dataType="System.String"
+                  description="Gibt die Variable an, die den Namen des zum Öffnen eines Rowsets verwendeten Datenbankobjekts enthält."
+                  name="OpenRowsetVariable"></property>
+                <property
+                  dataType="System.String"
+                  description="Der auszuführende SQL-Befehl."
+                  name="SqlCommand"
+                  UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor, Microsoft.DataTransformationServices.Controls, Version=15.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91"></property>
+                <property
+                  dataType="System.Int32"
+                  description="Gibt die zu verwendende Spaltencodepage an, wenn keine Codepageinformationen von der Datenquelle verfügbar sind."
+                  name="DefaultCodePage">1252</property>
+                <property
+                  dataType="System.Boolean"
+                  description="Erzwingt die Verwendung des DefaultCodePage-Eigenschaftswerts beim Beschreiben von Zeichendaten."
+                  name="AlwaysUseDefaultCodePage">false</property>
+                <property
+                  dataType="System.Int32"
+                  description="Gibt den zum Zugreifen auf die Datenbank verwendeten Modus an."
+                  name="AccessMode"
+                  typeConverter="AccessMode">3</property>
+                <property
+                  dataType="System.Boolean"
+                  description="Zeigt an, ob die für Identitätsspalten übergebenen Werte zum Ziel kopiert werden. Bei &quot;False&quot; werden die Werte für Identitätsspalten am Ziel automatisch generiert. Trifft nur zu, wenn die Option &quot;Schnelles Laden&quot; aktiviert ist."
+                  name="FastLoadKeepIdentity">true</property>
+                <property
+                  dataType="System.Boolean"
+                  description="Zeigt an, ob für Spalten, die NULL enthalten, NULL am Ziel eingefügt wird. Bei &quot;False&quot; werden für Spalten, die NULL enthalten, am Ziel die Standardwerte eingefügt. Trifft nur zu, wenn die Option &quot;Schnelles Laden&quot; aktiviert ist."
+                  name="FastLoadKeepNulls">true</property>
+                <property
+                  dataType="System.String"
+                  description="Gibt die für die Option &quot;Schnelles Laden&quot; zu verwendenden Optionen an. Trifft nur zu, wenn die Option &quot;Schnelles Laden&quot; aktiviert ist."
+                  name="FastLoadOptions">TABLOCK,CHECK_CONSTRAINTS</property>
+                <property
+                  dataType="System.Int32"
+                  description="Gibt an, wann beim Einfügen von Daten Commits ausgegeben werden. Der Wert &quot;0&quot; gibt an, dass ein Commit am Ende des Einfügens von Daten ausgegeben wird. Trifft nur zu, wenn die Option &quot;Schnelles Laden&quot; aktiviert ist."
+                  name="FastLoadMaxInsertCommitSize">2147483647</property>
+              </properties>
+              <connections>
+                <connection
+                  refId="Package\txt nach Tabelle\OLE DB-Ziel.Connections[OleDbConnection]"
+                  connectionManagerID="{4ADACE00-0DAE-4573-9D92-4A105A6295AC}:external"
+                  connectionManagerRefId="Project.ConnectionManagers[sql2-sql1.HStSSiS.sa]"
+                  description="Die für den Zugriff auf die Datenbank verwendete OLE DB-Laufzeitverbindung."
+                  name="OleDbConnection" />
+              </connections>
+              <inputs>
+                <input
+                  refId="Package\txt nach Tabelle\OLE DB-Ziel.Inputs[Eingabe des OLE DB-Ziels]"
+                  errorOrTruncationOperation="Einfügen"
+                  errorRowDisposition="FailComponent"
+                  hasSideEffects="true"
+                  name="Eingabe des OLE DB-Ziels">
+                  <inputColumns>
+                    <inputColumn
+                      refId="Package\txt nach Tabelle\OLE DB-Ziel.Inputs[Eingabe des OLE DB-Ziels].Columns[&quot;Mandant&quot;]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="50"
+                      cachedName="&quot;Mandant&quot;"
+                      externalMetadataColumnId="Package\txt nach Tabelle\OLE DB-Ziel.Inputs[Eingabe des OLE DB-Ziels].ExternalColumns[&quot;Mandant&quot;]"
+                      lineageId="Package\txt nach Tabelle\Flatfilequelle.Outputs[Ausgabe der Flatfilequelle].Columns[&quot;Mandant&quot;]" />
+                    <inputColumn
+                      refId="Package\txt nach Tabelle\OLE DB-Ziel.Inputs[Eingabe des OLE DB-Ziels].Columns[&quot;Monat&quot;]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="50"
+                      cachedName="&quot;Monat&quot;"
+                      externalMetadataColumnId="Package\txt nach Tabelle\OLE DB-Ziel.Inputs[Eingabe des OLE DB-Ziels].ExternalColumns[&quot;Monat&quot;]"
+                      lineageId="Package\txt nach Tabelle\Flatfilequelle.Outputs[Ausgabe der Flatfilequelle].Columns[&quot;Monat&quot;]" />
+                    <inputColumn
+                      refId="Package\txt nach Tabelle\OLE DB-Ziel.Inputs[Eingabe des OLE DB-Ziels].Columns[&quot;Jahr&quot;]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="50"
+                      cachedName="&quot;Jahr&quot;"
+                      externalMetadataColumnId="Package\txt nach Tabelle\OLE DB-Ziel.Inputs[Eingabe des OLE DB-Ziels].ExternalColumns[&quot;Jahr&quot;]"
+                      lineageId="Package\txt nach Tabelle\Flatfilequelle.Outputs[Ausgabe der Flatfilequelle].Columns[&quot;Jahr&quot;]" />
+                    <inputColumn
+                      refId="Package\txt nach Tabelle\OLE DB-Ziel.Inputs[Eingabe des OLE DB-Ziels].Columns[&quot;PersonalNr&quot;]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="50"
+                      cachedName="&quot;PersonalNr&quot;"
+                      externalMetadataColumnId="Package\txt nach Tabelle\OLE DB-Ziel.Inputs[Eingabe des OLE DB-Ziels].ExternalColumns[&quot;PersonalNr&quot;]"
+                      lineageId="Package\txt nach Tabelle\Flatfilequelle.Outputs[Ausgabe der Flatfilequelle].Columns[&quot;PersonalNr&quot;]" />
+                    <inputColumn
+                      refId="Package\txt nach Tabelle\OLE DB-Ziel.Inputs[Eingabe des OLE DB-Ziels].Columns[&quot;Lohnart&quot;]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="50"
+                      cachedName="&quot;Lohnart&quot;"
+                      externalMetadataColumnId="Package\txt nach Tabelle\OLE DB-Ziel.Inputs[Eingabe des OLE DB-Ziels].ExternalColumns[&quot;Lohnart&quot;]"
+                      lineageId="Package\txt nach Tabelle\Flatfilequelle.Outputs[Ausgabe der Flatfilequelle].Columns[&quot;Lohnart&quot;]" />
+                    <inputColumn
+                      refId="Package\txt nach Tabelle\OLE DB-Ziel.Inputs[Eingabe des OLE DB-Ziels].Columns[&quot;Datum&quot;]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="50"
+                      cachedName="&quot;Datum&quot;"
+                      externalMetadataColumnId="Package\txt nach Tabelle\OLE DB-Ziel.Inputs[Eingabe des OLE DB-Ziels].ExternalColumns[&quot;Datum&quot;]"
+                      lineageId="Package\txt nach Tabelle\Flatfilequelle.Outputs[Ausgabe der Flatfilequelle].Columns[&quot;Datum&quot;]" />
+                    <inputColumn
+                      refId="Package\txt nach Tabelle\OLE DB-Ziel.Inputs[Eingabe des OLE DB-Ziels].Columns[&quot;Kostemstelle&quot;]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="50"
+                      cachedName="&quot;Kostemstelle&quot;"
+                      externalMetadataColumnId="Package\txt nach Tabelle\OLE DB-Ziel.Inputs[Eingabe des OLE DB-Ziels].ExternalColumns[&quot;Kostemstelle&quot;]"
+                      lineageId="Package\txt nach Tabelle\Flatfilequelle.Outputs[Ausgabe der Flatfilequelle].Columns[&quot;Kostemstelle&quot;]" />
+                    <inputColumn
+                      refId="Package\txt nach Tabelle\OLE DB-Ziel.Inputs[Eingabe des OLE DB-Ziels].Columns[&quot;Kostenträger&quot;]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="50"
+                      cachedName="&quot;Kostenträger&quot;"
+                      externalMetadataColumnId="Package\txt nach Tabelle\OLE DB-Ziel.Inputs[Eingabe des OLE DB-Ziels].ExternalColumns[&quot;Kostenträger&quot;]"
+                      lineageId="Package\txt nach Tabelle\Flatfilequelle.Outputs[Ausgabe der Flatfilequelle].Columns[&quot;Kostenträger&quot;]" />
+                    <inputColumn
+                      refId="Package\txt nach Tabelle\OLE DB-Ziel.Inputs[Eingabe des OLE DB-Ziels].Columns[&quot;Arbeitsart&quot;]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="50"
+                      cachedName="&quot;Arbeitsart&quot;"
+                      externalMetadataColumnId="Package\txt nach Tabelle\OLE DB-Ziel.Inputs[Eingabe des OLE DB-Ziels].ExternalColumns[&quot;Arbeitsart&quot;]"
+                      lineageId="Package\txt nach Tabelle\Flatfilequelle.Outputs[Ausgabe der Flatfilequelle].Columns[&quot;Arbeitsart&quot;]" />
+                    <inputColumn
+                      refId="Package\txt nach Tabelle\OLE DB-Ziel.Inputs[Eingabe des OLE DB-Ziels].Columns[&quot;Anzahl&quot;]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="50"
+                      cachedName="&quot;Anzahl&quot;"
+                      externalMetadataColumnId="Package\txt nach Tabelle\OLE DB-Ziel.Inputs[Eingabe des OLE DB-Ziels].ExternalColumns[&quot;Anzahl&quot;]"
+                      lineageId="Package\txt nach Tabelle\Flatfilequelle.Outputs[Ausgabe der Flatfilequelle].Columns[&quot;Anzahl&quot;]" />
+                    <inputColumn
+                      refId="Package\txt nach Tabelle\OLE DB-Ziel.Inputs[Eingabe des OLE DB-Ziels].Columns[&quot;Betrag&quot;]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="50"
+                      cachedName="&quot;Betrag&quot;"
+                      externalMetadataColumnId="Package\txt nach Tabelle\OLE DB-Ziel.Inputs[Eingabe des OLE DB-Ziels].ExternalColumns[&quot;Betrag&quot;]"
+                      lineageId="Package\txt nach Tabelle\Flatfilequelle.Outputs[Ausgabe der Flatfilequelle].Columns[&quot;Betrag&quot;]" />
+                    <inputColumn
+                      refId="Package\txt nach Tabelle\OLE DB-Ziel.Inputs[Eingabe des OLE DB-Ziels].Columns[&quot;Zuschlag&quot;]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="50"
+                      cachedName="&quot;Zuschlag&quot;"
+                      externalMetadataColumnId="Package\txt nach Tabelle\OLE DB-Ziel.Inputs[Eingabe des OLE DB-Ziels].ExternalColumns[&quot;Zuschlag&quot;]"
+                      lineageId="Package\txt nach Tabelle\Flatfilequelle.Outputs[Ausgabe der Flatfilequelle].Columns[&quot;Zuschlag&quot;]" />
+                  </inputColumns>
+                  <externalMetadataColumns
+                    isUsed="True">
+                    <externalMetadataColumn
+                      refId="Package\txt nach Tabelle\OLE DB-Ziel.Inputs[Eingabe des OLE DB-Ziels].ExternalColumns[&quot;Mandant&quot;]"
+                      codePage="1252"
+                      dataType="str"
+                      length="50"
+                      name="&quot;Mandant&quot;" />
+                    <externalMetadataColumn
+                      refId="Package\txt nach Tabelle\OLE DB-Ziel.Inputs[Eingabe des OLE DB-Ziels].ExternalColumns[&quot;Monat&quot;]"
+                      codePage="1252"
+                      dataType="str"
+                      length="50"
+                      name="&quot;Monat&quot;" />
+                    <externalMetadataColumn
+                      refId="Package\txt nach Tabelle\OLE DB-Ziel.Inputs[Eingabe des OLE DB-Ziels].ExternalColumns[&quot;Jahr&quot;]"
+                      codePage="1252"
+                      dataType="str"
+                      length="50"
+                      name="&quot;Jahr&quot;" />
+                    <externalMetadataColumn
+                      refId="Package\txt nach Tabelle\OLE DB-Ziel.Inputs[Eingabe des OLE DB-Ziels].ExternalColumns[&quot;PersonalNr&quot;]"
+                      codePage="1252"
+                      dataType="str"
+                      length="50"
+                      name="&quot;PersonalNr&quot;" />
+                    <externalMetadataColumn
+                      refId="Package\txt nach Tabelle\OLE DB-Ziel.Inputs[Eingabe des OLE DB-Ziels].ExternalColumns[&quot;Lohnart&quot;]"
+                      codePage="1252"
+                      dataType="str"
+                      length="50"
+                      name="&quot;Lohnart&quot;" />
+                    <externalMetadataColumn
+                      refId="Package\txt nach Tabelle\OLE DB-Ziel.Inputs[Eingabe des OLE DB-Ziels].ExternalColumns[&quot;Datum&quot;]"
+                      codePage="1252"
+                      dataType="str"
+                      length="50"
+                      name="&quot;Datum&quot;" />
+                    <externalMetadataColumn
+                      refId="Package\txt nach Tabelle\OLE DB-Ziel.Inputs[Eingabe des OLE DB-Ziels].ExternalColumns[&quot;Kostemstelle&quot;]"
+                      codePage="1252"
+                      dataType="str"
+                      length="50"
+                      name="&quot;Kostemstelle&quot;" />
+                    <externalMetadataColumn
+                      refId="Package\txt nach Tabelle\OLE DB-Ziel.Inputs[Eingabe des OLE DB-Ziels].ExternalColumns[&quot;Kostenträger&quot;]"
+                      codePage="1252"
+                      dataType="str"
+                      length="50"
+                      name="&quot;Kostenträger&quot;" />
+                    <externalMetadataColumn
+                      refId="Package\txt nach Tabelle\OLE DB-Ziel.Inputs[Eingabe des OLE DB-Ziels].ExternalColumns[&quot;Arbeitsart&quot;]"
+                      codePage="1252"
+                      dataType="str"
+                      length="50"
+                      name="&quot;Arbeitsart&quot;" />
+                    <externalMetadataColumn
+                      refId="Package\txt nach Tabelle\OLE DB-Ziel.Inputs[Eingabe des OLE DB-Ziels].ExternalColumns[&quot;Anzahl&quot;]"
+                      codePage="1252"
+                      dataType="str"
+                      length="50"
+                      name="&quot;Anzahl&quot;" />
+                    <externalMetadataColumn
+                      refId="Package\txt nach Tabelle\OLE DB-Ziel.Inputs[Eingabe des OLE DB-Ziels].ExternalColumns[&quot;Betrag&quot;]"
+                      codePage="1252"
+                      dataType="str"
+                      length="50"
+                      name="&quot;Betrag&quot;" />
+                    <externalMetadataColumn
+                      refId="Package\txt nach Tabelle\OLE DB-Ziel.Inputs[Eingabe des OLE DB-Ziels].ExternalColumns[&quot;Zuschlag&quot;]"
+                      codePage="1252"
+                      dataType="str"
+                      length="50"
+                      name="&quot;Zuschlag&quot;" />
+                  </externalMetadataColumns>
+                </input>
+              </inputs>
+              <outputs>
+                <output
+                  refId="Package\txt nach Tabelle\OLE DB-Ziel.Outputs[Fehlerausgabe des OLE DB-Ziels]"
+                  exclusionGroup="1"
+                  isErrorOut="true"
+                  name="Fehlerausgabe des OLE DB-Ziels"
+                  synchronousInputId="Package\txt nach Tabelle\OLE DB-Ziel.Inputs[Eingabe des OLE DB-Ziels]">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\txt nach Tabelle\OLE DB-Ziel.Outputs[Fehlerausgabe des OLE DB-Ziels].Columns[ErrorCode]"
+                      dataType="i4"
+                      lineageId="Package\txt nach Tabelle\OLE DB-Ziel.Outputs[Fehlerausgabe des OLE DB-Ziels].Columns[ErrorCode]"
+                      name="ErrorCode"
+                      specialFlags="1" />
+                    <outputColumn
+                      refId="Package\txt nach Tabelle\OLE DB-Ziel.Outputs[Fehlerausgabe des OLE DB-Ziels].Columns[ErrorColumn]"
+                      dataType="i4"
+                      lineageId="Package\txt nach Tabelle\OLE DB-Ziel.Outputs[Fehlerausgabe des OLE DB-Ziels].Columns[ErrorColumn]"
+                      name="ErrorColumn"
+                      specialFlags="2" />
+                  </outputColumns>
+                  <externalMetadataColumns />
+                </output>
+              </outputs>
+            </component>
+          </components>
+          <paths>
+            <path
+              refId="Package\txt nach Tabelle.Paths[Ausgabe der Flatfilequelle]"
+              endId="Package\txt nach Tabelle\OLE DB-Ziel.Inputs[Eingabe des OLE DB-Ziels]"
+              name="Ausgabe der Flatfilequelle"
+              startId="Package\txt nach Tabelle\Flatfilequelle.Outputs[Ausgabe der Flatfilequelle]" />
+          </paths>
+        </pipeline>
+      </DTS:ObjectData>
+    </DTS:Executable>
+    <DTS:Executable
+      DTS:refId="Package\Verschieben nach save_egecko"
+      DTS:CreationName="Microsoft.FileSystemTask"
+      DTS:Description="Task &quot;Dateisystem&quot;"
+      DTS:DTSID="{48DCF98A-63B7-4D6D-965C-EF78DAA6E528}"
+      DTS:ExecutableType="Microsoft.FileSystemTask"
+      DTS:LocaleID="-1"
+      DTS:ObjectName="Verschieben nach save_egecko"
+      DTS:TaskContact="File System Task;Microsoft Corporation; SQL Server 2017; © 2017 Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1"
+      DTS:ThreadHint="0">
+      <DTS:Variables />
+      <DTS:ObjectData>
+        <FileSystemData
+          TaskOperationType="MoveFile"
+          TaskOverwriteDestFile="True"
+          TaskSourcePath="User::JJK_Neueste_Datei_kopieren"
+          TaskIsSourceVariable="True"
+          TaskDestinationPath="User::JJK_verschieben"
+          TaskIsDestinationVariable="True" />
+      </DTS:ObjectData>
+    </DTS:Executable>
+  </DTS:Executables>
+  <DTS:PrecedenceConstraints>
+    <DTS:PrecedenceConstraint
+      DTS:refId="Package.PrecedenceConstraints[Einschränkung]"
+      DTS:CreationName=""
+      DTS:DTSID="{D63F3D40-8867-4862-BBA2-AEE462DF9494}"
+      DTS:From="Package\Foreach-Schleifencontainer"
+      DTS:LogicalAnd="True"
+      DTS:ObjectName="Einschränkung"
+      DTS:To="Package\Verschieben nach save_egecko" />
+    <DTS:PrecedenceConstraint
+      DTS:refId="Package.PrecedenceConstraints[Einschränkung 1]"
+      DTS:CreationName=""
+      DTS:DTSID="{7481040E-51DD-49DD-A85A-55F240EB74E5}"
+      DTS:From="Package\Datei nach Bearbeitung"
+      DTS:LogicalAnd="True"
+      DTS:ObjectName="Einschränkung 1"
+      DTS:To="Package\Ende"
+      DTS:Value="1" />
+    <DTS:PrecedenceConstraint
+      DTS:refId="Package.PrecedenceConstraints[Einschränkung 10]"
+      DTS:CreationName=""
+      DTS:DTSID="{20f54f0c-95f5-40b6-8e1b-cf61ccfe09d7}"
+      DTS:From="Package\PROCEDURE Import_Zustellerdaten_JJK"
+      DTS:LogicalAnd="True"
+      DTS:ObjectName="Einschränkung 10"
+      DTS:To="Package\Tabelle nach csv" />
+    <DTS:PrecedenceConstraint
+      DTS:refId="Package.PrecedenceConstraints[Einschränkung 11]"
+      DTS:CreationName=""
+      DTS:DTSID="{27062508-a658-4aed-bf2a-0153c3600ba3}"
+      DTS:From="Package\Tabelle nach csv"
+      DTS:LogicalAnd="True"
+      DTS:ObjectName="Einschränkung 11"
+      DTS:To="Package\Foreach-Schleifencontainer" />
+    <DTS:PrecedenceConstraint
+      DTS:refId="Package.PrecedenceConstraints[Einschränkung 2]"
+      DTS:CreationName=""
+      DTS:DTSID="{ecb554cb-c699-4818-8111-0744cc4349da}"
+      DTS:From="Package\Datei nach Bearbeitung"
+      DTS:LogicalAnd="True"
+      DTS:ObjectName="Einschränkung 2"
+      DTS:To="Package\Datei umbenennen" />
+    <DTS:PrecedenceConstraint
+      DTS:refId="Package.PrecedenceConstraints[Einschränkung 4]"
+      DTS:CreationName=""
+      DTS:DTSID="{5d0c1cac-7f43-48bc-91ee-56a5659debeb}"
+      DTS:From="Package\Datei umbenennen"
+      DTS:LogicalAnd="True"
+      DTS:ObjectName="Einschränkung 4"
+      DTS:To="Package\truncate table Egecko_Import_JJK" />
+    <DTS:PrecedenceConstraint
+      DTS:refId="Package.PrecedenceConstraints[Einschränkung 5]"
+      DTS:CreationName=""
+      DTS:DTSID="{e05413f4-0492-4522-889f-f4f3eb8d4503}"
+      DTS:From="Package\truncate table Egecko_Import_JJK"
+      DTS:LogicalAnd="True"
+      DTS:ObjectName="Einschränkung 5"
+      DTS:To="Package\truncate table Egecko_Export_JJK" />
+    <DTS:PrecedenceConstraint
+      DTS:refId="Package.PrecedenceConstraints[Einschränkung 6]"
+      DTS:CreationName=""
+      DTS:DTSID="{0c08898c-e87e-44fc-8116-fd17ef8f661c}"
+      DTS:From="Package\truncate table Egecko_Export_JJK"
+      DTS:LogicalAnd="True"
+      DTS:ObjectName="Einschränkung 6"
+      DTS:To="Package\txt nach Tabelle" />
+    <DTS:PrecedenceConstraint
+      DTS:refId="Package.PrecedenceConstraints[Einschränkung 7]"
+      DTS:CreationName=""
+      DTS:DTSID="{dbd27528-b38d-4f68-98be-2cc8075fdebf}"
+      DTS:From="Package\txt nach Tabelle"
+      DTS:LogicalAnd="True"
+      DTS:ObjectName="Einschränkung 7"
+      DTS:To="Package\PROCEDURE Import_Zustellerdaten_JJK" />
+  </DTS:PrecedenceConstraints>
+  <DTS:DesignTimeProperties><![CDATA[<?xml version="1.0"?>
+<!--Dieser CDATA-Abschnitt enthält die Layoutinformationen des Pakets, z.B. Informationen wie X-/Y-Koordinaten, Breite und Höhe.-->
+<!--Wenn Sie diesen Abschnitt manuell ändern und Ihnen ein Fehler unterläuft, können Sie ihn löschen. -->
+<!--Das Paket kann zwar weiterhin normal geladen werden, aber frühere Layoutinformationen gehen verloren, und die Elemente auf der Entwurfsoberfläche werden vom Designer automatisch neu angeordnet.-->
+<Objects
+  Version="8">
+  <!--Jeder darunter liegende Knoten enthält Eigenschaften, die sich nicht auf das Laufzeitverhalten auswirken.-->
+  <Package
+    design-time-name="Package">
+    <LayoutInfo>
+      <GraphLayout
+        Capacity="32" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml" xmlns:mssgm="clr-namespace:Microsoft.SqlServer.Graph.Model;assembly=Microsoft.SqlServer.Graph">
+        <NodeLayout
+          Size="189,42"
+          Id="Package\Datei nach Bearbeitung"
+          TopLeft="63.75,57.9166666666667" />
+        <NodeLayout
+          Size="170,42"
+          Id="Package\Datei umbenennen"
+          TopLeft="290.833333333333,65.5" />
+        <NodeLayout
+          Size="102.5,42"
+          Id="Package\Ende"
+          TopLeft="100.833333333333,155" />
+        <NodeLayout
+          Size="147,42"
+          Id="Package\Foreach-Schleifencontainer\Datei kopieren"
+          TopLeft="19.4999999999999,14.4821428571429" />
+        <NodeLayout
+          Size="197.5,42"
+          Id="Package\Foreach-Schleifencontainer\Datei kopieren nach save"
+          TopLeft="194.083333333333,14.1666666666667" />
+        <NodeLayout
+          Size="170,42"
+          Id="Package\Foreach-Schleifencontainer\Datei umbenennen"
+          TopLeft="420.666666666667,12.9821428571429" />
+        <EdgeLayout
+          Id="Package\Foreach-Schleifencontainer.PrecedenceConstraints[Einschränkung]"
+          TopLeft="166.5,35.3244047619048">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="27.5833333333335,0"
+              Start="0,0"
+              End="20.0833333333335,0">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="20.0833333333335,0" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package\Foreach-Schleifencontainer.PrecedenceConstraints[Einschränkung 1]"
+          TopLeft="391.583333333333,34.5744047619048">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="29.0833333333334,0"
+              Start="0,0"
+              End="21.5833333333334,0">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="21.5833333333334,0" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <ContainerLayout
+          HeaderHeight="43"
+          IsExpanded="True"
+          PanelSize="622,73"
+          Size="622,116"
+          Id="Package\Foreach-Schleifencontainer"
+          TopLeft="72.4999999999999,227" />
+        <NodeLayout
+          Size="267,42"
+          Id="Package\PROCEDURE Import_Zustellerdaten_JJK"
+          TopLeft="507.333333333333,135" />
+        <NodeLayout
+          Size="157,42"
+          Id="Package\Tabelle nach csv"
+          TopLeft="300.333333333333,135" />
+        <NodeLayout
+          Size="238.5,42"
+          Id="Package\truncate table Egecko_Export_JJK"
+          TopLeft="791.333333333333,66.125" />
+        <NodeLayout
+          Size="240,42"
+          Id="Package\truncate table Egecko_Import_JJK"
+          TopLeft="503.333333333333,64.5" />
+        <NodeLayout
+          Size="154.5,42"
+          Id="Package\txt nach Tabelle"
+          TopLeft="833.333333333333,135" />
+        <NodeLayout
+          Size="179.5,42"
+          Id="Package\Verschieben nach save_egecko"
+          TopLeft="770.833333333333,264.166666666666" />
+        <EdgeLayout
+          Id="Package.PrecedenceConstraints[Einschränkung]"
+          TopLeft="694.5,285.083333333333">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="76.3333333333335,0"
+              Start="0,0"
+              End="68.8333333333335,0">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="68.8333333333335,0" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package.PrecedenceConstraints[Einschränkung 1]"
+          TopLeft="155.166666666667,99.9166666666667">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="0,55.0833333333333"
+              Start="0,0"
+              End="0,47.5833333333333">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,47.5833333333333" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <mssgm:EdgeLabel
+              BoundingBox="-14.20869140625,18.9293619791667,28.4173828125,9.724609375"
+              RelativePosition="Any" />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package.PrecedenceConstraints[Einschränkung 10]"
+          TopLeft="507.333333333333,156">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="-50.0000000000001,0"
+              Start="0,0"
+              End="-42.5000000000001,0">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="-42.5000000000001,0" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package.PrecedenceConstraints[Einschränkung 11]"
+          TopLeft="381.166666666666,177">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="0,50"
+              Start="0,0"
+              End="0,42.5">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,42.5" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package.PrecedenceConstraints[Einschränkung 2]"
+          TopLeft="252.75,82.7083333333333">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="38.083333333333,0"
+              Start="0,0"
+              End="30.583333333333,0">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="30.583333333333,0" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package.PrecedenceConstraints[Einschränkung 4]"
+          TopLeft="460.833333333333,86">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="42.5,0"
+              Start="0,0"
+              End="35,0">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="35,0" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package.PrecedenceConstraints[Einschränkung 5]"
+          TopLeft="743.333333333333,86.3125">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="48,0"
+              Start="0,0"
+              End="40.5,0">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="40.5,0" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package.PrecedenceConstraints[Einschränkung 6]"
+          TopLeft="910.583333333333,108.125">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="0,26.875"
+              Start="0,0"
+              End="0,19.375">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,19.375" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package.PrecedenceConstraints[Einschränkung 7]"
+          TopLeft="833.333333333333,156">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="-59,0"
+              Start="0,0"
+              End="-51.5,0">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="-51.5,0" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+      </GraphLayout>
+    </LayoutInfo>
+  </Package>
+  <TaskHost
+    design-time-name="Package\Tabelle nach csv">
+    <LayoutInfo>
+      <GraphLayout
+        Capacity="4" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml" xmlns:mssgm="clr-namespace:Microsoft.SqlServer.Graph.Model;assembly=Microsoft.SqlServer.Graph">
+        <NodeLayout
+          Size="125.5,42"
+          Id="Package\Tabelle nach csv\Flatfileziel"
+          TopLeft="256.5,214.75" />
+        <NodeLayout
+          Size="148,42"
+          Id="Package\Tabelle nach csv\OLE DB-Quelle"
+          TopLeft="298,81.25" />
+        <EdgeLayout
+          Id="Package\Tabelle nach csv.Paths[Ausgabe der OLE DB-Quelle]"
+          TopLeft="372,123.25">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="-52.75,91.5"
+              Start="0,0"
+              End="-52.75,84">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,41.75" />
+                  <mssgle:CubicBezierSegment
+                    Point1="0,41.75"
+                    Point2="0,45.75"
+                    Point3="-4,45.75" />
+                  <mssgle:LineSegment
+                    End="-48.75,45.75" />
+                  <mssgle:CubicBezierSegment
+                    Point1="-48.75,45.75"
+                    Point2="-52.75,45.75"
+                    Point3="-52.75,49.75" />
+                  <mssgle:LineSegment
+                    End="-52.75,84" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <mssgm:EdgeLabel
+              BoundingBox="0,0,0,0"
+              RelativePosition="Any" />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+      </GraphLayout>
+    </LayoutInfo>
+  </TaskHost>
+  <PipelineComponentMetadata
+    design-time-name="Package\Tabelle nach csv\OLE DB-Quelle">
+    <Properties>
+      <Property>
+        <Name>DataSourceViewID</Name>
+      </Property>
+      <Property>
+        <Name>TableInfoObjectType</Name>
+        <Value
+          type="q2:string">Table</Value>
+      </Property>
+    </Properties>
+  </PipelineComponentMetadata>
+  <TaskHost
+    design-time-name="Package\txt nach Tabelle">
+    <LayoutInfo>
+      <GraphLayout
+        Capacity="4" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml" xmlns:mssgm="clr-namespace:Microsoft.SqlServer.Graph.Model;assembly=Microsoft.SqlServer.Graph">
+        <NodeLayout
+          Size="135,42"
+          Id="Package\txt nach Tabelle\OLE DB-Ziel"
+          TopLeft="442,316.5" />
+        <NodeLayout
+          Size="138,42"
+          Id="Package\txt nach Tabelle\Flatfilequelle"
+          TopLeft="372.5,170.5" />
+        <EdgeLayout
+          Id="Package\txt nach Tabelle.Paths[Ausgabe der Flatfilequelle]"
+          TopLeft="441.5,212.5">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="68,104"
+              Start="0,0"
+              End="68,96.5">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,48" />
+                  <mssgle:CubicBezierSegment
+                    Point1="0,48"
+                    Point2="0,52"
+                    Point3="4,52" />
+                  <mssgle:LineSegment
+                    End="64,52" />
+                  <mssgle:CubicBezierSegment
+                    Point1="64,52"
+                    Point2="68,52"
+                    Point3="68,56" />
+                  <mssgle:LineSegment
+                    End="68,96.5" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <mssgm:EdgeLabel
+              BoundingBox="0,0,0,0"
+              RelativePosition="Any" />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+      </GraphLayout>
+    </LayoutInfo>
+  </TaskHost>
+</Objects>]]></DTS:DesignTimeProperties>
+</DTS:Executable>

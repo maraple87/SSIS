@@ -1,0 +1,17 @@
+﻿<?xml version="1.0"?>
+<DTS:ConnectionManager xmlns:DTS="www.microsoft.com/SqlServer/Dts"
+  DTS:ObjectName="kommerz_hst.egeckotrans.sa"
+  DTS:DTSID="{225706EA-5A81-4D50-8336-52B58D7B9234}"
+  DTS:CreationName="OLEDB">
+  <DTS:ObjectData>
+    <DTS:ConnectionManager
+      DTS:ConnectionString="Data Source=kommerz_hst;User ID=sa;Initial Catalog=egeckotrans;Provider=ASEOLEDB.1;Persist Security Info=True;">
+      <DTS:Password
+        DTS:Name="Password"
+        Sensitive="1"
+        p4:Salt="krPx4607QNQ="
+        p4:IV="tEminzyscPAvYwSuOBhvCw=="
+        p4:Algorithm="http://www.w3.org/2001/04/xmlenc#aes256-cbc" xmlns:p4="www.microsoft.com/SqlServer/SSIS">R1BcQQeFb+YntZJBHZOXRSk4C1kW86Uiye2ApJM743TLVM7ERTQx7rMKyePTRZsv2Y92k9uOERwHe4/q/h53f892x3B+uqrjg+s12im42VxnoNiTDLj1rRHUjWZPTfv9Ti0V5MYR38MeYLbE6JvLZxCCnvQ0TnrpA1Ci17IDBdA=</DTS:Password>
+    </DTS:ConnectionManager>
+  </DTS:ObjectData>
+</DTS:ConnectionManager>
